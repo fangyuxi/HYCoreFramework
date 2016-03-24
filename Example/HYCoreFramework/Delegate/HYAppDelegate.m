@@ -9,11 +9,17 @@
 #import "HYAppDelegate.h"
 #import "HYViewController.h"
 
+#import "HYNetworkDefaultServer.h"
+#import "HYNetworkGlobalParamFilter.h"
+#import "HYNetworkGlobalResponseFilter.h"
+#import "HYNetworkSignatureUrlFilter.h"
 
 @implementation HYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self p_configNetwork];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     HYViewController *root = [[HYViewController alloc] init];
     self.window.rootViewController = root;
@@ -22,6 +28,19 @@
     
     return YES;
 }
+
+- (void)p_configNetwork
+{
+    HYNetworkConfig *config = [HYNetworkConfig sharedInstance];
+    config.defaultSever = [[HYNetworkDefaultServer alloc] init];
+    config.defaultSever.online = YES;
+    config.defaultSever.verify = NO;
+    config.securityPolicy = [HYNetworkSecurityPolicy defaultSecurityPolicy];
+    
+    [config addUrlFilter:[[HYNetworkGlobalParamFilter alloc] init]];
+    [config addResponseFilter:[[HYNetworkGlobalResponseFilter alloc] init]];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

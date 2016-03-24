@@ -15,6 +15,8 @@
     
 }
 
+
 - (NSString *)apiURL;
+- (NSDictionary *)requestParamDic;
 
 @end

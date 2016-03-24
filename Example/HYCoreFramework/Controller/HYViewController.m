@@ -7,6 +7,7 @@
 //
 
 #import "HYViewController.h"
+#import "HYHomeTableViewSource.h"
 
 @interface HYViewController ()
 
@@ -17,7 +18,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+}
+
+- (void)initTableView
+{
+    
+}
+
+- (void)makeLayout
+{
+    
+}
+
+- (void)initTableViewSource
+{
+    HYHomeTableViewSource *source = [[HYHomeTableViewSource alloc] initWithDelegate:self];
+    [source refreshSource];
 }
 
 - (void)didReceiveMemoryWarning

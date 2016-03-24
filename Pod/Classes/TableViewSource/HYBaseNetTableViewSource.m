@@ -25,8 +25,9 @@
     
     HYSimpleRequest *request = [[HYSimpleRequest alloc] init];
     request.simpleApiUrl = [self apiURL];
-    NSMutableDictionary *paramDic = [NSMutableDictionary dictionaryWithDictionary:[self requestParamDic]];
-    [paramDic setObject:@(self.pageNum) forKey:@"pageNum"];
+    NSDictionary *param = [self requestParamDic];
+    NSMutableDictionary *paramDic = [NSMutableDictionary dictionaryWithDictionary:param ? param : [NSDictionary new]];
+    [paramDic setObject:@(self.pageNum) forKey:@"page"];
     request.simpleArgument = paramDic;
     self.request = request;
     
@@ -51,8 +52,9 @@
     
     HYSimpleRequest *request = [[HYSimpleRequest alloc] init];
     request.simpleApiUrl = [self apiURL];
-    NSMutableDictionary *paramDic = [NSMutableDictionary dictionaryWithDictionary:[self requestParamDic]];
-    [paramDic setObject:@(self.pageNum) forKey:@"pageNum"];
+    NSDictionary *param = [self requestParamDic];
+    NSMutableDictionary *paramDic = [NSMutableDictionary dictionaryWithDictionary:param ? param : [NSDictionary new]];
+    [paramDic setObject:@(self.pageNum) forKey:@"page"];
     request.simpleArgument = paramDic;
     self.request = request;
     

@@ -20,6 +20,9 @@
 
 @implementation HYBaseTableViewSource
 
+@synthesize pageNum = _pageNum;
+@synthesize canLoadMore = _canLoadMore;
+
 - (instancetype)init
 {
     self = [self initWithDelegate:nil];
@@ -37,6 +40,8 @@
     {
         self.delegate = delegate;
         self.cellModels = [NSMutableArray array];
+        self.pageNum = 1;
+        
         return self;
     }
     return nil;

@@ -10,4 +10,25 @@
 
 @implementation HYHomeTableViewSource
 
+
+- (NSString *)apiURL
+{
+    return @"/api/user?method=skills.list.home";
+}
+
+- (NSDictionary *)requestParamDic
+{
+    return nil;
+}
+
+- (void)refreshFinishWithData:(id)data
+{
+    
+}
+
+- (void)loadMoreFinishWithData:(id)data
+{
+    
+}
+
 @end

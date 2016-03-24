@@ -12,7 +12,7 @@
 #import <MJRefresh/MJRefresh.h>
 #import "HYBaseCellModel.h"
 
-@interface HYBaseListViewController ()<DZNEmptyDataSetDelegate>
+@interface HYBaseListViewController ()<DZNEmptyDataSetDelegate, HYBaseTableViewSourceDelegate>
 
 @property (nonatomic, strong, readwrite) MJRefreshHeader *refreshHeader;
 @property (nonatomic, strong, readwrite) MJRefreshFooter *refreshFooter;
