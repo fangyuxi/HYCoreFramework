@@ -9,7 +9,6 @@
 #import "HYBaseRequest.h"
 #import "HYBaseRequestInternal.h"
 #import <objc/runtime.h>
-#import "AFNetworking.h"
 
 @interface HYBaseRequest ()
 

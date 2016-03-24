@@ -31,12 +31,12 @@ PODS:
   - HYCoreFramework (0.1.0):
     - DZNEmptyDataSet
     - FMDB (~> 2.5)
-    - HYNetworking (~> 0.1.0)
+    - HYNetworking (~> 0.3.0)
     - MJExtension
     - MJRefresh (~> 3.1.0)
     - SDWebImage (~> 3.7.5)
     - UITableView+FDTemplateLayoutCell (~> 1.4)
-  - HYNetworking (0.1.0):
+  - HYNetworking (0.3.0):
     - AFNetworking (~> 3.0.4)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
@@ -64,8 +64,8 @@ SPEC CHECKSUMS:
   Expecta+Snapshots: c343f410c7a6392f3e22e78f94c44b6c0749a516
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  HYCoreFramework: 55098093a99e96a923d061004ce2a56025e7184d
-  HYNetworking: 62d89989c8f05bb6346d8d67587411b65c21459c
+  HYCoreFramework: 98220dd23ceda8deb0e320440b3c8f884544a481
+  HYNetworking: d7069f9defce1e2a7533dea466b124d090bf0798
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461

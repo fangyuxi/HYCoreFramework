@@ -10,38 +10,49 @@
 
 @implementation HYSimpleRequest
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        _simpleRequestMethod = HYRequestMethodGet;
+        self.validator = nil;
+        return self;
+    }
+    return nil;
+}
 
-- (HYRequestMethod)simpleRequestMethod
+- (HYRequestMethod)requestMethod
 {
     return _simpleRequestMethod;
 }
 
 //与HYNetworkConfig里面的baseUrl和参数组成完整的请求url，原则上apiUrl返回的字符串不应该包含任何参数 应该是:/api/user
-- (NSString *)simpleApiUrl
+- (NSString *)apiUrl
 {
     return _simpleApiUrl;
 }
 
-- (NSString *)simpleIdentifier
+- (NSString *)identifier
 {
     return _simpleIdentifier;
 }
 
 
 //完整的url 如果有值，那么会忽略掉HYNetworkConfig里面的baseUrl
-- (NSString *)simpleFullUrl
+- (NSString *)fullUrl
 {
     return _simpleFullUrl;
 }
 
 /// 在HTTP报头添加的自定义参数
-- (NSDictionary *)simpleHeaderValueDictionary
+- (NSDictionary *)requestHeaderValueDictionary
 {
     return _simpleHeaderValueDictionary;
 }
 
 //默认30秒
-- (NSTimeInterval)simpleTimeoutInterval
+- (NSTimeInterval)requestTimeoutInterval
 {
     return _simpleTimeoutInterval;
 }
@@ -53,13 +64,13 @@
 }
 
 /// 请求的参数列表
-- (id)simpleArgument
+- (NSDictionary *)requestArgument
 {
     return _simpleArgument;
 }
 
 //下载的URL 如果子类提供了path 那么将会把内容下载到指定位置
-- (NSString *)simpleDownloadPath
+- (NSString *)downloadPath
 {
     return _simpleDownloadPath;
 }

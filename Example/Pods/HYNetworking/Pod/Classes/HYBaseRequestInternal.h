@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "HYBaseRequest.h"
 #import "HYNetworkConfig.h"
-#import "AFNetworking.h"
 
 @interface HYBaseRequestInternal : NSObject
 {

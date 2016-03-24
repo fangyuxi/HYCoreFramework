@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
 
-  s.dependency 'HYNetworking', '~> 0.1.0'
+  s.dependency 'HYNetworking', '~> 0.3.0'
   s.dependency 'SDWebImage', '~> 3.7.5'
   s.dependency 'MJRefresh', '~> 3.1.0'
   s.dependency 'MJExtension'

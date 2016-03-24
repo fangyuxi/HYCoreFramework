@@ -22,10 +22,11 @@
       "Pod/Assets/*.png"
     ]
   },
+  "public_header_files": "Pod/Classes/**/*.h",
   "frameworks": "UIKit",
   "dependencies": {
     "HYNetworking": [
-      "~> 0.1.0"
+      "~> 0.3.0"
     ],
     "SDWebImage": [
       "~> 3.7.5"
