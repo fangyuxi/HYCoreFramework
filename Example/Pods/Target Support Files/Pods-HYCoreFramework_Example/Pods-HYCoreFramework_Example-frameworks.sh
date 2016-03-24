@@ -85,17 +85,23 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HYCoreFramework_Example/AFNetworking.framework"
+  install_framework "Pods-HYCoreFramework_Example/DZNEmptyDataSet.framework"
+  install_framework "Pods-HYCoreFramework_Example/FMDB.framework"
   install_framework "Pods-HYCoreFramework_Example/HYCoreFramework.framework"
   install_framework "Pods-HYCoreFramework_Example/HYNetworking.framework"
   install_framework "Pods-HYCoreFramework_Example/MJExtension.framework"
   install_framework "Pods-HYCoreFramework_Example/MJRefresh.framework"
   install_framework "Pods-HYCoreFramework_Example/SDWebImage.framework"
+  install_framework "Pods-HYCoreFramework_Example/UITableView_FDTemplateLayoutCell.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HYCoreFramework_Example/AFNetworking.framework"
+  install_framework "Pods-HYCoreFramework_Example/DZNEmptyDataSet.framework"
+  install_framework "Pods-HYCoreFramework_Example/FMDB.framework"
   install_framework "Pods-HYCoreFramework_Example/HYCoreFramework.framework"
   install_framework "Pods-HYCoreFramework_Example/HYNetworking.framework"
   install_framework "Pods-HYCoreFramework_Example/MJExtension.framework"
   install_framework "Pods-HYCoreFramework_Example/MJRefresh.framework"
   install_framework "Pods-HYCoreFramework_Example/SDWebImage.framework"
+  install_framework "Pods-HYCoreFramework_Example/UITableView_FDTemplateLayoutCell.framework"
 fi

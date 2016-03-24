@@ -14,17 +14,28 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - DZNEmptyDataSet (1.7.3)
   - Expecta (1.0.5)
-  - Expecta+Snapshots (2.0.0):
+  - Expecta+Snapshots (3.0.0):
     - Expecta (~> 1.0)
-    - FBSnapshotTestCase/Core (~> 2.0.3)
+    - FBSnapshotTestCase/Core (~> 2.0)
+    - Specta (~> 1.0)
   - FBSnapshotTestCase (2.0.7):
     - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
   - FBSnapshotTestCase/Core (2.0.7)
   - FBSnapshotTestCase/SwiftSupport (2.0.7):
     - FBSnapshotTestCase/Core
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - HYCoreFramework (0.1.0):
+    - DZNEmptyDataSet
+    - FMDB (~> 2.5)
     - HYNetworking (~> 0.1.0)
+    - MJExtension
+    - MJRefresh (~> 3.1.0)
+    - SDWebImage (~> 3.7.5)
+    - UITableView+FDTemplateLayoutCell (~> 1.4)
   - HYNetworking (0.1.0):
     - AFNetworking (~> 3.0.4)
   - MJExtension (3.0.10)
@@ -33,15 +44,13 @@ PODS:
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
   - Specta (1.0.5)
+  - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
   - Expecta
   - Expecta+Snapshots
   - FBSnapshotTestCase
   - HYCoreFramework (from `../`)
-  - MJExtension (~> 3.0.10)
-  - MJRefresh (~> 3.1.0)
-  - SDWebImage (~> 3.7.5)
   - Specta
 
 EXTERNAL SOURCES:
@@ -50,14 +59,17 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  Expecta+Snapshots: 29b38dd695bc72a0ed2bea833937d78df41943ba
+  Expecta+Snapshots: c343f410c7a6392f3e22e78f94c44b6c0749a516
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
-  HYCoreFramework: 42b0d5529163dbb9103024b8c6f08cdbb1718356
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HYCoreFramework: 55098093a99e96a923d061004ce2a56025e7184d
   HYNetworking: 62d89989c8f05bb6346d8d67587411b65c21459c
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
 COCOAPODS: 0.39.0

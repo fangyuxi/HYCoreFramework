@@ -85,11 +85,14 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HYCoreFramework_Tests/AFNetworking.framework"
+  install_framework "Pods-HYCoreFramework_Tests/DZNEmptyDataSet.framework"
+  install_framework "Pods-HYCoreFramework_Tests/FMDB.framework"
   install_framework "Pods-HYCoreFramework_Tests/HYCoreFramework.framework"
   install_framework "Pods-HYCoreFramework_Tests/HYNetworking.framework"
   install_framework "Pods-HYCoreFramework_Tests/MJExtension.framework"
   install_framework "Pods-HYCoreFramework_Tests/MJRefresh.framework"
   install_framework "Pods-HYCoreFramework_Tests/SDWebImage.framework"
+  install_framework "Pods-HYCoreFramework_Tests/UITableView_FDTemplateLayoutCell.framework"
   install_framework "Pods-HYCoreFramework_Tests/Expecta.framework"
   install_framework "Pods-HYCoreFramework_Tests/Expecta_Snapshots.framework"
   install_framework "Pods-HYCoreFramework_Tests/FBSnapshotTestCase.framework"
@@ -97,11 +100,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HYCoreFramework_Tests/AFNetworking.framework"
+  install_framework "Pods-HYCoreFramework_Tests/DZNEmptyDataSet.framework"
+  install_framework "Pods-HYCoreFramework_Tests/FMDB.framework"
   install_framework "Pods-HYCoreFramework_Tests/HYCoreFramework.framework"
   install_framework "Pods-HYCoreFramework_Tests/HYNetworking.framework"
   install_framework "Pods-HYCoreFramework_Tests/MJExtension.framework"
   install_framework "Pods-HYCoreFramework_Tests/MJRefresh.framework"
   install_framework "Pods-HYCoreFramework_Tests/SDWebImage.framework"
+  install_framework "Pods-HYCoreFramework_Tests/UITableView_FDTemplateLayoutCell.framework"
   install_framework "Pods-HYCoreFramework_Tests/Expecta.framework"
   install_framework "Pods-HYCoreFramework_Tests/Expecta_Snapshots.framework"
   install_framework "Pods-HYCoreFramework_Tests/FBSnapshotTestCase.framework"

@@ -7,6 +7,7 @@
 //
 
 #import "HYAppDelegate.h"
+#import "HYNetworking.h"
 
 @implementation HYAppDelegate
 
