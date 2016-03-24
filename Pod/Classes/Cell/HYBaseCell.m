@@ -16,17 +16,17 @@
     [self bindCellModelIfNeeded];
 }
 
-- (void) resetCell
+- (void)resetCell
 {
     
 }
 
-- (void) reload
+- (void)reload
 {
     
 }
 
-- (void) cancel
+- (void)cancel
 {
     
 }

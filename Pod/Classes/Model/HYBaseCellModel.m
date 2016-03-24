@@ -8,7 +8,7 @@
 
 #import "HYBaseCellModel.h"
 
-const CGFloat HYBaseCellDefaultHeightWhenUseAutoLayout = -1;
+const CGFloat HYBaseCellDefaultHeightWhenUseAutoLayout = -1.0f;
 
 @implementation HYBaseCellModel
 
@@ -16,6 +16,19 @@ const CGFloat HYBaseCellDefaultHeightWhenUseAutoLayout = -1;
 - (CGFloat)cellHeight
 {
     return HYBaseCellDefaultHeightWhenUseAutoLayout;
+}
+
+- (void)dicMapModelFinish
+{
+    if (self.cellHeight != HYBaseCellDefaultHeightWhenUseAutoLayout)
+    {
+        [self calculateCellElementFrame];
+    }
+}
+
+- (void)calculateCellElementFrame
+{
+    [self doesNotRecognizeSelector:_cmd];
 }
 
 @end

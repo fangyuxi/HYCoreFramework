@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HYStorage.h"
+
+@class HYStorage;
 
 @interface HYBaseModel : NSObject<NSCoding>
 {
@@ -17,17 +18,37 @@
 - (instancetype)initWithDictionary:(id)dic NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
+/**
+ *  当Model初始化之前，会先调用这个函数，子类覆盖，可以做自己的事情
+ */
 - (void)initExtension;
 
 @property (nonatomic, retain, readonly) NSDictionary *dic;
 @property (nonatomic, retain)HYStorage *storage;
 
 
-//转换完成后调用，手动修改后也可以调用更新
-- (void)updateModel;
+/**
+ *  当字典转模型结束之后，会回调这个方法，做一些其他处理
+ */
+- (void)dicMapModelFinish;
 
-//隔离MJExtension中的方法，子类可以覆盖
+/**
+ *  如果服务端返回的某些字段和我们的属性值不符合
+    那么在这个方法里面做一个转换
+ 
+    @{ourPropertyName : ServerPropertyName}
+ *
+ *  @return 转换的字典
+ */
 + (NSDictionary *)transferDic;
+
+/**
+ *  如果服务端返回的数组里面的对象对应着我们的一个Model，那么需要告诉MJExtension
+    
+    @{ServerArrayName: [OurClass Class]}
+ *
+ *  @return 转换的字典
+ */
 + (NSDictionary *)hy_objectClassInArray;
 
 @end

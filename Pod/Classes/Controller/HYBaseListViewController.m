@@ -25,18 +25,31 @@
 {
     [super viewDidLoad];
     
+    
     [self initTableView];
     [self initTableViewSource];
     [self p_registTableViewWithTableViewSource];
+    
+    self.needHeader = YES;
+    self.needFooter = YES;
+    
+    [self configHeaderFooterAppearance];
 }
 
 
 - (void)initTableView
 {
-    
+    NSLog(@"Yout Must create TableView in initTableView Method");
+    [self doesNotRecognizeSelector:_cmd];
 }
 
 - (void)initTableViewSource
+{
+    NSLog(@"Yout Must create TableViewSource in initTableViewSource Method");
+    [self doesNotRecognizeSelector:_cmd];
+}
+
+- (void)configHeaderFooterAppearance
 {
     
 }
@@ -74,15 +87,26 @@
 
 #pragma mark table view delegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HYBaseCellModel *cellModel = [[self.tableViewSource.cellModels objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    return [tableView fd_heightForCellWithIdentifier:cellModel.reuseIdentifier cacheByIndexPath:indexPath configuration:^(HYBaseCell *cell){
-        
-        [cell resetCell];
-        cell.cellModel = cellModel;
-        [cell updateCell];
-    }];
+    NSArray *cellModels = self.tableViewSource.cellModels;
+    NSArray *sectionArray = [cellModels objectAtIndex:indexPath.section];
+    HYBaseCellModel *cellModel = [sectionArray objectAtIndex:indexPath.row];
+
+    if (cellModel.cellHeight == HYBaseCellDefaultHeightWhenUseAutoLayout)
+    {
+        return [tableView fd_heightForCellWithIdentifier:cellModel.reuseIdentifier
+                                        cacheByIndexPath:indexPath
+                                           configuration:^(HYBaseCell *cell)
+        {
+            [cell resetCell];
+            cell.cellModel = cellModel;
+            [cell updateCell];
+        }];
+    }
+    
+    return cellModel.cellHeight;
 }
 
 #pragma mark overwrite
@@ -131,7 +155,8 @@
     
     if (!self.refreshHeader)
     {
-        self.refreshHeader = [self.headerClass headerWithRefreshingTarget:self refreshingAction:@selector(p_refreshViewBeginRefreshing)];
+        self.refreshHeader = [self.headerClass headerWithRefreshingTarget:self
+                                                         refreshingAction:@selector(p_refreshViewBeginRefreshing)];
     }
     
     [self.tableView setMj_header:self.refreshHeader];
@@ -146,7 +171,8 @@
     
     if (!self.refreshFooter)
     {
-        self.refreshFooter = [self.footerClass footerWithRefreshingTarget:self refreshingAction:@selector(p_refreshViewBeginLoadMore)];
+        self.refreshFooter = [self.footerClass footerWithRefreshingTarget:self
+                                                         refreshingAction:@selector(p_refreshViewBeginLoadMore)];
     }
     
     [self.tableView setMj_footer:self.refreshFooter];
@@ -173,6 +199,7 @@
         self.tableView.mj_footer = nil;;
     }
 }
+
 - (void)tableSourceDidFinishRefresh:(HYBaseTableViewSource *)tableSource
 {
     [self.tableView reloadEmptyDataSet];
@@ -195,10 +222,12 @@
     
     [self.tableView.mj_header endRefreshing];
 }
+
 - (void)tableSourceDidStartLoadMore:(HYBaseTableViewSource *)tableSource
 {
     
 }
+
 - (void)tableSourceDidFinishLoadMore:(HYBaseTableViewSource *)tableSource
 {
     [self.tableView reloadEmptyDataSet];
@@ -219,7 +248,9 @@
     
     [(UITableView *)_tableView reloadData];
 }
-- (void)tableSource:(HYBaseTableViewSource *)tableSource refreshError:(NSError *)error
+
+- (void)tableSource:(HYBaseTableViewSource *)tableSource
+       refreshError:(NSError *)error
 {
     [self.tableView reloadEmptyDataSet];
     
@@ -231,7 +262,9 @@
     [self.tableView.mj_header endRefreshing];
     [self p_addFooter];
 }
-- (void)tableSource:(HYBaseTableViewSource *)tableSource loadMoreError:(NSError *)error
+
+- (void)tableSource:(HYBaseTableViewSource *)tableSource
+      loadMoreError:(NSError *)error
 {
     [self.tableView reloadEmptyDataSet];
     
@@ -249,7 +282,8 @@
         }
     }
 }
-- (void)tableSource:(HYBaseTableViewSource *)source didReceviedExtraData:(id)data
+- (void)tableSource:(HYBaseTableViewSource *)source
+didReceviedExtraData:(id)data
 {
     
 }
@@ -258,4 +292,5 @@
 {
     
 }
+
 @end

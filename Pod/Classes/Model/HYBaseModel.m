@@ -8,6 +8,7 @@
 
 #import "HYBaseModel.h"
 #import "MJExtension/MJExtension.h"
+#import "HYStorage.h"
 
 @interface HYBaseModel ()
 
@@ -67,7 +68,7 @@
     
 }
 
-- (void)updateModel
+- (void)dicMapModelFinish
 {
     
 }
@@ -82,6 +83,11 @@
 + (NSDictionary *)mj_objectClassInArray
 {
     return [self hy_objectClassInArray];
+}
+
+- (void)mj_keyValuesDidFinishConvertingToObject
+{
+    [self dicMapModelFinish];
 }
 
 + (NSDictionary *)transferDic

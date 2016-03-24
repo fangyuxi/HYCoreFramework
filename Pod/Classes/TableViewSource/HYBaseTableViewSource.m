@@ -36,6 +36,7 @@
     if (self)
     {
         self.delegate = delegate;
+        self.cellModels = [NSMutableArray array];
         return self;
     }
     return nil;

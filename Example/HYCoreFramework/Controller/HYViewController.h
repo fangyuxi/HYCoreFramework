@@ -7,7 +7,10 @@
 //
 
 @import UIKit;
+@import Foundation;
 
-@interface HYViewController : UIViewController
+#import "HYBaseListViewController.h"
+
+@interface HYViewController : HYBaseListViewController
 
 @end

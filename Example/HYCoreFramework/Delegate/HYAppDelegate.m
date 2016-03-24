@@ -7,13 +7,19 @@
 //
 
 #import "HYAppDelegate.h"
-#import "HYNetworking.h"
+#import "HYViewController.h"
+
 
 @implementation HYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    HYViewController *root = [[HYViewController alloc] init];
+    self.window.rootViewController = root;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
