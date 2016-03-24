@@ -59,6 +59,7 @@
 		1D4AFFFB7BB6693B74DE8E670CB37527 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5D6D8406C5798538D81A67968E19A /* MJExtensionConst.m */; };
 		1E5B8F12ED7CC40ECDB9B1F755F387E5 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6468F9BCDAC86AE28939707626F65D5A /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E6CB3108E7BCD0A0126E78B257E79A2 /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DC120475E03FFB1712320A46F20DD /* SpectaDSL.m */; };
+		1EF5BF921CA4192D005E2EF5 /* HYCoreFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF5BF911CA418F2005E2EF5 /* HYCoreFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F4A0A76F7A551A86378ADE0DD6620D3 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = A14B40FA49C1D04B27202B577B538F08 /* NSData+ImageContentType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		1F4E495FCA964379E9CB14A228632836 /* HYBaseTableViewSource.h in Headers */ = {isa = PBXBuildFile; fileRef = E94B9959948E619C6134E66F2DFFB282 /* HYBaseTableViewSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FEA08F428761C9DA0824A0362EB11FD /* HYDataPresenterProtocal.h in Headers */ = {isa = PBXBuildFile; fileRef = E6A45999F85FF29A978222AC81594E56 /* HYDataPresenterProtocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -688,6 +689,7 @@
 		1D7CA44324BBF44F58371DEAB1991D21 /* EXPDoubleTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDoubleTuple.h; path = Expecta/EXPDoubleTuple.h; sourceTree = "<group>"; };
 		1E46D6C1D3868BD3E7DE131DE3E004C4 /* HYResponseCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HYResponseCache.m; path = Pod/Classes/HYResponseCache.m; sourceTree = "<group>"; };
 		1EE350A96C98C57B1102D7BB9FAE343B /* Pods-HYCoreFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HYCoreFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1EF5BF911CA418F2005E2EF5 /* HYCoreFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYCoreFramework.h; sourceTree = "<group>"; };
 		1EF69C7EF35C6DF488E01B23C578D370 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		22F5C50DE2C44D4DFD10577F66E22224 /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
 		23182D0863788A3E178CD5441A5C30BC /* Expecta+Snapshots-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Expecta+Snapshots-dummy.m"; sourceTree = "<group>"; };
@@ -1472,6 +1474,7 @@
 		2C7491BA79741493954B200AF420F9ED /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1EF5BF911CA418F2005E2EF5 /* HYCoreFramework.h */,
 				EB5C9882B3447E701D0DE85D7A6723FE /* Cell */,
 				45FE8F9A41603A4BAAB5D5853570CD1C /* Controller */,
 				C08A42345D3975E0827C6DEBB1DBBDD3 /* DataPresenter */,
@@ -2170,6 +2173,7 @@
 				2813B3409F2C73174CEC4F77CBBDF3F1 /* HYStorage.h in Headers */,
 				3A64F1EC6B87ADCC96BE8DBBB7AA2DF5 /* HYTableViewSourceSection.h in Headers */,
 				01A43BA4363844871C6C853C0F89C050 /* SQLStatement.h in Headers */,
+				1EF5BF921CA4192D005E2EF5 /* HYCoreFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,12 +8,38 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HYBaseViewController : UIViewController
+@protocol HYViewControllerProtocal <NSObject>
+
+@required
+
+/**
+ *  初始化View，子类必须实现，不实现会崩溃
+ */
+- (void)initView;
+
+/**
+ *  配置导航栏和导航栏按钮按钮
+ */
+- (void)configNavigationBarItem;
+
+/**
+ *  子类布局view的时候必须实现
+ */
+- (void)makeLayout;
+
+/**
+ *  如果controller想要关注source中model的变化，可以在这个方法中绑定
+ */
+- (void)bindViewModel;
+
+@end
+
+@interface HYBaseViewController : UIViewController<HYViewControllerProtocal>
 {
     
 }
 
-//如果controller想要关注source中model的变化，可以在这个方法中绑定
-- (void)bindViewModel;
+
+
 
 @end

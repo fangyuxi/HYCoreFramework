@@ -25,17 +25,23 @@
 {
     [super viewDidLoad];
     
-    
-    [self initTableView];
-    [self initTableViewSource];
-    [self p_registTableViewWithTableViewSource];
-    
     self.needHeader = YES;
     self.needFooter = YES;
     
     [self configHeaderFooterAppearance];
 }
 
+- (void)initView
+{
+    [self initTableView];
+    [self initTableViewSource];
+    [self p_registTableViewWithTableViewSource];
+}
+
+- (void)makeLayout
+{
+    
+}
 
 - (void)initTableView
 {
