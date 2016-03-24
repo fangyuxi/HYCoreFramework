@@ -1,0 +1,1 @@
+../../../HYNetworking/Pod/Classes/HYResponseCache.h
