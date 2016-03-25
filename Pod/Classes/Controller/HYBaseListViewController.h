@@ -70,6 +70,13 @@
     如果不实现，会崩溃
  
     基类会先调用initTableView 再调用initTableViewSource 再调用bindViewModel
+ 
+    调用顺序
+    ViewDidLoad
+        initView
+            initTableView
+            initTableViewSource
+        configHeaderFooterAppearance
  */
 - (void)initTableView;
 - (void)initTableViewSource;

@@ -23,18 +23,17 @@ extern const CGFloat HYBaseCellDefaultHeightWhenUseAutoLayout;
  
     如果返回值不是 HYBaseCellDefaultHeightWhenUseAutoLayout，
  
-    那么将对这种类型的cell 关闭AutoLyout的self-sizing，使用frame
+    那么将对这种类型的cell 关闭AutoLyout的self-sizing，使用frame布局
  
-    布局
  */
 @property (nonatomic, assign)CGFloat cellHeight;
 
 /**
  *
-    如果不试用AutoLyout
+    如果不使用AutoLyout
     可以在这个方法中计算cell中各个元素的frame
  
  */
-- (void)calculateCellElementFrame;
+- (CGFloat)calculateCellElementFrame;
 
 @end

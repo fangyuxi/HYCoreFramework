@@ -10,4 +10,14 @@
 
 @implementation HYHomeCellModel
 
++ (NSDictionary *)transferDic
+{
+    return nil;
+}
+
+- (CGFloat)calculateCellElementFrame
+{
+    return 100;
+}
+
 @end

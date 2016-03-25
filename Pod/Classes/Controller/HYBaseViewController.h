@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  调用顺序
+    init
+    initExtension
+    
+    ViewDidLoad
+        initView
+        configNavigationBarItem
+        makeLayout
+        bindViewModel
+ 
+ */
 @protocol HYViewControllerProtocal <NSObject>
 
 @required

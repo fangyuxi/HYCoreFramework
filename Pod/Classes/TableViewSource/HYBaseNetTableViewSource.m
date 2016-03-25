@@ -22,6 +22,7 @@
 - (void)initExtension
 {
     self.request = [[HYSimpleRequest alloc] init];
+    self.request.validator = self;
 }
 
 - (void)refreshSource

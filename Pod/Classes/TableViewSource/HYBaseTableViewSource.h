@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "HYBaseCellModel.h"
 
+@class HYBassCellModel;
 @class HYBaseCell;
 @class HYTableViewSourceSection;
 @class HYBaseTableViewSource;

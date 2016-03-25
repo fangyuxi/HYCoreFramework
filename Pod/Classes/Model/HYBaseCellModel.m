@@ -10,25 +10,32 @@
 
 const CGFloat HYBaseCellDefaultHeightWhenUseAutoLayout = -1.0f;
 
+@interface HYBaseCellModel()
+
+@end
+
 @implementation HYBaseCellModel
 
+- (void)initExtension
+{
+    self.reuseIdentifier = NSStringFromClass([self class]);
+    self.cellHeight = HYBaseCellDefaultHeightWhenUseAutoLayout;
+}
 
-- (CGFloat)cellHeight
+
+- (void)dicMapModelFinish
+{
+    [self calculateCellElementFrame];
+}
+
+- (CGFloat)calculateCellElementFrame
 {
     return HYBaseCellDefaultHeightWhenUseAutoLayout;
 }
 
-- (void)dicMapModelFinish
++ (NSDictionary *)transferDic
 {
-    if (self.cellHeight != HYBaseCellDefaultHeightWhenUseAutoLayout)
-    {
-        [self calculateCellElementFrame];
-    }
-}
-
-- (void)calculateCellElementFrame
-{
-    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 @end

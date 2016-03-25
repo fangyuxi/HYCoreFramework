@@ -25,6 +25,7 @@
 {
     [super viewDidLoad];
     [self initView];
+    [self configNavigationBarItem];
     [self makeLayout];
     [self bindViewModel];
 }
