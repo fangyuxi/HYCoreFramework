@@ -91,6 +91,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HYCoreFramework_Example/HYNetworking.framework"
   install_framework "Pods-HYCoreFramework_Example/MJExtension.framework"
   install_framework "Pods-HYCoreFramework_Example/MJRefresh.framework"
+  install_framework "Pods-HYCoreFramework_Example/Masonry.framework"
   install_framework "Pods-HYCoreFramework_Example/SDWebImage.framework"
   install_framework "Pods-HYCoreFramework_Example/UITableView_FDTemplateLayoutCell.framework"
 fi
@@ -102,6 +103,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HYCoreFramework_Example/HYNetworking.framework"
   install_framework "Pods-HYCoreFramework_Example/MJExtension.framework"
   install_framework "Pods-HYCoreFramework_Example/MJRefresh.framework"
+  install_framework "Pods-HYCoreFramework_Example/Masonry.framework"
   install_framework "Pods-HYCoreFramework_Example/SDWebImage.framework"
   install_framework "Pods-HYCoreFramework_Example/UITableView_FDTemplateLayoutCell.framework"
 fi

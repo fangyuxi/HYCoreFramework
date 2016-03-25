@@ -7,7 +7,6 @@
 //
 
 #import "HYBaseTableViewSource.h"
-#import "HYBaseCellModel.h"
 #import "HYBaseCell.h"
 #import "UIScrollView+EmptyDataSet.h"
 
@@ -42,9 +41,15 @@
         self.cellModels = [NSMutableArray array];
         self.pageNum = 1;
         
+        [self initExtension];
         return self;
     }
     return nil;
+}
+
+- (void)initExtension
+{
+    
 }
 
 #pragma mark UITableViewDataSourceProtocal

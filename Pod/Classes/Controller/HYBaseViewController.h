@@ -18,19 +18,25 @@
 - (void)initView;
 
 /**
+ *  子类布局view的时候必须实现
+ */
+- (void)makeLayout;
+
+@optional
+/**
  *  配置导航栏和导航栏按钮按钮
  */
 - (void)configNavigationBarItem;
 
 /**
- *  子类布局view的时候必须实现
- */
-- (void)makeLayout;
-
-/**
  *  如果controller想要关注source中model的变化，可以在这个方法中绑定
  */
 - (void)bindViewModel;
+
+/**
+ *  在ViewDidLoad之前，需要初始化的内容，放在这里面
+ */
+- (void)initExtension;
 
 @end
 

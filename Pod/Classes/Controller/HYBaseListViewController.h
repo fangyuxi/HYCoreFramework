@@ -10,11 +10,14 @@
 #import "HYBaseViewController.h"
 #import "HYBaseTableViewSource.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 @class MJRefreshHeader;
 @class MJRefreshFooter;
 
-@interface HYBaseListViewController : HYBaseViewController<UITableViewDelegate>
+@interface HYBaseListViewController : HYBaseViewController<DZNEmptyDataSetDelegate,
+                                                        HYBaseTableViewSourceDelegate,
+                                                        UITableViewDelegate>
 {
     
 }
@@ -65,6 +68,8 @@
 /**
  *  在这两个方法中创建TableView和TableViewSource
     如果不实现，会崩溃
+ 
+    基类会先调用initTableView 再调用initTableViewSource 再调用bindViewModel
  */
 - (void)initTableView;
 - (void)initTableViewSource;

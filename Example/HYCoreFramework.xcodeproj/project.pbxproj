@@ -10,6 +10,7 @@
 		1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB9B831CA3E647008A8411 /* HYViewController.m */; };
 		1EEB9B891CA3E647008A8411 /* HYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB9B861CA3E647008A8411 /* HYAppDelegate.m */; };
 		1EF5BF901CA418D3005E2EF5 /* HYHomeTableViewSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5BF8F1CA418D3005E2EF5 /* HYHomeTableViewSource.m */; };
+		1EF5BF951CA4D757005E2EF5 /* HYHomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5BF941CA4D757005E2EF5 /* HYHomeCellModel.m */; };
 		3794F9671CA43D0C00F41D1F /* HYNetworkDefaultServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9601CA43D0C00F41D1F /* HYNetworkDefaultServer.m */; };
 		3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9621CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m */; };
 		3794F9691CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9641CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m */; };
@@ -46,6 +47,8 @@
 		1EEB9B861CA3E647008A8411 /* HYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAppDelegate.m; sourceTree = "<group>"; };
 		1EF5BF8E1CA418D3005E2EF5 /* HYHomeTableViewSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeTableViewSource.h; sourceTree = "<group>"; };
 		1EF5BF8F1CA418D3005E2EF5 /* HYHomeTableViewSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeTableViewSource.m; sourceTree = "<group>"; };
+		1EF5BF931CA4D757005E2EF5 /* HYHomeCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeCellModel.h; sourceTree = "<group>"; };
+		1EF5BF941CA4D757005E2EF5 /* HYHomeCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeCellModel.m; sourceTree = "<group>"; };
 		251667E72788BA7127936287 /* HYCoreFramework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HYCoreFramework.podspec; path = ../HYCoreFramework.podspec; sourceTree = "<group>"; };
 		2C2E8BEFE5F9700CDE3ABEAE /* Pods_HYCoreFramework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYCoreFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3794F95F1CA43D0C00F41D1F /* HYNetworkDefaultServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetworkDefaultServer.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 			children = (
 				1EF5BF8E1CA418D3005E2EF5 /* HYHomeTableViewSource.h */,
 				1EF5BF8F1CA418D3005E2EF5 /* HYHomeTableViewSource.m */,
+				1EF5BF931CA4D757005E2EF5 /* HYHomeCellModel.h */,
+				1EF5BF941CA4D757005E2EF5 /* HYHomeCellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */,
 				3794F96A1CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m in Sources */,
 				1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */,
+				1EF5BF951CA4D757005E2EF5 /* HYHomeCellModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

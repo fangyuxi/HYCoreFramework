@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "HYBaseCellModel.h"
 
-@class HYBassCellModel;
 @class HYBaseCell;
 @class HYTableViewSourceSection;
 @class HYBaseTableViewSource;
@@ -82,6 +82,8 @@
 {
     
 }
+
+- (void)initExtension;
 
 - (instancetype)initWithDelegate:(id<HYBaseTableViewSourceDelegate>)delegate
                                                         NS_DESIGNATED_INITIALIZER;

@@ -8,11 +8,10 @@
 
 #import "HYBaseListViewController.h"
 #import "HYBaseCell.h"
-#import "UIScrollView+EmptyDataSet.h"
-#import <MJRefresh/MJRefresh.h>
+#import "MJRefresh/MJRefresh.h"
 #import "HYBaseCellModel.h"
 
-@interface HYBaseListViewController ()<DZNEmptyDataSetDelegate, HYBaseTableViewSourceDelegate>
+@interface HYBaseListViewController ()
 
 @property (nonatomic, strong, readwrite) MJRefreshHeader *refreshHeader;
 @property (nonatomic, strong, readwrite) MJRefreshFooter *refreshFooter;

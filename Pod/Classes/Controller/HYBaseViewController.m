@@ -10,6 +10,17 @@
 
 @implementation HYBaseViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    {
+        [self initExtension];
+        return self;
+    }
+    return nil;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,6 +45,11 @@
 }
 
 - (void)bindViewModel
+{
+    
+}
+
+- (void)initExtension
 {
     
 }

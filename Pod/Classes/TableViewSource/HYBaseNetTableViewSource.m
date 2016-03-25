@@ -13,25 +13,28 @@
     
 }
 
-@property (nonatomic, strong, readwrite)HYBaseRequest *request;
+@property (nonatomic, strong, readwrite)HYSimpleRequest *request;
 
 @end
 
 @implementation HYBaseNetTableViewSource
 
+- (void)initExtension
+{
+    self.request = [[HYSimpleRequest alloc] init];
+}
+
 - (void)refreshSource
 {
     [self notifyWillRefresh];
     
-    HYSimpleRequest *request = [[HYSimpleRequest alloc] init];
-    request.simpleApiUrl = [self apiURL];
+    self.request.simpleApiUrl = [self apiURL];
     NSDictionary *param = [self requestParamDic];
     NSMutableDictionary *paramDic = [NSMutableDictionary dictionaryWithDictionary:param ? param : [NSDictionary new]];
     [paramDic setObject:@(self.pageNum) forKey:@"page"];
-    request.simpleArgument = paramDic;
-    self.request = request;
+    self.request.simpleArgument = paramDic;
     
-    [request startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+    [self.request startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
         
         [self refreshFinishWithData:response.content];
         [self notifyDidFinishRefresh];
@@ -49,16 +52,14 @@
 {
     ++self.pageNum;
     [self notifyWillLoadMore];
-    
-    HYSimpleRequest *request = [[HYSimpleRequest alloc] init];
-    request.simpleApiUrl = [self apiURL];
+
+    self.request.simpleApiUrl = [self apiURL];
     NSDictionary *param = [self requestParamDic];
     NSMutableDictionary *paramDic = [NSMutableDictionary dictionaryWithDictionary:param ? param : [NSDictionary new]];
     [paramDic setObject:@(self.pageNum) forKey:@"page"];
-    request.simpleArgument = paramDic;
-    self.request = request;
+    self.request.simpleArgument = paramDic;
     
-    [request startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+    [self.request startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
         
         [self loadMoreFinishWithData:response.content];
         [self notifyDidFinishLoadMore];
@@ -70,6 +71,11 @@
     } progressHandler:^(HYBaseRequest *request, int64_t progress) {
         
     }];
+}
+
+- (id)jsonValidatorData
+{
+    return nil;
 }
 
 - (void)cancel

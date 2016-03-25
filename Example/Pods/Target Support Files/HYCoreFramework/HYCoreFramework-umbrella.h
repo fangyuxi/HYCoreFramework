@@ -4,6 +4,7 @@
 #import "HYBaseListViewController.h"
 #import "HYBaseViewController.h"
 #import "HYDataPresenterProtocal.h"
+#import "HYCoreFramework.h"
 #import "HYBaseCellModel.h"
 #import "HYBaseModel.h"
 #import "HYArchiverStorage.h"
