@@ -10,6 +10,7 @@
 #import "HYBaseCell.h"
 #import "MJRefresh/MJRefresh.h"
 #import "HYBaseCellModel.h"
+#import "HYCoreFramework.h"
 
 @interface HYBaseListViewController ()
 
@@ -24,6 +25,9 @@
 {
     [super viewDidLoad];
     
+    self.headerClass = NSClassFromString(@"MJRefreshNormalHeader");
+    self.footerClass = NSClassFromString(@"MJRefreshAutoStateFooter");
+    
     self.needHeader = YES;
     self.needFooter = YES;
     
@@ -35,6 +39,7 @@
     [self initTableView];
     [self initTableViewSource];
     [self p_registTableViewWithTableViewSource];
+    [self p_tableViewAndSourceInitFinish];
 }
 
 - (void)makeLayout
@@ -57,6 +62,14 @@
 - (void)configHeaderFooterAppearance
 {
     
+}
+
+- (void)p_tableViewAndSourceInitFinish
+{
+    NSAssert(self.tableView,@"The TableView instance must assign to the self.tableView");
+    if (!self.tableView.emptyDataSetDelegate){self.tableView.emptyDataSetDelegate = self;}
+    if (!self.tableView.emptyDataSetSource){self.tableView.emptyDataSetSource = self;}
+    if (!self.tableView.delegate){self.tableView.delegate = self;}
 }
 
 #pragma mark registe cell-cellmodel
@@ -183,6 +196,30 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     [self.tableView setMj_footer:self.refreshFooter];
 }
 
+- (void)setHeaderClass:(Class)headerClass
+{
+    _headerClass = headerClass;
+    self.refreshHeader = [self.headerClass headerWithRefreshingTarget:self
+                                                     refreshingAction:@selector(p_refreshViewBeginRefreshing)];
+    //重新调用set方法
+    if (self.needHeader)
+    {
+        [self.tableView setMj_header:self.refreshHeader];
+    }
+}
+
+- (void)setFooterClass:(Class)footerClass
+{
+    _footerClass = footerClass;
+    self.refreshFooter = [self.footerClass footerWithRefreshingTarget:self
+                                                   refreshingAction:@selector(p_refreshViewBeginLoadMore)];
+    //重新调用set方法
+    if (_needFooter && [self.tableViewSource canLoadMore])
+    {
+        [self.tableView setMj_footer:self.refreshFooter];
+    }
+}
+
 - (void)p_refreshViewBeginRefreshing
 {
     [self.tableViewSource refreshSource];
@@ -296,6 +333,25 @@ didReceviedExtraData:(id)data
 - (void) tableSourceDidClearAllData:(HYBaseTableViewSource *)tableSource
 {
     
+}
+
+
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView
+{
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    v.backgroundColor = [UIColor clearColor];
+    UIView *secon = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    secon.backgroundColor = [UIColor yellowColor];
+    [v addSubview:secon];
+    
+    [secon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@100);
+        make.height.equalTo(@100);
+        make.centerX.equalTo(v.mas_centerX);
+        make.centerY.equalTo(v.mas_centerY);
+    }];
+    
+    return v;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "HYViewController.h"
 #import "HYHomeTableViewSource.h"
+#import "MJRefreshGifHeader.h"
 
 @interface HYViewController ()
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self dragToRefreshWithoutAnimation];
 }
 
 - (void)initTableView
@@ -26,8 +28,6 @@
     tableView.backgroundColor = [UIColor redColor];
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeNone;
-    tableView.delegate = self;
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
 }
@@ -47,7 +47,20 @@
 {
     HYHomeTableViewSource *source = [[HYHomeTableViewSource alloc] initWithDelegate:self];
     self.tableViewSource = source;
-    [source refreshSource];
+}
+
+- (void)configHeaderFooterAppearance
+{
+    self.headerClass = NSClassFromString(@"MJRefreshGifHeader");
+    
+    NSArray *images = [self imagesForPNGS:@"headRefresh" count:1];
+    MJRefreshGifHeader *header = (MJRefreshGifHeader *)self.refreshHeader;
+    
+    [header setImages:images duration:1 forState:MJRefreshStateIdle];
+    [header setImages:images duration:1 forState:MJRefreshStatePulling];
+    [header setImages:images duration:1 forState:MJRefreshStateRefreshing];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.hidden = YES;
 }
 
 - (void)bindViewModel
@@ -60,4 +73,20 @@
     [super didReceiveMemoryWarning];
 }
 
+
+
+
+
+
+
+- (NSArray *)imagesForPNGS:(NSString *)pngFileName count:(NSInteger)count
+{
+    NSMutableArray *newImages = [NSMutableArray new];
+    for (int i = 0; i <= count; i++)
+    {
+        NSString *imageName = [NSString stringWithFormat:@"%@_%d", pngFileName, i];
+        [newImages addObject:[UIImage imageNamed:imageName]];
+    }
+    return newImages;
+}
 @end

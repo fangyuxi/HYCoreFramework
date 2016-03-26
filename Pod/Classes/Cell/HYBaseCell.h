@@ -95,7 +95,7 @@ typedef NS_ENUM(NSInteger, HYCustomCellPosition)
  *  见 上面 HYCellToControllerActionProtocal 协议
  */
 @property (nonatomic, weak) id<HYCellToControllerActionProtocal> actionDelegate;
-@property (nonatomic, assign) HYCustomCellPosition bgType;
+@property (nonatomic, assign) HYCustomCellPosition cellPosition;
 
 
 

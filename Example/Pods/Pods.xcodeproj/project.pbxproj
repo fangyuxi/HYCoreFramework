@@ -37,7 +37,6 @@
 		16365090EAAEE5BFBB6B19A2F5E7FFD1 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB71C88BCE41266DBA0DFDB06F004BC /* SDWebImageDecoder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		164492ECAA20E2D2549F1CF62010BB19 /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BBF19E2457DF94EEAEDD4E2C6441593B /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		16655B41B89AF4E12997A3AF09A26F7A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C396B854EB8FB0DC635474E106A2B58 /* SDWebImage.framework */; };
-		173EF8616F0F1457B0FC16D92CCED8B5 /* HYCoreFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 001DD9C9ADE94FB3E33F6BAB34B2B17F /* HYCoreFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		174202BD6AE0E4A41F5CE66E975EAE52 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B03CE36D354CFDE1AE51D9B806BFD356 /* UIRefreshControl+AFNetworking.m */; };
 		17572374B2AE183C6347C41E8DF8E579 /* EXPMatchers+beFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58FA83546B1FF17B1028C967B656603 /* EXPMatchers+beFalsy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18359C98147B5E9CBFDBB349F54C8BE2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12E5264EA66818803302CE887256591 /* UIKit.framework */; };
@@ -49,6 +48,12 @@
 		1B0389CD88AA949B34DC7269030FEC6F /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C375C6E8431D5F0F8F33DB42004079 /* EXPMatchers+beGreaterThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1B668D9637D2CDD722343444E2B2A6F5 /* SPTSharedExampleGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = D06C15CBF542F5B01856247C0ADFB84B /* SPTSharedExampleGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C0B9B130CEAD07D54219B736F4D9119 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CECC7C777EB80797654716D40C81A8 /* SDImageCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1E5403AC1CA67C0F009FF8BD /* HYCoreFrameworkConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5403AB1CA67C0F009FF8BD /* HYCoreFrameworkConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E5403AD1CA67C48009FF8BD /* HYCoreFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 001DD9C9ADE94FB3E33F6BAB34B2B17F /* HYCoreFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E5403B01CA67C82009FF8BD /* HYCoreFrameworkDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5403AE1CA67C82009FF8BD /* HYCoreFrameworkDefine.h */; };
+		1E5403B11CA67C82009FF8BD /* HYCoreFrameworkDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5403AF1CA67C82009FF8BD /* HYCoreFrameworkDefine.m */; };
+		1E5403B41CA68866009FF8BD /* HYEmptyDataSetStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5403B21CA68866009FF8BD /* HYEmptyDataSetStyle.h */; };
+		1E5403B51CA68866009FF8BD /* HYEmptyDataSetStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5403B31CA68866009FF8BD /* HYEmptyDataSetStyle.m */; };
 		1E5B8F12ED7CC40ECDB9B1F755F387E5 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E9011D434301A453EE1528DAA138AB24 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E687B5E7C22978EB880B3E8ABD112C7 /* Pods-HYCoreFramework_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD1F3C8E3CDA86330474A368CE3E427 /* Pods-HYCoreFramework_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E6CB3108E7BCD0A0126E78B257E79A2 /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CBD9DF6DAF2E0384721773C95D78 /* SpectaDSL.m */; };
@@ -765,6 +770,11 @@
 		1C4F884489DA9B14620ABFCAF0A6AF6F /* HYNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HYNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB1C4B5E413D2A3555A753DF27D7650 /* SPTCallSite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCallSite.m; path = Specta/Specta/SPTCallSite.m; sourceTree = "<group>"; };
 		1D08CDAEEC2A57597E049F7362EC8D34 /* EXPMatchers+postNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+postNotification.m"; path = "Expecta/Matchers/EXPMatchers+postNotification.m"; sourceTree = "<group>"; };
+		1E5403AB1CA67C0F009FF8BD /* HYCoreFrameworkConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCoreFrameworkConstant.h; sourceTree = "<group>"; };
+		1E5403AE1CA67C82009FF8BD /* HYCoreFrameworkDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCoreFrameworkDefine.h; sourceTree = "<group>"; };
+		1E5403AF1CA67C82009FF8BD /* HYCoreFrameworkDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCoreFrameworkDefine.m; sourceTree = "<group>"; };
+		1E5403B21CA68866009FF8BD /* HYEmptyDataSetStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYEmptyDataSetStyle.h; sourceTree = "<group>"; };
+		1E5403B31CA68866009FF8BD /* HYEmptyDataSetStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYEmptyDataSetStyle.m; sourceTree = "<group>"; };
 		1EE350A96C98C57B1102D7BB9FAE343B /* Pods-HYCoreFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HYCoreFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1F39C0E24FFFD3377195D276819E1DB6 /* UITableView+FDTemplateLayoutCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell-prefix.pch"; sourceTree = "<group>"; };
 		21457C230960876A333A5FCDA1595B10 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1773,6 +1783,9 @@
 			isa = PBXGroup;
 			children = (
 				001DD9C9ADE94FB3E33F6BAB34B2B17F /* HYCoreFramework.h */,
+				1E5403AB1CA67C0F009FF8BD /* HYCoreFrameworkConstant.h */,
+				1E5403AE1CA67C82009FF8BD /* HYCoreFrameworkDefine.h */,
+				1E5403AF1CA67C82009FF8BD /* HYCoreFrameworkDefine.m */,
 				C6CF91CD1A950339636A61ECC8362EAB /* Cell */,
 				7C57D03B54478BBB5AE66F4B24027B7F /* Controller */,
 				B579E855B3E3C1FC4070B9DBC11E58D8 /* DataPresenter */,
@@ -1930,6 +1943,8 @@
 				275AEB692F3E437B8DB9DF15DBC234E7 /* HYBaseListViewController.m */,
 				397F2B82ADB9AA8551AC34666611ABBD /* HYBaseViewController.h */,
 				E26B1937C13E6DE89739E1F240B52262 /* HYBaseViewController.m */,
+				1E5403B21CA68866009FF8BD /* HYEmptyDataSetStyle.h */,
+				1E5403B31CA68866009FF8BD /* HYEmptyDataSetStyle.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2547,12 +2562,15 @@
 				7ABF9FB191B7B4755AEF1445BAB37EB2 /* HYBaseListViewController.h in Headers */,
 				3CC5B79618B13D1B43DEC13E5DBC4CAC /* HYBaseModel.h in Headers */,
 				8CE2BC662B2B69DB1B3BF83B9563DC64 /* HYBaseNetTableViewSource.h in Headers */,
+				1E5403B01CA67C82009FF8BD /* HYCoreFrameworkDefine.h in Headers */,
 				428037ED7BD50685F5F6EE8F5A146FC7 /* HYBaseTableViewSource.h in Headers */,
+				1E5403AD1CA67C48009FF8BD /* HYCoreFramework.h in Headers */,
 				74D812CE2444A74DF7D6A3B1322BB45C /* HYBaseViewController.h in Headers */,
 				556A09BC45080C694A8D7FEBD3C5043D /* HYCoreDataStorage.h in Headers */,
 				8A9CFA7B49F9ED9953A5FB9837AAFB31 /* HYCoreFramework-umbrella.h in Headers */,
-				173EF8616F0F1457B0FC16D92CCED8B5 /* HYCoreFramework.h in Headers */,
+				1E5403B41CA68866009FF8BD /* HYEmptyDataSetStyle.h in Headers */,
 				2758F86FEFC26190E18BAB5C6200A8A1 /* HYDatabase.h in Headers */,
+				1E5403AC1CA67C0F009FF8BD /* HYCoreFrameworkConstant.h in Headers */,
 				B2B332EA29CF616689A9B3E9515DE7F9 /* HYDataPresenterProtocal.h in Headers */,
 				69AE54DE6918471C3DFAF8FD70BBE34E /* HYDBStorage.h in Headers */,
 				0036A5AA73BA9AE3AC00544F4352B779 /* HYFileHelper.h in Headers */,
@@ -3274,12 +3292,14 @@
 				B100438C3BF7BB93E75544E69028729D /* HYBaseModel.m in Sources */,
 				6A782464F8ADE3F94D6EE6322D61A8AB /* HYBaseNetTableViewSource.m in Sources */,
 				68F5432B2EA11874826252189EC26361 /* HYBaseTableViewSource.m in Sources */,
+				1E5403B51CA68866009FF8BD /* HYEmptyDataSetStyle.m in Sources */,
 				189DD470F818746984CD2D6B91042E83 /* HYBaseViewController.m in Sources */,
 				43E67E7588BE11D737CDA2C7378DC38E /* HYCoreDataStorage.m in Sources */,
 				BE06F5E25D3E99F8B70FBF4720F951C7 /* HYCoreFramework-dummy.m in Sources */,
 				D663CACF30F78A0B91618F550F28F39D /* HYDatabase.m in Sources */,
 				40894D14FAB832206A83323E62B6FBD2 /* HYDBStorage.m in Sources */,
 				7E9D988A22DA340232048182DA423104 /* HYFileHelper.m in Sources */,
+				1E5403B11CA67C82009FF8BD /* HYCoreFrameworkDefine.m in Sources */,
 				2D95FE1F352C07DA8D8FDA077848BA64 /* HYFileStorage.m in Sources */,
 				61CBBDE9329A4DEB061C178BC23FF1DA /* HYResultSet.m in Sources */,
 				C4FF013E22E35B14329264E4234A0E31 /* HYStorage.m in Sources */,

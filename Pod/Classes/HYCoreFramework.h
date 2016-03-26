@@ -9,6 +9,8 @@
 #ifndef HYCoreFramework_h
 #define HYCoreFramework_h
 
+#import "HYCoreFrameworkConstant.h"
+
 #import "HYBaseNetTableViewSource.h"
 #import "HYBaseCellModel.h"
 

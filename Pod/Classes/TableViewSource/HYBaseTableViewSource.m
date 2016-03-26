@@ -10,7 +10,7 @@
 #import "HYBaseCell.h"
 #import "UIScrollView+EmptyDataSet.h"
 
-@interface HYBaseTableViewSource ()<DZNEmptyDataSetSource>
+@interface HYBaseTableViewSource ()
 {
     
 }
@@ -94,7 +94,9 @@
 
 - (void)prepareCell:(HYBaseCell *)cell index:(NSIndexPath *)indexPath
 {
-    
+    [cell resetCell];
+    cell.cellModel = [[self.cellModels objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    [cell updateCell];
 }
 
 #pragma mark HYTableViewSourceDataProtocal

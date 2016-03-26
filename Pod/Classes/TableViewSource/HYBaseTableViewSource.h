@@ -17,22 +17,43 @@
 
 #pragma mark HYTableViewSourceProtocal
 
-//子类需要实现这个协议
+/**
+ *  //子类需要实现这个协议
+ */
 @protocol HYTableViewSourceProtocal <NSObject>
 
 @required
-//数据刷新回来之后需要组装数据，需要调Super
+/**
+ *  数据刷新回来之后需要组装数据，需要调Super
+ *
+ *  @param data 可以是网络回来的Data，可以是文件读出来的Data，子类通过refreshSource，
+                 得到的数据后会回调这个方法
+ */
 - (void)refreshFinishWithData:(id)data;
 
-//返回支持的Model-Cell类型 类似 @[CellModel1.class, CellModel2.class]; //BCell BCellModel
+/**
+ *  返回支持的Model-Cell类型
+ *
+ *  @return 类似 @[CellModel1.class, CellModel2.class];
+ */
 - (NSArray<Class> *)containedCellModelsClassArray;
 
 
 @optional
-//数据加载更多回来后需要组装数据，需要调Super
+/**
+ *  数据加载更多回来后需要组装数据，需要调Super
+ *
+ *  @param data 可以是网络回来的Data，可以是文件读出来的Data，子类通过loadMoreSource，
+                得到的数据后会回调这个方法
+ */
 - (void)loadMoreFinishWithData:(id)data;
 
-//准备Cell
+/**
+ *  在Cell将要显示的时候，配置Cell resetCell updateCell with cellmodel
+ *
+ *  @param cell      这个Cell已经从dequeue中返回
+ *  @param indexPath indexPath
+ */
 - (void)prepareCell:(HYBaseCell*)cell
               index:(NSIndexPath *)indexPath;
 
@@ -84,10 +105,10 @@
     
 }
 
-- (void)initExtension;
-
 - (instancetype)initWithDelegate:(id<HYBaseTableViewSourceDelegate>)delegate
                                                         NS_DESIGNATED_INITIALIZER;
+
+- (void)initExtension;
 
 @property (nonatomic, weak) id<HYBaseTableViewSourceDelegate> delegate;
 

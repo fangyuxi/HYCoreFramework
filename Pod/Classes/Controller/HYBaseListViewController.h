@@ -16,6 +16,7 @@
 @class MJRefreshFooter;
 
 @interface HYBaseListViewController : HYBaseViewController<DZNEmptyDataSetDelegate,
+                                                        DZNEmptyDataSetSource,
                                                         HYBaseTableViewSourceDelegate,
                                                         UITableViewDelegate>
 {
