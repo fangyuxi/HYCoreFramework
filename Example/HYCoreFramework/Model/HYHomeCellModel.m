@@ -10,14 +10,9 @@
 
 @implementation HYHomeCellModel
 
-+ (NSDictionary *)transferDic
+- (void)calculateCellElementFrame
 {
-    return nil;
-}
-
-- (CGFloat)calculateCellElementFrame
-{
-    return 100;
+    self.cellHeight = 100.0f;
 }
 
 @end

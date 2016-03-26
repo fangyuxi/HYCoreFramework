@@ -18,7 +18,7 @@
         {
             return @"";
         }
-        return @"http://192.168.118.94:8081";
+        return @"http://sxbb.58v5.cn";
     }
     else
     {

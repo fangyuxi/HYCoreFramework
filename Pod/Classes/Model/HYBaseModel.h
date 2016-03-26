@@ -35,7 +35,7 @@
 
 /**
  *  如果服务端返回的某些字段和我们的属性值不符合
-    那么在这个方法里面做一个转换
+    那么在这个方法里面做一个转换，子类可以实现这个方法,注意是静态方法
  
     @{ourPropertyName : ServerPropertyName}
  *
@@ -47,6 +47,8 @@
  *  如果服务端返回的数组里面的对象对应着我们的一个Model，那么需要告诉MJExtension
     
     @{ServerArrayName: [OurClass Class]}
+ 
+    子类可以实现这个方法,注意是静态方法
  *
  *  @return 转换的字典
  */

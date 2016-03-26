@@ -99,7 +99,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     NSArray *sectionArray = [cellModels objectAtIndex:indexPath.section];
     HYBaseCellModel *cellModel = [sectionArray objectAtIndex:indexPath.row];
 
-    if (cellModel.cellHeight == HYBaseCellDefaultHeightWhenUseAutoLayout)
+    if (cellModel.cellHeight == HYBaseCellNoFrameHeightWhenUseAutoLayout)
     {
         return [tableView fd_heightForCellWithIdentifier:cellModel.reuseIdentifier
                                         cacheByIndexPath:indexPath

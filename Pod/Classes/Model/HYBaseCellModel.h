@@ -9,7 +9,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "HYBaseModel.h"
 
-extern const CGFloat HYBaseCellDefaultHeightWhenUseAutoLayout;
+extern const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout;
 
 @interface HYBaseCellModel : HYBaseModel
 {
@@ -19,9 +19,9 @@ extern const CGFloat HYBaseCellDefaultHeightWhenUseAutoLayout;
 @property (nonatomic, copy) NSString *reuseIdentifier;
 
 /**
- *  默认为 HYBaseCellDefaultHeightWhenUseAutoLayout
+ *  默认为 HYBaseCellNoFrameHeightWhenUseAutoLayout
  
-    如果返回值不是 HYBaseCellDefaultHeightWhenUseAutoLayout，
+    如果返回值不是 HYBaseCellNoFrameHeightWhenUseAutoLayout，
  
     那么将对这种类型的cell 关闭AutoLyout的self-sizing，使用frame布局
  
@@ -34,6 +34,6 @@ extern const CGFloat HYBaseCellDefaultHeightWhenUseAutoLayout;
     可以在这个方法中计算cell中各个元素的frame
  
  */
-- (CGFloat)calculateCellElementFrame;
+- (void)calculateCellElementFrame;
 
 @end
