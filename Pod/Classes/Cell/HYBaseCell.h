@@ -95,8 +95,15 @@ typedef NS_ENUM(NSInteger, HYCustomCellPosition)
  *  见 上面 HYCellToControllerActionProtocal 协议
  */
 @property (nonatomic, weak) id<HYCellToControllerActionProtocal> actionDelegate;
+
+/**
+ *  Cell在TableView中的位置的枚举，如果一个Cell会根据不同位置显示不同的样子的时候，可以赋值
+ 
+    这个通过下面的静态方法赋值这个属性
+ */
 @property (nonatomic, assign) HYCustomCellPosition cellPosition;
 
-
++ (HYCustomCellPosition) groupStyleWithIndex:(NSInteger)index Count:(NSInteger)count;
++ (HYCustomCellPosition) plainStyleWithIndex:(NSInteger)index Count:(NSInteger)count;
 
 @end

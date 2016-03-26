@@ -54,6 +54,8 @@
 		1E5403B11CA67C82009FF8BD /* HYCoreFrameworkDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5403AF1CA67C82009FF8BD /* HYCoreFrameworkDefine.m */; };
 		1E5403B41CA68866009FF8BD /* HYEmptyDataSetStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5403B21CA68866009FF8BD /* HYEmptyDataSetStyle.h */; };
 		1E5403B51CA68866009FF8BD /* HYEmptyDataSetStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5403B31CA68866009FF8BD /* HYEmptyDataSetStyle.m */; };
+		1E5403B91CA6EA26009FF8BD /* UIView+HYEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5403B71CA6EA26009FF8BD /* UIView+HYEmptyDataSet.h */; };
+		1E5403BA1CA6EA26009FF8BD /* UIView+HYEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5403B81CA6EA26009FF8BD /* UIView+HYEmptyDataSet.m */; };
 		1E5B8F12ED7CC40ECDB9B1F755F387E5 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E9011D434301A453EE1528DAA138AB24 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E687B5E7C22978EB880B3E8ABD112C7 /* Pods-HYCoreFramework_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD1F3C8E3CDA86330474A368CE3E427 /* Pods-HYCoreFramework_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E6CB3108E7BCD0A0126E78B257E79A2 /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CBD9DF6DAF2E0384721773C95D78 /* SpectaDSL.m */; };
@@ -775,6 +777,8 @@
 		1E5403AF1CA67C82009FF8BD /* HYCoreFrameworkDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCoreFrameworkDefine.m; sourceTree = "<group>"; };
 		1E5403B21CA68866009FF8BD /* HYEmptyDataSetStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYEmptyDataSetStyle.h; sourceTree = "<group>"; };
 		1E5403B31CA68866009FF8BD /* HYEmptyDataSetStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYEmptyDataSetStyle.m; sourceTree = "<group>"; };
+		1E5403B71CA6EA26009FF8BD /* UIView+HYEmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HYEmptyDataSet.h"; sourceTree = "<group>"; };
+		1E5403B81CA6EA26009FF8BD /* UIView+HYEmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HYEmptyDataSet.m"; sourceTree = "<group>"; };
 		1EE350A96C98C57B1102D7BB9FAE343B /* Pods-HYCoreFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HYCoreFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1F39C0E24FFFD3377195D276819E1DB6 /* UITableView+FDTemplateLayoutCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell-prefix.pch"; sourceTree = "<group>"; };
 		21457C230960876A333A5FCDA1595B10 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1422,6 +1426,15 @@
 			path = "../Target Support Files/MJRefresh";
 			sourceTree = "<group>";
 		};
+		1E5403B61CA6E986009FF8BD /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				1E5403B71CA6EA26009FF8BD /* UIView+HYEmptyDataSet.h */,
+				1E5403B81CA6EA26009FF8BD /* UIView+HYEmptyDataSet.m */,
+			);
+			path = Categorys;
+			sourceTree = "<group>";
+		};
 		2316586A3BEA722723AE93E2FE00FDDC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1786,6 +1799,7 @@
 				1E5403AB1CA67C0F009FF8BD /* HYCoreFrameworkConstant.h */,
 				1E5403AE1CA67C82009FF8BD /* HYCoreFrameworkDefine.h */,
 				1E5403AF1CA67C82009FF8BD /* HYCoreFrameworkDefine.m */,
+				1E5403B61CA6E986009FF8BD /* Categorys */,
 				C6CF91CD1A950339636A61ECC8362EAB /* Cell */,
 				7C57D03B54478BBB5AE66F4B24027B7F /* Controller */,
 				B579E855B3E3C1FC4070B9DBC11E58D8 /* DataPresenter */,
@@ -2579,6 +2593,7 @@
 				BB2C284973C34F086CA658A0E230525A /* HYStorage.h in Headers */,
 				628CDC09D253DC5DE467EF57824FD320 /* HYTableViewSourceSection.h in Headers */,
 				DD7D5E82CFCB8D5691F796039E85ECE7 /* SQLStatement.h in Headers */,
+				1E5403B91CA6EA26009FF8BD /* UIView+HYEmptyDataSet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3293,6 +3308,7 @@
 				6A782464F8ADE3F94D6EE6322D61A8AB /* HYBaseNetTableViewSource.m in Sources */,
 				68F5432B2EA11874826252189EC26361 /* HYBaseTableViewSource.m in Sources */,
 				1E5403B51CA68866009FF8BD /* HYEmptyDataSetStyle.m in Sources */,
+				1E5403BA1CA6EA26009FF8BD /* UIView+HYEmptyDataSet.m in Sources */,
 				189DD470F818746984CD2D6B91042E83 /* HYBaseViewController.m in Sources */,
 				43E67E7588BE11D737CDA2C7378DC38E /* HYCoreDataStorage.m in Sources */,
 				BE06F5E25D3E99F8B70FBF4720F951C7 /* HYCoreFramework-dummy.m in Sources */,

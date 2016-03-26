@@ -30,7 +30,7 @@
 - (void)initView;
 
 /**
- *  子类布局view的时候必须实现
+ *  子类布局view的时候必须实现，不实现会崩溃
  */
 - (void)makeLayout;
 

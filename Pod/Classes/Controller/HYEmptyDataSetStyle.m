@@ -8,6 +8,14 @@
 
 #import "HYEmptyDataSetStyle.h"
 
-@implementation HYEmptyDataSetStyle
+@implementation HYEmptyDataSetInScrollViewStyleObject
+
+@synthesize showType = _showType;
+
+@end
+
+@implementation HYEmptyDataSetInCommonViewStyleObject
+
+@synthesize showType = _showType;
 
 @end
