@@ -11,6 +11,7 @@
 
 #import "HYCoreFrameworkConstant.h"
 #import "HYCoreFrameworkDefine.h"
+#import "HYDataPresenterProtocal.h"
 
 //#import "HYBaseNetTableViewSource.h"
 //#import "HYBaseCellModel.h"

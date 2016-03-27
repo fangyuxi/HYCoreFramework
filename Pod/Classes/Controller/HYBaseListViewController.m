@@ -161,6 +161,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
+- (void)setEmptyViewStyle:(id<HYEmptyDataSetStyleProtocal,DZNEmptyDataSetSource>)emptyViewStyle
+{
+    _emptyViewStyle = emptyViewStyle;
+    self.tableView.emptyDataSetSource = _emptyViewStyle;
+}
+
 #pragma mark MJRefresh private
 
 - (void)p_addHeader

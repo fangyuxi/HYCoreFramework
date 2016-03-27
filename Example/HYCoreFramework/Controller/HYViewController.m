@@ -10,8 +10,15 @@
 #import "HYHomeTableViewSource.h"
 #import "MJRefreshGifHeader.h"
 #import "Masonry.h"
+#import "HYDefautEmtpyScrollViewDataSetStypeObject.h"
+#import "HYHomeAdDataPresenter.h"
+#import "HYHomeAdView.h"
 
 @interface HYViewController ()
+
+@property (nonatomic, strong)HYHomeAdDataPresenter *adPresenter;
+@property (nonatomic, strong)UIView *adView;
+
 
 @end
 
@@ -20,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.emptyViewStyle = [[HYDefautEmtpyScrollViewDataSetStypeObject alloc] init];
+    
+    [self p_refreshAd];
+    
     [self dragToRefreshWithoutAnimation];
 }
 
@@ -69,13 +81,24 @@
     self.tableView.dataSource = self.tableViewSource;
 }
 
+- (void)p_refreshAd
+{
+    HYSimpleRequest *adRequest = [[HYSimpleRequest alloc] init];
+    [adRequest startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+        
+        [self.adPresenter dataPresenterWithSourceData:response.content businessName:request.identifier];
+        
+    } failerHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+        
+    } progressHandler:^(HYBaseRequest *request, int64_t progress) {
+        
+    }];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
-
-
-
 
 
 
@@ -90,4 +113,16 @@
     }
     return newImages;
 }
+
+#pragma mark getter 
+
+- (HYHomeAdDataPresenter *)adPresenter
+{
+    if (!_adPresenter)
+    {
+        _adPresenter = [[HYHomeAdDataPresenter alloc] init];
+    }
+    return _adPresenter;
+}
+
 @end

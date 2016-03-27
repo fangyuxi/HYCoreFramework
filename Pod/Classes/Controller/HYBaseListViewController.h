@@ -53,7 +53,7 @@
 
 #pragma mark refresh state view style
 
-@property (nonatomic, retain) id<HYEmptyDataSetStyleProtocal,DZNEmptyDataSetSource> emptyViewStyle;
+@property (nonatomic, strong) id<HYEmptyDataSetStyleProtocal,DZNEmptyDataSetSource> emptyViewStyle;
 
 #pragma mark refresh action
 

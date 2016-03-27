@@ -7,10 +7,9 @@
 //
 
 #import "HYBaseTableViewSource.h"
-#import "HYDataPresenterProtocal.h"
 #import "HYNetworking.h"
 
-@interface HYBaseNetTableViewSource : HYBaseTableViewSource<HYDataPresenterProtocal, HYRequestValidator>
+@interface HYBaseNetTableViewSource : HYBaseTableViewSource<HYRequestValidator>
 {
     
 }
