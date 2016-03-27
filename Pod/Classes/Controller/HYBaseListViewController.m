@@ -10,7 +10,6 @@
 #import "HYBaseCell.h"
 #import "MJRefresh/MJRefresh.h"
 #import "HYBaseCellModel.h"
-#import "HYCoreFramework.h"
 
 @interface HYBaseListViewController ()
 
@@ -68,7 +67,7 @@
 {
     NSAssert(self.tableView,@"The TableView instance must assign to the self.tableView");
     if (!self.tableView.emptyDataSetDelegate){self.tableView.emptyDataSetDelegate = self;}
-    if (!self.tableView.emptyDataSetSource){self.tableView.emptyDataSetSource = self;}
+    if (!self.tableView.emptyDataSetSource){self.tableView.emptyDataSetSource = self.emptyViewStyle;}
     if (!self.tableView.delegate){self.tableView.delegate = self;}
 }
 
@@ -234,6 +233,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)tableSourceDidStartRefresh:(HYBaseTableViewSource *)tableSource
 {
+    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeRefresh;
     [self.tableView reloadEmptyDataSet];
     
     if(self.needFooter)
@@ -244,6 +244,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)tableSourceDidFinishRefresh:(HYBaseTableViewSource *)tableSource
 {
+    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeNoContent;
     [self.tableView reloadEmptyDataSet];
     
     if (self.needFooter)
@@ -272,6 +273,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)tableSourceDidFinishLoadMore:(HYBaseTableViewSource *)tableSource
 {
+    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeNoContent;
     [self.tableView reloadEmptyDataSet];
     
     if (self.needFooter)
@@ -294,6 +296,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)tableSource:(HYBaseTableViewSource *)tableSource
        refreshError:(NSError *)error
 {
+    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeError;
     [self.tableView reloadEmptyDataSet];
     
     NSArray *cells = nil;
@@ -308,6 +311,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)tableSource:(HYBaseTableViewSource *)tableSource
       loadMoreError:(NSError *)error
 {
+    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeError;
     [self.tableView reloadEmptyDataSet];
     
     [self.tableView.mj_footer endRefreshing];
@@ -332,26 +336,7 @@ didReceviedExtraData:(id)data
 
 - (void) tableSourceDidClearAllData:(HYBaseTableViewSource *)tableSource
 {
-    
-}
-
-
-- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView
-{
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    v.backgroundColor = [UIColor clearColor];
-    UIView *secon = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    secon.backgroundColor = [UIColor yellowColor];
-    [v addSubview:secon];
-    
-    [secon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@100);
-        make.height.equalTo(@100);
-        make.centerX.equalTo(v.mas_centerX);
-        make.centerY.equalTo(v.mas_centerY);
-    }];
-    
-    return v;
+    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeNoContent;
 }
 
 @end

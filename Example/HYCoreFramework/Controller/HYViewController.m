@@ -9,6 +9,7 @@
 #import "HYViewController.h"
 #import "HYHomeTableViewSource.h"
 #import "MJRefreshGifHeader.h"
+#import "Masonry.h"
 
 @interface HYViewController ()
 

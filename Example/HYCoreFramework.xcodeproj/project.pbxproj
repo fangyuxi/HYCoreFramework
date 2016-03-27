@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E3F04531CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F04521CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m */; };
 		1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB9B831CA3E647008A8411 /* HYViewController.m */; };
 		1EEB9B891CA3E647008A8411 /* HYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB9B861CA3E647008A8411 /* HYAppDelegate.m */; };
 		1EF5BF901CA418D3005E2EF5 /* HYHomeTableViewSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5BF8F1CA418D3005E2EF5 /* HYHomeTableViewSource.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E3F04511CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDefautEmtpyScrollViewDataSetStypeObject.h; sourceTree = "<group>"; };
+		1E3F04521CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDefautEmtpyScrollViewDataSetStypeObject.m; sourceTree = "<group>"; };
 		1EEB9B821CA3E647008A8411 /* HYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYViewController.h; sourceTree = "<group>"; };
 		1EEB9B831CA3E647008A8411 /* HYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYViewController.m; sourceTree = "<group>"; };
 		1EEB9B851CA3E647008A8411 /* HYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYAppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 			children = (
 				1EEB9B821CA3E647008A8411 /* HYViewController.h */,
 				1EEB9B831CA3E647008A8411 /* HYViewController.m */,
+				1E3F04511CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.h */,
+				1E3F04521CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				3794F9691CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m in Sources */,
 				3794F9671CA43D0C00F41D1F /* HYNetworkDefaultServer.m in Sources */,
 				1EF5BF991CA50EBE005E2EF5 /* HYHomeCell.m in Sources */,
+				1E3F04531CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m in Sources */,
 				1EEB9B891CA3E647008A8411 /* HYAppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */,

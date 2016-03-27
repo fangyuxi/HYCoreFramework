@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYEmptyDataSetStyle.h"
 
 /**
  *  调用顺序
@@ -52,7 +53,7 @@
 
 @end
 
-@interface HYBaseViewController : UIViewController<HYViewControllerProtocal>
+@interface HYBaseViewController : UIViewController<HYViewControllerProtocal,HYEmptyDataSetDelegate>
 {
     
 }

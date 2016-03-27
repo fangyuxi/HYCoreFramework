@@ -6,7 +6,7 @@
 //  Copyright © 2016年 fangyuxi. All rights reserved.
 //
 
-#import "HYCoreFramework.h"
+#import "HYBaseCellModel.h"
 
 @interface HYHomeCellModel : HYBaseCellModel
 

@@ -10,7 +10,7 @@
 #import "HYBaseViewController.h"
 #import "HYBaseTableViewSource.h"
 #import "UITableView+FDTemplateLayoutCell.h"
-#import "UIScrollView+EmptyDataSet.h"
+#import "HYEmptyDataSetStyle.h"
 
 @class MJRefreshHeader;
 @class MJRefreshFooter;
@@ -51,6 +51,9 @@
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)HYBaseTableViewSource *tableViewSource;
 
+#pragma mark refresh state view style
+
+@property (nonatomic, retain) id<HYEmptyDataSetStyleProtocal,DZNEmptyDataSetSource> emptyViewStyle;
 
 #pragma mark refresh action
 
