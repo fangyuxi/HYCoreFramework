@@ -20,6 +20,8 @@
 
 @implementation HYBaseListViewController
 
+@synthesize emptyViewStyle = _emptyViewStyle;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

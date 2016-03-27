@@ -17,7 +17,7 @@
 @interface HYViewController ()
 
 @property (nonatomic, strong)HYHomeAdDataPresenter *adPresenter;
-@property (nonatomic, strong)UIView *adView;
+@property (nonatomic, strong)HYHomeAdView *adView;
 
 
 @end
@@ -83,22 +83,29 @@
 
 - (void)p_refreshAd
 {
-    HYSimpleRequest *adRequest = [[HYSimpleRequest alloc] init];
-    [adRequest startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
-        
-        [self.adPresenter dataPresenterWithSourceData:response.content businessName:request.identifier];
-        
-    } failerHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
-        
-    } progressHandler:^(HYBaseRequest *request, int64_t progress) {
-        
-    }];
+//    HYSimpleRequest *adRequest = [[HYSimpleRequest alloc] init];
+//    [adRequest startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+//        
+//        [self.adView configViewWithData:[self.adPresenter dataPresenterWithSourceData:response
+//                                                                         businessName:request.identifier]];
+//        
+//    } failerHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+//        
+//        [self.adView configViewWithData:[self.adPresenter dataPresenterWithSourceData:response
+//                                                                         businessName:request.identifier]];
+//        
+//    } progressHandler:^(HYBaseRequest *request, int64_t progress) {
+//        
+//    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
+
+
+
 
 
 

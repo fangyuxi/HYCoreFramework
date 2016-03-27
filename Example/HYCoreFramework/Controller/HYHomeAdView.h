@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface HYHomeAdView : UIView
+{
+    
+}
 
+
+- (void)configViewWithData:(id)data;
 @end

@@ -53,12 +53,12 @@
 
 @end
 
-@interface HYBaseViewController : UIViewController<HYViewControllerProtocal,HYEmptyDataSetDelegate>
+@interface HYBaseViewController : UIViewController<HYViewControllerProtocal,DZNEmptyDataSetDelegate>
 {
     
 }
 
-
+@property (nonatomic, strong) id<HYEmptyDataSetStyleProtocal,DZNEmptyDataSetSource> emptyViewStyle;
 
 
 @end

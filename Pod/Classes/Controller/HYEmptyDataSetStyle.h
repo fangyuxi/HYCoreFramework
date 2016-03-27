@@ -35,8 +35,15 @@ typedef NS_ENUM(NSInteger, HYEmptyDataSetStyleShowType)
 @protocol HYEmptyDataSetStyleProtocal <NSObject>
 
 @required
-
 @property (nonatomic, assign) HYEmptyDataSetStyleShowType showType;
+
+
+@optional
+@property (nonatomic, assign) CGFloat verticalOffset;
+
+- (UIView *)emptyDataSetRefreshView;
+- (UIView *)emptyDataSetNoContentView;
+- (UIView *)emptyDataSetErrorView;
 
 @end
 
@@ -49,7 +56,7 @@ typedef NS_ENUM(NSInteger, HYEmptyDataSetStyleShowType)
 /**
  *  带有列表样式的控制器的Style对象基类，实现了HYEmptyDataSetStyleProtocal
     
-    根据不同的ShowType，在HYEmptyDataSetStyleProtocal回调方法中返回不同的View
+    根据不同的ShowType，在DZNEmptyDataSetSource回调方法中返回不同的View
 */
 @interface HYEmptyDataSetInScrollViewStyleObject : NSObject<HYEmptyDataSetStyleProtocal,
                                                                 DZNEmptyDataSetSource>
@@ -68,7 +75,7 @@ typedef NS_ENUM(NSInteger, HYEmptyDataSetStyleShowType)
     基本不用改代码
  */
 
-@interface HYEmptyDataSetInCommonViewStyleObject : NSObject<HYEmptyDataSetStyleProtocal,
-                                                                HYEmptyDataSetDataSource>
-
-@end
+//@interface HYEmptyDataSetInCommonViewStyleObject : NSObject<HYEmptyDataSetStyleProtocal,
+//                                                                HYEmptyDataSetDataSource>
+//
+//@end

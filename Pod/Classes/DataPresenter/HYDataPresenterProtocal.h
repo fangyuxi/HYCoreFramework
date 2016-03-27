@@ -42,9 +42,6 @@
 @required
 - (id)dataPresenterWithSourceData:(id)sourceData businessName:(NSString *)name;
 
-//@optional
-//- (id)dataPresenterWithSourceData:(id<HYDataPresenterSourceDataProtocal>)sourceData;
-
 @property (nonatomic, strong)NSError *error;
 
 @end

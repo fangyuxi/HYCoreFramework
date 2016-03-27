@@ -15,8 +15,7 @@
 @class MJRefreshHeader;
 @class MJRefreshFooter;
 
-@interface HYBaseListViewController : HYBaseViewController<DZNEmptyDataSetDelegate,
-                                                        HYBaseTableViewSourceDelegate,
+@interface HYBaseListViewController : HYBaseViewController<HYBaseTableViewSourceDelegate,
                                                         UITableViewDelegate>
 {
     
@@ -50,10 +49,6 @@
 
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)HYBaseTableViewSource *tableViewSource;
-
-#pragma mark refresh state view style
-
-@property (nonatomic, strong) id<HYEmptyDataSetStyleProtocal,DZNEmptyDataSetSource> emptyViewStyle;
 
 #pragma mark refresh action
 
