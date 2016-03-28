@@ -33,6 +33,12 @@
     [self p_refreshAd];
     
     [self dragToRefreshWithoutAnimation];
+    
+    self.emptyViewStyle.emptyDataSetActions = ^(NSString *event){
+    
+        
+    
+    };
 }
 
 - (void)initTableView

@@ -11,7 +11,6 @@
 
 @implementation HYDefautEmtpyScrollViewDataSetStypeObject
 
-
 - (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView
 {
     if (self.showType == HYEmptyDataSetStyleShowTypeRefresh)
@@ -44,6 +43,7 @@
         make.centerY.equalTo(v.mas_centerY);
     }];
     
+    self.emptyDataSetActions(@"10181");
     return v;
 }
 

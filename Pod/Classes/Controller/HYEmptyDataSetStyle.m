@@ -12,6 +12,7 @@
 
 @synthesize showType = _showType;
 @synthesize verticalOffset = _verticalOffset;
+@synthesize emptyDataSetActions = _emptyDataSetActions;
 
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView
 {
@@ -19,10 +20,3 @@
 }
 
 @end
-
-//@implementation HYEmptyDataSetInCommonViewStyleObject
-//
-//@synthesize showType = _showType;
-//@synthesize verticalOffset = _verticalOffset;
-//
-//@end
