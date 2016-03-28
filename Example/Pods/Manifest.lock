@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - DZNEmptyDataSet (1.7.3)
   - Expecta (1.0.5)
   - Expecta+Snapshots (3.0.0):
     - Expecta (~> 1.0)
@@ -29,7 +28,6 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - HYCoreFramework (0.1.0):
-    - DZNEmptyDataSet
     - FMDB (~> 2.5)
     - HYNetworking (~> 0.3.0)
     - Masonry
@@ -61,12 +59,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
   Expecta+Snapshots: c343f410c7a6392f3e22e78f94c44b6c0749a516
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  HYCoreFramework: 1e4e512c4dbad9bb1a87116018359beb3a322684
+  HYCoreFramework: 1689ae280ad2034803f16bfa73fad10e2588cc80
   HYNetworking: d7069f9defce1e2a7533dea466b124d090bf0798
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548

@@ -8,11 +8,17 @@
 
 #import "HYEmptyDataSetStyle.h"
 
-@implementation HYEmptyDataSetInScrollViewStyleObject
+@implementation HYEmptyDataSetViewStyleObject
 
 @synthesize showType = _showType;
 @synthesize verticalOffset = _verticalOffset;
 @synthesize emptyDataSetActions = _emptyDataSetActions;
+
+- (UIView *)hy_customViewForEmptyDataSet:(UIView *)view
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
 
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView
 {

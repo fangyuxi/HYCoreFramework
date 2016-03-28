@@ -8,7 +8,6 @@
 
 #import "HYBaseTableViewSource.h"
 #import "HYBaseCell.h"
-#import "UIScrollView+EmptyDataSet.h"
 
 @interface HYBaseTableViewSource ()<HYCellToControllerActionProtocal>
 {

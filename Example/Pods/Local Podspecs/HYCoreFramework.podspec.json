@@ -43,9 +43,6 @@
     "FMDB": [
       "~> 2.5"
     ],
-    "DZNEmptyDataSet": [
-
-    ],
     "Masonry": [
 
     ]

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UIScrollView+EmptyDataSet.h"
 #import "UIView+HYEmptyDataSet.h"
 
 typedef void(^HYEmptyDataSetActions)(NSString *events);
@@ -34,7 +33,7 @@ typedef NS_ENUM(NSInteger, HYEmptyDataSetStyleShowType)
 /**
  *  所有style对象应该遵循这个协议，根据不同的ShowType，返回不同的View
  */
-@protocol HYEmptyDataSetStyleProtocal <NSObject>
+@protocol HYEmptyDataSetStyleProtocal <NSObject, HYEmptyDataSetSource>
 
 @required
 @property (nonatomic, assign) HYEmptyDataSetStyleShowType showType;
@@ -55,8 +54,7 @@ typedef NS_ENUM(NSInteger, HYEmptyDataSetStyleShowType)
     
     根据不同的ShowType，在DZNEmptyDataSetSource回调方法中返回不同的View
 */
-@interface HYEmptyDataSetInScrollViewStyleObject : NSObject<HYEmptyDataSetStyleProtocal,
-                                                                DZNEmptyDataSetSource>
+@interface HYEmptyDataSetViewStyleObject : NSObject<HYEmptyDataSetStyleProtocal>
 {
     
 }

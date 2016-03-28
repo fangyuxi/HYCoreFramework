@@ -16,6 +16,6 @@
     当没有缓存，返回错误内容的时候：一个图片，可点击继续加载
  */
 
-@interface HYDefautEmtpyScrollViewDataSetStypeObject : HYEmptyDataSetInScrollViewStyleObject
+@interface HYDefautEmtpyScrollViewDataSetStypeObject : HYEmptyDataSetViewStyleObject
 
 @end

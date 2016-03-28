@@ -68,8 +68,8 @@
 - (void)p_tableViewAndSourceInitFinish
 {
     NSAssert(self.tableView,@"The TableView instance must assign to the self.tableView");
-    if (!self.tableView.emptyDataSetDelegate){self.tableView.emptyDataSetDelegate = self;}
-    if (!self.tableView.emptyDataSetSource){self.tableView.emptyDataSetSource = self.emptyViewStyle;}
+    if (!self.tableView.hy_emptyDataSetDelegate){self.tableView.hy_emptyDataSetDelegate = self;}
+    if (!self.tableView.hy_emptyDataSetSource){self.tableView.hy_emptyDataSetSource = self.emptyViewStyle;}
     if (!self.tableView.delegate){self.tableView.delegate = self;}
 }
 
@@ -163,10 +163,10 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-- (void)setEmptyViewStyle:(id<HYEmptyDataSetStyleProtocal,DZNEmptyDataSetSource>)emptyViewStyle
+- (void)setEmptyViewStyle:(id<HYEmptyDataSetStyleProtocal,HYEmptyDataSetSource>)emptyViewStyle
 {
     _emptyViewStyle = emptyViewStyle;
-    self.tableView.emptyDataSetSource = _emptyViewStyle;
+    self.tableView.hy_emptyDataSetSource = _emptyViewStyle;
 }
 
 #pragma mark MJRefresh private

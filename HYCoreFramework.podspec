@@ -27,7 +27,6 @@ Pod::Spec.new do |s|
   s.dependency 'MJExtension'
   s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.4'
   s.dependency 'FMDB', '~> 2.5'
-  s.dependency 'DZNEmptyDataSet'
   s.dependency 'Masonry'
   s.dependency 'HYLogEngine', '~> 1.1'
 end

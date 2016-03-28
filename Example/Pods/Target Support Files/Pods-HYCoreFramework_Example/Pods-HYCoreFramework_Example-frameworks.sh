@@ -85,7 +85,6 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HYCoreFramework_Example/AFNetworking.framework"
-  install_framework "Pods-HYCoreFramework_Example/DZNEmptyDataSet.framework"
   install_framework "Pods-HYCoreFramework_Example/FMDB.framework"
   install_framework "Pods-HYCoreFramework_Example/HYCoreFramework.framework"
   install_framework "Pods-HYCoreFramework_Example/HYNetworking.framework"
@@ -97,7 +96,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HYCoreFramework_Example/AFNetworking.framework"
-  install_framework "Pods-HYCoreFramework_Example/DZNEmptyDataSet.framework"
   install_framework "Pods-HYCoreFramework_Example/FMDB.framework"
   install_framework "Pods-HYCoreFramework_Example/HYCoreFramework.framework"
   install_framework "Pods-HYCoreFramework_Example/HYNetworking.framework"
