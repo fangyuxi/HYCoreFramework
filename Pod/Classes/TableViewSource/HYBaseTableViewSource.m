@@ -10,7 +10,7 @@
 #import "HYBaseCell.h"
 #import "UIScrollView+EmptyDataSet.h"
 
-@interface HYBaseTableViewSource ()
+@interface HYBaseTableViewSource ()<HYCellToControllerActionProtocal>
 {
     
 }
@@ -69,6 +69,7 @@
 {
     HYBaseCellModel *cellModel = [[self.cellModels objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     HYBaseCell *cell = (HYBaseCell *)[tableView dequeueReusableCellWithIdentifier:cellModel.reuseIdentifier];
+    cell.actionDelegate == nil ? cell.actionDelegate = self : nil;
     [self prepareCell:cell index:indexPath];
     return cell;
 }

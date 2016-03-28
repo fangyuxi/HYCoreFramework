@@ -15,6 +15,13 @@
 @class HYTableViewSourceSection;
 @class HYBaseTableViewSource;
 
+/**
+
+ *  如果准备开发一个直接基于 HYBaseTableViewSource 的子类
+ 
+    请参看 HYBaseNetTableViewSource，这个基类使用的一个例子是
+ */
+
 #pragma mark HYTableViewSourceProtocal
 
 /**
@@ -61,7 +68,23 @@
 
 #pragma mark HYTableViewSourceConnectControllerProtocal
 
-//tableviewsoure遵循这个协议，给控制器提供访问数据的接口
+/**
+ *  tableViewSoure遵循这个协议，给控制器提供访问数据的接口
+ 
+    必须要实现 refreshSource ，在该方法按照顺序调用 
+    
+    notifyWillRefresh
+    refreshFinishWithData
+    notifyDidFinishRefresh 或者 notifyRefreshError
+ 
+    同样，如果实现了 loadMoreSource，那么在该方法中按照顺序调用
+    
+    notifyWillLoadMore
+    loadMoreFinishWithData
+    notifyDidFinishLoadMore 或者 notifyLoadMoreError
+ 
+    notify方法会将状态回调给Controller
+ */
 @protocol HYTableViewSourceConnectControllerProtocal <NSObject>
 
 @required
@@ -78,7 +101,9 @@
 
 #pragma mark HYBaseTableViewSourceDelegate
 
-//source向外部回调
+/**
+ *  source向外部回调状态
+ */
 @protocol HYBaseTableViewSourceDelegate <NSObject>
 
 @optional
@@ -112,11 +137,19 @@
 
 @property (nonatomic, weak) id<HYBaseTableViewSourceDelegate> delegate;
 
+
+/**
+ *  存放CellModels
+ 
+    CellModels里面对应TableView的Section结构，一个数组对应一个secion
+ 
+    如果只有一个section 那么cellModels里面就只有一个数组，数组里面是cellModel
+ */
 @property (nonatomic, strong) NSMutableArray *cellModels;
 
 //根据ModelClass返回CellClass
 - (Class)cellClassForCellViewModelClass:(Class)aClass;
-//根绝CellClass返回重用标识符
+//根据CellClass返回重用标识符
 - (NSString *)cellIdentifierForCellViewModelClass:(Class)aClass;
 
 @end
