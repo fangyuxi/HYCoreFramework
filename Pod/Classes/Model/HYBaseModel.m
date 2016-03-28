@@ -111,11 +111,36 @@
     return nil;
 }
 
+#pragma mark setter
+
 - (void)setDic:(NSDictionary *)dic
 {
     _dic = dic;
     [self mj_setKeyValues:dic];
+}
+
+- (void)setStorageDirectory:(NSString *)storageDirectory
+{
+    _storageDirectory = [storageDirectory copy];
     
+    if (!storageDirectory)
+    {
+        NSLog(@"storageDirectory must not be nil !!! in %@ model class", [self class]);
+        return;
+    }
+    
+    //for tread safe
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    
+    if (![fileManager fileExistsAtPath:[_storageDirectory hasPrefix:@"~"] ? [_storageDirectory stringByExpandingTildeInPath] : _storageDirectory])
+    {
+        NSError *error = nil;
+        BOOL result = [fileManager createDirectoryAtPath:_storageDirectory  withIntermediateDirectories:YES attributes:nil error:&error];
+        if (!result)
+        {
+            NSLog(@"%@", error);
+        }
+    }
 }
 
 @end

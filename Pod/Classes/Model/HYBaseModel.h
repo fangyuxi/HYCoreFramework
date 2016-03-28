@@ -25,8 +25,12 @@
 - (void)initExtension;
 
 @property (nonatomic, retain, readonly) NSDictionary *dic;
-@property (nonatomic, retain)HYStorage *storage;
 
+/**
+ *  storage & storageDirectory
+ */
+@property (nonatomic, retain)HYStorage *storage;
+@property (nonatomic, copy)NSString *storageDirectory;
 
 /**
  *  当字典转模型结束之后，会回调这个方法，做一些其他处理
