@@ -1,27 +1,39 @@
 //
 //  UIView+HYEmptyDataSet.h
-//  Pods
+//  HYEmptyDataSet
 //
-//  Created by fangyuxi on 16/3/27.
-//
+//  Created by 58 on 3/28/16.
+//  Copyright © 2016 Huang Wei. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@protocol HYEmptyDataSetSource;
+@protocol HYEmptyDataSetDelegate;
 
-@protocol HYEmptyDataSetDataSource <NSObject>
 
+@interface UIView (HYEmptyDataSet)
+@property (nonatomic, weak) id <HYEmptyDataSetSource> hy_emptyDataSetSource;
+@property (nonatomic, weak) id <HYEmptyDataSetDelegate> hy_emptyDataSetDelegate;
+
+/// If the class is UITableView or UIColloctionView, you don't need to call this method manually, just call `reloadData` method. Otherwise, you should call this method by yourself.
+- (void)reloadEmptyDataSet;
 @end
+
+
+@protocol HYEmptyDataSetSource <NSObject>
+@required
+- (UIView *)hy_customViewForEmptyDataSet:(UIView *)view;
+@optional
+- (CGFloat)hy_verticalOffsetForEmptyDataSet:(UIView *)view;
+@end
+
 
 @protocol HYEmptyDataSetDelegate <NSObject>
-
+@optional
+- (BOOL)hy_emptyDataSetCanDisplay:(UIView *)view;
+- (void)hy_emptyDataSetWillAppear:(UIView *)view;
+- (void)hy_emptyDataSetDidAppear:(UIView *)view;
+- (void)hy_emptyDataSetWillDisappear:(UIView *)view;
+- (void)hy_emptyDataSetDidDisappear:(UIView *)view;
 @end
 
-/**
- *  由于 UIScrollView+EmptyDataSet 仅仅考虑到了TableView和CellectionView
-    的情况，但是我们业务中也需要在没有这两个View的情况下，也显示相同的空内容加载
-    等，所以创建了一个基于UIView的分类解决这个问题
- */
-
-@interface UIView(HYEmptyDataSet)
-
-@end
