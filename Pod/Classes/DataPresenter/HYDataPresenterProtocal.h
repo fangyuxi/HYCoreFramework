@@ -24,11 +24,10 @@
  
     通常的做法是，将数据在request中处理后再返回，或者request只返回原始数据类型然后
  
-    view自己做转化，（我们的项目中由于网络层比较薄，所以很多数据都是在controller
+    view自己做转化，（我们的项目中很多数据都是在controller里面自己处理了。）
  
-    里面自己处理了。） ，所以可以创建一个遵循 HYDataPresenterProtocal 的对象，接受
- 
-    request的原始数据，给View提供可供显示的数据。
+    所以可以创建一个遵循 HYDataPresenterProtocal 的对象，
+    接受request的原始数据，给View提供可供显示的数据。
  
     如果同样的业务，但是是不同的接口返回的数据，格式不统一，那么presenter可以通过name
  
