@@ -1,5 +1,5 @@
 //
-//  HYDataPresenterProtocal.h
+//  HYDataPresenterProtocol.h
 //  MyFirst
 //
 //  Created by fangyuxi on 16/3/15.
@@ -26,7 +26,7 @@
  
     view自己做转化，（我们的项目中很多数据都是在controller里面自己处理了。）
  
-    所以可以创建一个遵循 HYDataPresenterProtocal 的对象，
+    所以可以创建一个遵循 HYDataPresenterProtocol 的对象，
     接受request的原始数据，给View提供可供显示的数据。
  
     如果同样的业务，但是是不同的接口返回的数据，格式不统一，那么presenter可以通过name
@@ -36,7 +36,7 @@
     列表页中使用tableViewSource和CellModel共同完成了这个职责
  
  */
-@protocol HYDataPresenterProtocal <NSObject>
+@protocol HYDataPresenterProtocol <NSObject>
 
 @required
 - (id)dataPresenterWithSourceData:(id)sourceData businessName:(NSString *)name;

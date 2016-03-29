@@ -12,7 +12,7 @@
 /**
  *  首页广告
  */
-@interface HYHomeAdDataPresenter : NSObject<HYDataPresenterProtocal>
+@interface HYHomeAdDataPresenter : NSObject<HYDataPresenterProtocol>
 
 - (id)dataPresenterWithSourceData:(id)sourceData businessName:(NSString *)name;
 
