@@ -45,6 +45,9 @@
     ],
     "Masonry": [
 
+    ],
+    "HYLogEngine": [
+      "~> 1.1"
     ]
   }
 }
