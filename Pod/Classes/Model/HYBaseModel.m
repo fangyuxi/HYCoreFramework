@@ -139,8 +139,11 @@
         if (!result)
         {
             NSLog(@"%@", error);
+            return;
         }
     }
+    
+    
 }
 
 @end

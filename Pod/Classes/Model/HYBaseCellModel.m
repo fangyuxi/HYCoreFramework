@@ -21,9 +21,9 @@ const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout = -1.0f;
     self.reuseIdentifier = NSStringFromClass([self class]);
 }
 
-
-- (void)dicMapModelFinish
+- (void)mj_keyValuesDidFinishConvertingToObject
 {
+    [self dicMapModelFinish];
     [self calculateCellElementFrame];
 }
 
