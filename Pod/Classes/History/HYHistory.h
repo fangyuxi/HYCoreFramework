@@ -6,7 +6,7 @@
 //  Copyright © 2016 fangyuxi. All rights reserved.
 //
 
-#import <HYCoreFramework/HYCoreFramework.h>
+#import "HYBaseModel.h"
 
 /**
  *  所有history继承这个基类
@@ -15,9 +15,9 @@
 @interface HYHistory : HYBaseModel
 - (NSArray *)items;
 - (void)addItem:(id<NSCoding>)item;
-- (BOOL)insertItem:(id<NSCoding>)item atIndex:(NSUInteger)index;
-- (BOOL)removeItem:(id<NSCoding>)item;
-- (BOOL)removeItemAtIndex:(NSUInteger)index;
-- (BOOL)clearHistory;
+- (void)insertItem:(id<NSCoding>)item atIndex:(NSUInteger)index;
+- (void)removeItem:(id<NSCoding>)item;
+- (void)removeItemAtIndex:(NSUInteger)index;
+- (void)clearHistory;
 - (instancetype)initWithPath:(NSString *)path NS_DESIGNATED_INITIALIZER;
 @end

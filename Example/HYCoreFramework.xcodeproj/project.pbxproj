@@ -19,7 +19,6 @@
 		3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9621CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m */; };
 		3794F9691CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9641CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m */; };
 		3794F96A1CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9661CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m */; };
-		379A94951CA958ED0003B323 /* HYHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 379A94941CA958ED0003B323 /* HYHistory.m */; };
 		4EB4FCAE016631227AD72CB4 /* Pods_HYCoreFramework_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2E8BEFE5F9700CDE3ABEAE /* Pods_HYCoreFramework_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -72,8 +71,6 @@
 		3794F9641CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetworkGlobalResponseFilter.m; sourceTree = "<group>"; };
 		3794F9651CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetworkSignatureUrlFilter.h; sourceTree = "<group>"; };
 		3794F9661CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetworkSignatureUrlFilter.m; sourceTree = "<group>"; };
-		379A94931CA958ED0003B323 /* HYHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHistory.h; sourceTree = "<group>"; };
-		379A94941CA958ED0003B323 /* HYHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHistory.m; sourceTree = "<group>"; };
 		4700240E42A41DDAFEFF1727 /* Pods-HYCoreFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCoreFramework_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYCoreFramework_Example/Pods-HYCoreFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HYCoreFramework_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYCoreFramework_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -227,8 +224,6 @@
 				1EEB9B871CA3E647008A8411 /* Model */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
-				379A94931CA958ED0003B323 /* HYHistory.h */,
-				379A94941CA958ED0003B323 /* HYHistory.m */,
 			);
 			name = "Example for HYCoreFramework";
 			path = HYCoreFramework;
@@ -495,7 +490,6 @@
 				3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */,
 				3794F96A1CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m in Sources */,
 				1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */,
-				379A94951CA958ED0003B323 /* HYHistory.m in Sources */,
 				1EF5BF951CA4D757005E2EF5 /* HYHomeCellModel.m in Sources */,
 				1E3F04561CA7C02800530244 /* HYHomeAdDataPresenter.m in Sources */,
 			);
@@ -626,7 +620,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bangbang.sherlock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4b05bcf5-0ded-415b-b510-3f5092c680f8";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
@@ -646,7 +640,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bangbang.sherlock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4b05bcf5-0ded-415b-b510-3f5092c680f8";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};

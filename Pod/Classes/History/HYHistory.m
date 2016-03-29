@@ -11,9 +11,13 @@
 
 @interface HYHistory ()
 @property (nonatomic, strong) NSMutableArray *itemsArray;
+@property (nonatomic, strong) HYArchiverStorage *storage;
+
 @end
 
 @implementation HYHistory
+
+@dynamic storage;
 
 - (NSArray *)items
 {
@@ -27,28 +31,27 @@
     [self saveHistory];
 }
 
-- (BOOL)insertItem:(id<NSCoding>)item atIndex:(NSUInteger)index
+- (void)insertItem:(id<NSCoding>)item atIndex:(NSUInteger)index
 {
     if (!item) return;
     [self.itemsArray insertObject:item atIndex:index];
     [self saveHistory];
 }
 
-- (BOOL)removeItem:(id<NSCoding>)item
+- (void)removeItem:(id<NSCoding>)item
 {
     if (!item) return;
     [self.itemsArray removeObject:item];
     [self saveHistory];
 }
 
-- (BOOL)removeItemAtIndex:(NSUInteger)index
+- (void)removeItemAtIndex:(NSUInteger)index
 {
-    if (!item) return;
     [self.itemsArray removeObjectAtIndex:index];
     [self saveHistory];
 }
 
-- (BOOL)clearHistory
+- (void)clearHistory
 {
     [self.itemsArray removeAllObjects];
     return [self saveHistory];
