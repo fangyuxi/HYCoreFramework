@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E3F04531CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F04521CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m */; };
 		1E3F04561CA7C02800530244 /* HYHomeAdDataPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */; };
 		1E3F04591CA7C14900530244 /* HYHomeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F04581CA7C14900530244 /* HYHomeAdView.m */; };
 		1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB9B831CA3E647008A8411 /* HYViewController.m */; };
@@ -45,8 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E3F04511CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDefautEmtpyScrollViewDataSetStypeObject.h; sourceTree = "<group>"; };
-		1E3F04521CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDefautEmtpyScrollViewDataSetStypeObject.m; sourceTree = "<group>"; };
 		1E3F04541CA7C02800530244 /* HYHomeAdDataPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeAdDataPresenter.h; sourceTree = "<group>"; };
 		1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeAdDataPresenter.m; sourceTree = "<group>"; };
 		1E3F04571CA7C14900530244 /* HYHomeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeAdView.h; sourceTree = "<group>"; };
@@ -126,8 +123,6 @@
 			children = (
 				1EEB9B821CA3E647008A8411 /* HYViewController.h */,
 				1EEB9B831CA3E647008A8411 /* HYViewController.m */,
-				1E3F04511CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.h */,
-				1E3F04521CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m */,
 				1E3F04541CA7C02800530244 /* HYHomeAdDataPresenter.h */,
 				1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */,
 				1E3F04571CA7C14900530244 /* HYHomeAdView.h */,
@@ -484,7 +479,6 @@
 				3794F9671CA43D0C00F41D1F /* HYNetworkDefaultServer.m in Sources */,
 				1E3F04591CA7C14900530244 /* HYHomeAdView.m in Sources */,
 				1EF5BF991CA50EBE005E2EF5 /* HYHomeCell.m in Sources */,
-				1E3F04531CA7770D00530244 /* HYDefautEmtpyScrollViewDataSetStypeObject.m in Sources */,
 				1EEB9B891CA3E647008A8411 /* HYAppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */,

@@ -20,7 +20,6 @@
 
 @implementation HYBaseListViewController
 
-@synthesize emptyViewStyle = _emptyViewStyle;
 
 - (void)viewDidLoad
 {
@@ -69,7 +68,7 @@
 {
     NSAssert(self.tableView,@"The TableView instance must assign to the self.tableView");
     if (!self.tableView.hy_emptyDataSetDelegate){self.tableView.hy_emptyDataSetDelegate = self;}
-    if (!self.tableView.hy_emptyDataSetSource){self.tableView.hy_emptyDataSetSource = self.emptyViewStyle;}
+    if (!self.tableView.hy_emptyDataSetSource){self.tableView.hy_emptyDataSetSource = self;}
     if (!self.tableView.delegate){self.tableView.delegate = self;}
 }
 
@@ -163,12 +162,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-- (void)setEmptyViewStyle:(id<HYEmptyDataSetStyleProtocal,HYEmptyDataSetSource>)emptyViewStyle
-{
-    _emptyViewStyle = emptyViewStyle;
-    self.tableView.hy_emptyDataSetSource = _emptyViewStyle;
-}
-
 #pragma mark MJRefresh private
 
 - (void)p_addHeader
@@ -237,12 +230,49 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     [self.tableViewSource loadMoreSource];
 }
 
+#pragma mark empty view show conditions
+
+- (BOOL)shouldShowEmptyDataSetRefreshView
+{
+    return [self p_emptyViewShowDefaultShowConditions];
+}
+- (BOOL)shouldShowEmptyDataSetContentView
+{
+    return [self p_emptyViewShowDefaultShowConditions];
+}
+- (BOOL)shouldShowEmptyDataSetErrorView
+{
+    return [self p_emptyViewShowDefaultShowConditions];
+}
+
+- (BOOL)p_emptyViewShowDefaultShowConditions
+{
+    if (self.tableViewSource.cellModels.count == 0)
+    {
+        return YES;
+    }
+    
+    if (self.tableViewSource.cellModels.count != 0)
+    {
+        for (NSArray *sections in self.tableViewSource.cellModels)
+        {
+            if (sections.count != 0)
+            {
+                return NO;
+            }
+        }
+    }
+    return NO;
+}
+
 #pragma mark TableViewSourceDelegate
 
 - (void)tableSourceDidStartRefresh:(HYBaseTableViewSource *)tableSource
 {
-    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeRefresh;
-    [self.tableView reloadEmptyDataSet];
+    if ([self shouldShowEmptyDataSetRefreshView])
+    {
+        [self showEmptyView:self.emptyDataSetRefreshView];
+    }
     
     if(self.needFooter)
     {
@@ -252,37 +282,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)tableSourceDidFinishRefresh:(HYBaseTableViewSource *)tableSource
 {
-    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeNoContent;
-    [self.tableView reloadEmptyDataSet];
-    
-    if (self.needFooter)
+    if ([self shouldShowEmptyDataSetContentView])
     {
-        if ([tableSource canLoadMore])
-        {
-            [self p_addFooter];
-        }
-        else
-        {
-            self.tableView.mj_footer = nil;;
-        }
-    }
-    if ([self.tableView isKindOfClass:[UITableView class]])
-    {
-        [(UITableView *)_tableView reloadData];
+        [self showEmptyView:self.emptyDataSetNoContentView];
     }
     
     [self.tableView.mj_header endRefreshing];
-}
-
-- (void)tableSourceDidStartLoadMore:(HYBaseTableViewSource *)tableSource
-{
-    
-}
-
-- (void)tableSourceDidFinishLoadMore:(HYBaseTableViewSource *)tableSource
-{
-    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeNoContent;
-    [self.tableView reloadEmptyDataSet];
     
     if (self.needFooter)
     {
@@ -296,55 +301,81 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
         }
     }
     
+    [self.tableView reloadData];
+}
+
+- (void)tableSourceDidStartLoadMore:(HYBaseTableViewSource *)tableSource
+{
+    
+}
+
+- (void)tableSourceDidFinishLoadMore:(HYBaseTableViewSource *)tableSource
+{
+    if ([self shouldShowEmptyDataSetContentView])
+    {
+        [self showEmptyView:self.emptyDataSetNoContentView];
+    }
+    
     [self.tableView.mj_footer endRefreshing];
     
-    [(UITableView *)_tableView reloadData];
+    [self showFooterIfNeeded];
+    
+    [self.tableView reloadData];
 }
 
 - (void)tableSource:(HYBaseTableViewSource *)tableSource
        refreshError:(NSError *)error
 {
-    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeError;
-    [self.tableView reloadEmptyDataSet];
-    
-    NSArray *cells = nil;
-    if ([self.tableView isKindOfClass:[UITableView class]])
+    if ([self shouldShowEmptyDataSetErrorView])
     {
-        cells = [(UITableView *)_tableView visibleCells];
+        [self showEmptyView:self.emptyDataSetErrorView];
     }
+    
     [self.tableView.mj_header endRefreshing];
-    [self p_addFooter];
+    
+    [self showFooterIfNeeded];
 }
 
 - (void)tableSource:(HYBaseTableViewSource *)tableSource
       loadMoreError:(NSError *)error
 {
-    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeError;
-    [self.tableView reloadEmptyDataSet];
+    if ([self shouldShowEmptyDataSetErrorView])
+    {
+        [self showEmptyView:self.emptyDataSetErrorView];
+    }
     
     [self.tableView.mj_footer endRefreshing];
     
+    [self showFooterIfNeeded];
+}
+
+- (void)showFooterIfNeeded
+{
     if (self.needFooter)
     {
-        if ([tableSource canLoadMore])
+        if ([self.tableViewSource canLoadMore])
         {
             [self p_addFooter];
         }
         else
         {
-            self.tableView.mj_footer = nil;;
+            self.tableView.mj_footer = nil;
         }
     }
 }
+
 - (void)tableSource:(HYBaseTableViewSource *)source
 didReceviedExtraData:(id)data
 {
     
 }
 
-- (void) tableSourceDidClearAllData:(HYBaseTableViewSource *)tableSource
+- (void)tableSourceDidClearAllData:(HYBaseTableViewSource *)tableSource
 {
-    self.emptyViewStyle.showType = HYEmptyDataSetStyleShowTypeNoContent;
+    if ([self shouldShowEmptyDataSetContentView])
+    {
+        [self showEmptyView:self.emptyDataSetNoContentView];
+    }
 }
 
 @end

@@ -36,4 +36,5 @@ extern const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout;
  */
 - (void)calculateCellElementFrame;
 
+
 @end

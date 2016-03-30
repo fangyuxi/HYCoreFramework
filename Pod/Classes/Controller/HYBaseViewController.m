@@ -8,6 +8,13 @@
 
 #import "HYBaseViewController.h"
 
+@interface HYBaseViewController ()
+
+@property (nonatomic, strong, readwrite) UIView<HYEmptySetViewProtocol> *emptyView;
+@property (nonatomic, assign) BOOL canDisplayEmptyView;
+
+@end
+
 @implementation HYBaseViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,7 +44,7 @@
 
 - (void)makeLayout
 {
-    [self doesNotRecognizeSelector:_cmd];
+    //[self doesNotRecognizeSelector:_cmd];
 }
 
 - (void)configNavigationBarItem
@@ -53,6 +60,37 @@
 - (void)initExtension
 {
     
+}
+
+#pragma mark empty view
+
+- (void)showEmptyView:(UIView<HYEmptySetViewProtocol> *)emptyView
+{
+    self.canDisplayEmptyView = YES;
+    self.emptyView = emptyView;
+    [self.view reloadEmptyDataSet];
+}
+
+- (void)hideEmptyView
+{
+    self.canDisplayEmptyView = NO;
+    [self.view reloadEmptyDataSet];
+    
+    self.emptyView = nil;
+}
+
+#pragma mark HYEmptyDataSetDataSource
+
+- (UIView *)hy_customViewForEmptyDataSet:(UIView *)view
+{
+    return self.emptyView;
+}
+
+#pragma mark HYEmptyDataSetDelegate
+
+- (BOOL)hy_emptyDataSetCanDisplay:(UIView *)view
+{
+    return self.canDisplayEmptyView;
 }
 
 @end

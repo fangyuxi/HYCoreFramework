@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HYEmptyDataSetStyle.h"
+#import "HYEmptySetViewProtocol.h"
+#import "UIView+HYEmptyDataSet.h"
 
 /**
  *  调用顺序
@@ -30,12 +31,13 @@
  */
 - (void)initView;
 
+@optional
+
 /**
- *  子类布局view的时候必须实现，不实现会崩溃
+ *  子类布局view的时候
  */
 - (void)makeLayout;
 
-@optional
 /**
  *  配置导航栏和导航栏按钮按钮
  */
@@ -53,12 +55,16 @@
 
 @end
 
-@interface HYBaseViewController : UIViewController<HYViewControllerProtocal,HYEmptyDataSetDelegate>
+@interface HYBaseViewController : UIViewController<HYViewControllerProtocal,
+                                                        HYEmptyDataSetSource,
+                                                        HYEmptyDataSetDelegate>
 {
     
 }
 
-@property (nonatomic, strong) id<HYEmptyDataSetStyleProtocal> emptyViewStyle;
+@property (nonatomic, strong, readonly) UIView<HYEmptySetViewProtocol> *emptyView;
 
+- (void)showEmptyView:(UIView<HYEmptySetViewProtocol> *)emptyView;
+- (void)hideEmptyView;
 
 @end

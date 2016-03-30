@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "HYBaseCellModel.h"
+#import "HYBaseCell.h"
 
-@class HYBassCellModel;
-@class HYBaseCell;
-@class HYTableViewSourceSection;
 @class HYBaseTableViewSource;
 
 /**
@@ -136,7 +134,7 @@
 - (void)initExtension;
 
 @property (nonatomic, weak) id<HYBaseTableViewSourceDelegate> delegate;
-
+@property (nonatomic, weak) id<HYCellToControllerActionProtocal>actionDelegate;
 
 /**
  *  存放CellModels
