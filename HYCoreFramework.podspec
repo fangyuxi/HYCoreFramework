@@ -29,4 +29,5 @@ Pod::Spec.new do |s|
   s.dependency 'FMDB', '~> 2.5'
   s.dependency 'Masonry'
   s.dependency 'HYLogEngine', '~> 1.1'
+  s.dependency 'MBProgressHUD'
 end
