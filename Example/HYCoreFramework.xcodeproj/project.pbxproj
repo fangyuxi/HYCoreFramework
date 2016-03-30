@@ -19,6 +19,9 @@
 		3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9621CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m */; };
 		3794F9691CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9641CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m */; };
 		3794F96A1CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9661CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m */; };
+		3795E89C1CAB90AF009383B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3795E89B1CAB90AF009383B3 /* Default-568h@2x.png */; };
+		3795E8A11CAB95F0009383B3 /* SLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3795E89F1CAB95F0009383B3 /* SLRootViewController.m */; };
+		3795E8A21CAB95F0009383B3 /* SLRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3795E8A01CAB95F0009383B3 /* SLRootViewController.xib */; };
 		4EB4FCAE016631227AD72CB4 /* Pods_HYCoreFramework_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2E8BEFE5F9700CDE3ABEAE /* Pods_HYCoreFramework_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -71,6 +74,10 @@
 		3794F9641CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetworkGlobalResponseFilter.m; sourceTree = "<group>"; };
 		3794F9651CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetworkSignatureUrlFilter.h; sourceTree = "<group>"; };
 		3794F9661CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetworkSignatureUrlFilter.m; sourceTree = "<group>"; };
+		3795E89B1CAB90AF009383B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3795E89E1CAB95F0009383B3 /* SLRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRootViewController.h; path = RootViewController/SLRootViewController.h; sourceTree = "<group>"; };
+		3795E89F1CAB95F0009383B3 /* SLRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRootViewController.m; path = RootViewController/SLRootViewController.m; sourceTree = "<group>"; };
+		3795E8A01CAB95F0009383B3 /* SLRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLRootViewController.xib; path = RootViewController/SLRootViewController.xib; sourceTree = "<group>"; };
 		4700240E42A41DDAFEFF1727 /* Pods-HYCoreFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCoreFramework_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYCoreFramework_Example/Pods-HYCoreFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HYCoreFramework_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYCoreFramework_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -180,9 +187,27 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		3795E89D1CAB95CD009383B3 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3795E89E1CAB95F0009383B3 /* SLRootViewController.h */,
+				3795E89F1CAB95F0009383B3 /* SLRootViewController.m */,
+				3795E8A01CAB95F0009383B3 /* SLRootViewController.xib */,
+			);
+			name = RootViewController;
+			sourceTree = "<group>";
+		};
+		3795E8A31CAB9614009383B3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				3795E89B1CAB90AF009383B3 /* Default-568h@2x.png */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for HYCoreFramework */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -217,6 +242,8 @@
 		6003F593195388D20070C39A /* Example for HYCoreFramework */ = {
 			isa = PBXGroup;
 			children = (
+				3795E89D1CAB95CD009383B3 /* RootViewController */,
+				3795E8A31CAB9614009383B3 /* Modules */,
 				1EF5BF961CA50EAF005E2EF5 /* Cells */,
 				3794F95E1CA43D0C00F41D1F /* Network */,
 				1EEB9B811CA3E647008A8411 /* Controller */,
@@ -367,7 +394,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				3795E89C1CAB90AF009383B3 /* Default-568h@2x.png in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				3795E8A21CAB95F0009383B3 /* SLRootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +517,7 @@
 				1EEB9B891CA3E647008A8411 /* HYAppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */,
+				3795E8A11CAB95F0009383B3 /* SLRootViewController.m in Sources */,
 				3794F96A1CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m in Sources */,
 				1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */,
 				1EF5BF951CA4D757005E2EF5 /* HYHomeCellModel.m in Sources */,
@@ -621,6 +651,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bangbang.sherlock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
@@ -641,6 +672,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bangbang.sherlock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
