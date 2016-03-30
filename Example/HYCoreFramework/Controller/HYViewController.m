@@ -28,17 +28,9 @@
 {
     [super viewDidLoad];
     
-    self.emptyViewStyle = [[HYDefautEmtpyScrollViewDataSetStypeObject alloc] init];
-    
     [self p_refreshAd];
     
     [self dragToRefreshWithoutAnimation];
-    
-    self.emptyViewStyle.emptyDataSetActions = ^(NSString *event){
-    
-        
-    
-    };
 }
 
 - (void)initTableView
@@ -89,30 +81,26 @@
 
 - (void)p_refreshAd
 {
-    HYSimpleRequest *adRequest = [[HYSimpleRequest alloc] init];
-    [adRequest startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
-        
-        [self.adView configViewWithData:[self.adPresenter dataPresenterWithSourceData:response
-                                                                         businessName:request.identifier]];
-        
-    } failerHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
-        
-        [self.adView configViewWithData:[self.adPresenter dataPresenterWithSourceData:response
-                                                                         businessName:request.identifier]];
-        
-    } progressHandler:^(HYBaseRequest *request, int64_t progress) {
-        
-    }];
+//    HYSimpleRequest *adRequest = [[HYSimpleRequest alloc] init];
+//    [adRequest startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+//        
+//        [self.adView configViewWithData:[self.adPresenter dataPresenterWithSourceData:response
+//                                                                         businessName:request.identifier]];
+//        
+//    } failerHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+//        
+//        [self.adView configViewWithData:[self.adPresenter dataPresenterWithSourceData:response
+//                                                                         businessName:request.identifier]];
+//        
+//    } progressHandler:^(HYBaseRequest *request, int64_t progress) {
+//        
+//    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
-
-
-
-
 
 
 

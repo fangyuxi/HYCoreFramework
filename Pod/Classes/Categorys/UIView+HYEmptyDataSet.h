@@ -23,8 +23,6 @@
 @protocol HYEmptyDataSetSource <NSObject>
 @required
 - (UIView *)hy_customViewForEmptyDataSet:(UIView *)view;
-@optional
-- (CGFloat)hy_verticalOffsetForEmptyDataSet:(UIView *)view;
 @end
 
 
@@ -36,4 +34,3 @@
 - (void)hy_emptyDataSetWillDisappear:(UIView *)view;
 - (void)hy_emptyDataSetDidDisappear:(UIView *)view;
 @end
-

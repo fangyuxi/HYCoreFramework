@@ -19,5 +19,5 @@
 - (void)removeItem:(id<NSCoding>)item;
 - (void)removeItemAtIndex:(NSUInteger)index;
 - (void)clearHistory;
-- (instancetype)initWithPath:(NSString *)path NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPath:(NSString *)path;
 @end

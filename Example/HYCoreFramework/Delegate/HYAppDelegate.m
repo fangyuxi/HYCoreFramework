@@ -14,6 +14,8 @@
 #import "HYNetworkGlobalResponseFilter.h"
 #import "HYNetworkSignatureUrlFilter.h"
 
+#import "SLRootViewController.h"
+
 @implementation HYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,9 +23,7 @@
     [self p_configNetwork];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    HYViewController *root = [[HYViewController alloc] init];
-    self.window.rootViewController = root;
-    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SLRootViewController alloc] init]];
     [self.window makeKeyAndVisible];
     
     return YES;
