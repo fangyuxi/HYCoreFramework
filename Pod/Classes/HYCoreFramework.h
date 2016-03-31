@@ -16,7 +16,6 @@
 #import "HYBaseCellModel.h"
 #import "HYBaseCell.h"
 #import "Masonry.h"
-#import "HYBaseViewController.h"
 #import "HYBaseListViewController.h"
 #import "ReactiveCocoa.h"
 

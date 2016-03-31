@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E3F04561CA7C02800530244 /* HYHomeAdDataPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */; };
 		1E3F04591CA7C14900530244 /* HYHomeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F04581CA7C14900530244 /* HYHomeAdView.m */; };
+		1EA71AC31CAD288F00CD57BD /* SLViewControllerHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA71AC21CAD288F00CD57BD /* SLViewControllerHooker.m */; };
 		1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB9B831CA3E647008A8411 /* HYViewController.m */; };
 		1EEB9B891CA3E647008A8411 /* HYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB9B861CA3E647008A8411 /* HYAppDelegate.m */; };
 		1EF5BF901CA418D3005E2EF5 /* HYHomeTableViewSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5BF8F1CA418D3005E2EF5 /* HYHomeTableViewSource.m */; };
@@ -56,6 +57,8 @@
 		1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeAdDataPresenter.m; sourceTree = "<group>"; };
 		1E3F04571CA7C14900530244 /* HYHomeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeAdView.h; sourceTree = "<group>"; };
 		1E3F04581CA7C14900530244 /* HYHomeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeAdView.m; sourceTree = "<group>"; };
+		1EA71AC11CAD288F00CD57BD /* SLViewControllerHooker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLViewControllerHooker.h; sourceTree = "<group>"; };
+		1EA71AC21CAD288F00CD57BD /* SLViewControllerHooker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLViewControllerHooker.m; sourceTree = "<group>"; };
 		1EEB9B821CA3E647008A8411 /* HYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYViewController.h; sourceTree = "<group>"; };
 		1EEB9B831CA3E647008A8411 /* HYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYViewController.m; sourceTree = "<group>"; };
 		1EEB9B851CA3E647008A8411 /* HYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYAppDelegate.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 		3795E89D1CAB95CD009383B3 /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1EA71AC11CAD288F00CD57BD /* SLViewControllerHooker.h */,
+				1EA71AC21CAD288F00CD57BD /* SLViewControllerHooker.m */,
 				3795E89E1CAB95F0009383B3 /* SLRootViewController.h */,
 				3795E89F1CAB95F0009383B3 /* SLRootViewController.m */,
 				3795E8A01CAB95F0009383B3 /* SLRootViewController.xib */,
@@ -544,6 +549,7 @@
 				3794F96A1CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m in Sources */,
 				1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */,
 				371DF3961CACEB08009E1E09 /* SLRACDemo1CellModel.m in Sources */,
+				1EA71AC31CAD288F00CD57BD /* SLViewControllerHooker.m in Sources */,
 				371DF38C1CACD0E6009E1E09 /* SLRACDemoViewController.m in Sources */,
 				1EF5BF951CA4D757005E2EF5 /* HYHomeCellModel.m in Sources */,
 				1E3F04561CA7C02800530244 /* HYHomeAdDataPresenter.m in Sources */,
