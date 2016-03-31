@@ -22,7 +22,7 @@
  *  当Model初始化之前，会先调用这个函数，子类覆盖，可以做自己的事情
     必须调用super
  */
-- (void)initExtension;
+//- (void)initExtension;
 
 @property (nonatomic, retain, readonly) NSDictionary *dic;
 

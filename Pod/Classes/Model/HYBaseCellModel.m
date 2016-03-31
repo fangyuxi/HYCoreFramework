@@ -16,9 +16,24 @@ const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout = -1.0f;
 
 @implementation HYBaseCellModel
 
-- (void)initExtension
+- (instancetype)initWithDictionary:(id)dic
 {
-    self.reuseIdentifier = NSStringFromClass([self class]);
+    self = [super initWithDictionary:dic];
+    if (self) {
+        self.reuseIdentifier = NSStringFromClass([self class]);
+        self.cellHeight = HYBaseCellNoFrameHeightWhenUseAutoLayout;
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.reuseIdentifier = NSStringFromClass([self class]);
+        self.cellHeight = HYBaseCellNoFrameHeightWhenUseAutoLayout;
+    }
+    return self;
 }
 
 - (void)mj_keyValuesDidFinishConvertingToObject

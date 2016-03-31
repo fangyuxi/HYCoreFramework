@@ -20,12 +20,12 @@
     请参看 HYBaseNetTableViewSource，这个基类使用的一个例子是
  */
 
-#pragma mark HYTableViewSourceProtocal
+#pragma mark HYTableViewSourceProtocol
 
 /**
  *  //子类需要实现这个协议
  */
-@protocol HYTableViewSourceProtocal <NSObject>
+@protocol HYTableViewSourceProtocol <NSObject>
 
 @required
 /**
@@ -64,7 +64,7 @@
 
 @end
 
-#pragma mark HYTableViewSourceConnectControllerProtocal
+#pragma mark HYTableViewSourceConnectControllerProtocol
 
 /**
  *  tableViewSoure遵循这个协议，给控制器提供访问数据的接口
@@ -83,7 +83,7 @@
  
     notify方法会将状态回调给Controller
  */
-@protocol HYTableViewSourceConnectControllerProtocal <NSObject>
+@protocol HYTableViewSourceConnectControllerProtocol <NSObject>
 
 @required
 - (void)refreshSource;
@@ -122,19 +122,18 @@
 
 @interface HYBaseTableViewSource : NSObject<
                         UITableViewDataSource,
-                        HYTableViewSourceProtocal,
-                        HYTableViewSourceConnectControllerProtocal>
+                        HYTableViewSourceProtocol,
+                        HYTableViewSourceConnectControllerProtocol>
 {
     
 }
 
-- (instancetype)initWithDelegate:(id<HYBaseTableViewSourceDelegate>)delegate
-                                                        NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithDelegate:(id<HYBaseTableViewSourceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 - (void)initExtension;
 
 @property (nonatomic, weak) id<HYBaseTableViewSourceDelegate> delegate;
-@property (nonatomic, weak) id<HYCellToControllerActionProtocal>actionDelegate;
+@property (nonatomic, weak) id<HYCellToControllerActionProtocol> actionDelegate;
 
 /**
  *  存放CellModels

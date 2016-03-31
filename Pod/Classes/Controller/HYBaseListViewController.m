@@ -105,8 +105,7 @@
 
 #pragma mark table view delegate
 
-- (CGFloat)tableView:(UITableView *)tableView
-heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *cellModels = self.tableViewSource.cellModels;
     NSArray *sectionArray = [cellModels objectAtIndex:indexPath.section];
@@ -114,14 +113,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
     if (cellModel.cellHeight == HYBaseCellNoFrameHeightWhenUseAutoLayout)
     {
-        return [tableView fd_heightForCellWithIdentifier:cellModel.reuseIdentifier
-                                        cacheByIndexPath:indexPath
-                                           configuration:^(HYBaseCell *cell)
-        {
-            [cell resetCell];
-            cell.cellModel = cellModel;
-            [cell updateCell];
-        }];
+        CGFloat f = [tableView fd_heightForCellWithIdentifier:cellModel.reuseIdentifier
+                                             cacheByIndexPath:indexPath
+                                                configuration:^(HYBaseCell *cell) {
+                                                    [cell resetCell];
+                                                    cell.cellModel = cellModel;
+                                                    [cell updateCell];
+                                                }];
+        
+        return f;
     }
     
     return cellModel.cellHeight;

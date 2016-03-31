@@ -8,7 +8,7 @@
 
 #import "HYBaseTableViewSource.h"
 
-@interface HYBaseTableViewSource ()<HYCellToControllerActionProtocal>
+@interface HYBaseTableViewSource ()<HYCellToControllerActionProtocol>
 {
     
 }

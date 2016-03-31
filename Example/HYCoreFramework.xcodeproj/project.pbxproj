@@ -15,6 +15,9 @@
 		1EF5BF951CA4D757005E2EF5 /* HYHomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5BF941CA4D757005E2EF5 /* HYHomeCellModel.m */; };
 		1EF5BF991CA50EBE005E2EF5 /* HYHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5BF981CA50EBE005E2EF5 /* HYHomeCell.m */; };
 		371DF38C1CACD0E6009E1E09 /* SLRACDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DF38A1CACD0E6009E1E09 /* SLRACDemoViewController.m */; };
+		371DF3901CACE8C7009E1E09 /* SLRACDemoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DF38F1CACE8C7009E1E09 /* SLRACDemoSource.m */; };
+		371DF3931CACEAF1009E1E09 /* SLRACDemo1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DF3921CACEAF1009E1E09 /* SLRACDemo1Cell.m */; };
+		371DF3961CACEB08009E1E09 /* SLRACDemo1CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 371DF3951CACEB08009E1E09 /* SLRACDemo1CellModel.m */; };
 		3794F9671CA43D0C00F41D1F /* HYNetworkDefaultServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9601CA43D0C00F41D1F /* HYNetworkDefaultServer.m */; };
 		3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9621CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m */; };
 		3794F9691CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794F9641CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m */; };
@@ -22,7 +25,7 @@
 		3795E89C1CAB90AF009383B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3795E89B1CAB90AF009383B3 /* Default-568h@2x.png */; };
 		3795E8A11CAB95F0009383B3 /* SLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3795E89F1CAB95F0009383B3 /* SLRootViewController.m */; };
 		3795E8A21CAB95F0009383B3 /* SLRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3795E8A01CAB95F0009383B3 /* SLRootViewController.xib */; };
-		4EB4FCAE016631227AD72CB4 /* Pods_HYCoreFramework_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2E8BEFE5F9700CDE3ABEAE /* Pods_HYCoreFramework_Tests.framework */; };
+		5D2CA72D0556BFE2238E2A4E /* libPods-HYCoreFramework_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B411C15AAEC9A3655179C5D /* libPods-HYCoreFramework_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -34,7 +37,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		B45C0851992773FC7B232ADC /* Pods_HYCoreFramework_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EDCE96F4257C7BAEC591BA /* Pods_HYCoreFramework_Example.framework */; };
+		D184917CC1BBC880E971286F /* libPods-HYCoreFramework_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF97D0186AD1388E24A10A68 /* libPods-HYCoreFramework_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B411C15AAEC9A3655179C5D /* libPods-HYCoreFramework_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYCoreFramework_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3F04541CA7C02800530244 /* HYHomeAdDataPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeAdDataPresenter.h; sourceTree = "<group>"; };
 		1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeAdDataPresenter.m; sourceTree = "<group>"; };
 		1E3F04571CA7C14900530244 /* HYHomeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeAdView.h; sourceTree = "<group>"; };
@@ -63,9 +67,14 @@
 		1EF5BF971CA50EBE005E2EF5 /* HYHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeCell.h; sourceTree = "<group>"; };
 		1EF5BF981CA50EBE005E2EF5 /* HYHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeCell.m; sourceTree = "<group>"; };
 		251667E72788BA7127936287 /* HYCoreFramework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HYCoreFramework.podspec; path = ../HYCoreFramework.podspec; sourceTree = "<group>"; };
-		2C2E8BEFE5F9700CDE3ABEAE /* Pods_HYCoreFramework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYCoreFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		371DF3891CACD0E6009E1E09 /* SLRACDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRACDemoViewController.h; path = RAC/SLRACDemoViewController.h; sourceTree = "<group>"; };
 		371DF38A1CACD0E6009E1E09 /* SLRACDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRACDemoViewController.m; path = RAC/SLRACDemoViewController.m; sourceTree = "<group>"; };
+		371DF38E1CACE8C7009E1E09 /* SLRACDemoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRACDemoSource.h; path = RAC/SLRACDemoSource.h; sourceTree = "<group>"; };
+		371DF38F1CACE8C7009E1E09 /* SLRACDemoSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRACDemoSource.m; path = RAC/SLRACDemoSource.m; sourceTree = "<group>"; };
+		371DF3911CACEAF1009E1E09 /* SLRACDemo1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRACDemo1Cell.h; path = RAC/SLRACDemo1Cell.h; sourceTree = "<group>"; };
+		371DF3921CACEAF1009E1E09 /* SLRACDemo1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRACDemo1Cell.m; path = RAC/SLRACDemo1Cell.m; sourceTree = "<group>"; };
+		371DF3941CACEB08009E1E09 /* SLRACDemo1CellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRACDemo1CellModel.h; path = RAC/SLRACDemo1CellModel.h; sourceTree = "<group>"; };
+		371DF3951CACEB08009E1E09 /* SLRACDemo1CellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRACDemo1CellModel.m; path = RAC/SLRACDemo1CellModel.m; sourceTree = "<group>"; };
 		3794F95F1CA43D0C00F41D1F /* HYNetworkDefaultServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetworkDefaultServer.h; sourceTree = "<group>"; };
 		3794F9601CA43D0C00F41D1F /* HYNetworkDefaultServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetworkDefaultServer.m; sourceTree = "<group>"; };
 		3794F9611CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetworkGlobalParamFilter.h; sourceTree = "<group>"; };
@@ -94,12 +103,12 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		66EDCE96F4257C7BAEC591BA /* Pods_HYCoreFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYCoreFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0600C6C01603FDC4BAC3DD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AF3FCA69A45346DF2BE62144 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B7A9A99C7DAFFE942911C40A /* Pods-HYCoreFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCoreFramework_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYCoreFramework_Tests/Pods-HYCoreFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA0097F4DF604CCFA112E1C1 /* Pods-HYCoreFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCoreFramework_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYCoreFramework_Example/Pods-HYCoreFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D6829AC927113125A9CF028B /* Pods-HYCoreFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYCoreFramework_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYCoreFramework_Tests/Pods-HYCoreFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FF97D0186AD1388E24A10A68 /* libPods-HYCoreFramework_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYCoreFramework_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +119,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				B45C0851992773FC7B232ADC /* Pods_HYCoreFramework_Example.framework in Frameworks */,
+				D184917CC1BBC880E971286F /* libPods-HYCoreFramework_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +130,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				4EB4FCAE016631227AD72CB4 /* Pods_HYCoreFramework_Tests.framework in Frameworks */,
+				5D2CA72D0556BFE2238E2A4E /* libPods-HYCoreFramework_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +184,12 @@
 			children = (
 				371DF3891CACD0E6009E1E09 /* SLRACDemoViewController.h */,
 				371DF38A1CACD0E6009E1E09 /* SLRACDemoViewController.m */,
+				371DF38E1CACE8C7009E1E09 /* SLRACDemoSource.h */,
+				371DF38F1CACE8C7009E1E09 /* SLRACDemoSource.m */,
+				371DF3911CACEAF1009E1E09 /* SLRACDemo1Cell.h */,
+				371DF3921CACEAF1009E1E09 /* SLRACDemo1Cell.m */,
+				371DF3941CACEB08009E1E09 /* SLRACDemo1CellModel.h */,
+				371DF3951CACEB08009E1E09 /* SLRACDemo1CellModel.m */,
 			);
 			name = RAC;
 			sourceTree = "<group>";
@@ -241,8 +256,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				66EDCE96F4257C7BAEC591BA /* Pods_HYCoreFramework_Example.framework */,
-				2C2E8BEFE5F9700CDE3ABEAE /* Pods_HYCoreFramework_Tests.framework */,
+				FF97D0186AD1388E24A10A68 /* libPods-HYCoreFramework_Example.a */,
+				0B411C15AAEC9A3655179C5D /* libPods-HYCoreFramework_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -522,14 +537,17 @@
 				1E3F04591CA7C14900530244 /* HYHomeAdView.m in Sources */,
 				1EF5BF991CA50EBE005E2EF5 /* HYHomeCell.m in Sources */,
 				1EEB9B891CA3E647008A8411 /* HYAppDelegate.m in Sources */,
+				371DF3931CACEAF1009E1E09 /* SLRACDemo1Cell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				3794F9681CA43D0C00F41D1F /* HYNetworkGlobalParamFilter.m in Sources */,
 				3795E8A11CAB95F0009383B3 /* SLRootViewController.m in Sources */,
 				3794F96A1CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m in Sources */,
 				1EEB9B881CA3E647008A8411 /* HYViewController.m in Sources */,
+				371DF3961CACEB08009E1E09 /* SLRACDemo1CellModel.m in Sources */,
 				371DF38C1CACD0E6009E1E09 /* SLRACDemoViewController.m in Sources */,
 				1EF5BF951CA4D757005E2EF5 /* HYHomeCellModel.m in Sources */,
 				1E3F04561CA7C02800530244 /* HYHomeAdDataPresenter.m in Sources */,
+				371DF3901CACE8C7009E1E09 /* SLRACDemoSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,7 +28,7 @@
     self = [super init];
     if (self)
     {
-        [self initExtension];
+//        [self initExtension];
         return self;
     }
     return nil;
@@ -42,7 +42,7 @@
         if (!dic)
         {
             self.dic = nil;
-            [self initExtension];
+//            [self initExtension];
             return self;
         }
         
@@ -62,7 +62,7 @@
             NSLog(@"dic to %@ error", [self class]);
         }
         
-        [self initExtension];
+//        [self initExtension];
         
         return self;
     }

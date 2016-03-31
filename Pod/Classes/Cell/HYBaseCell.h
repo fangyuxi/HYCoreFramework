@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, HYCustomCellPosition)
     HYCustomCellPositionGroupSingle = HYCustomCellPositionPlainSingle,
 };
 
-#pragma mark HYCellToControllerActionProtocal
+#pragma mark HYCellToControllerActionProtocol
 
 /**
  *  从cell到controller的各种操作统一接口
@@ -40,15 +40,15 @@ typedef NS_ENUM(NSInteger, HYCustomCellPosition)
     button.action = ^(){
  
  
-    [self.actionDelegate ActionFromView:self withEventTag:yourtag withParameterObject:cellModel];
+    [self.actionDelegate actionFromView:self withEventTag:yourtag withParameterObject:cellModel];
  
     actionDelegate是从tableviewsource中传到cell中的实现了此协议的controller对象
  };
  */
-@protocol HYCellToControllerActionProtocal <NSObject>
+@protocol HYCellToControllerActionProtocol <NSObject>
 @optional
 
-- (void)ActionFromView:(UIView *)view
+- (void)actionFromView:(UIView *)view
           withEventTag:(NSString *)tag
    withParameterObject:(id)object;
 
@@ -92,9 +92,9 @@ typedef NS_ENUM(NSInteger, HYCustomCellPosition)
 - (void)startAnimationWithDelay:(CGFloat)delayTime;
 
 /**
- *  见 上面 HYCellToControllerActionProtocal 协议
+ *  见 上面 HYCellToControllerActionProtocol 协议
  */
-@property (nonatomic, weak) id<HYCellToControllerActionProtocal> actionDelegate;
+@property (nonatomic, weak) id<HYCellToControllerActionProtocol> actionDelegate;
 
 /**
  *  Cell在TableView中的位置的枚举，如果一个Cell会根据不同位置显示不同的样子的时候，可以赋值
