@@ -14,12 +14,15 @@
 #import "HYNetworkGlobalResponseFilter.h"
 #import "HYNetworkSignatureUrlFilter.h"
 
+#import "SLViewControllerHooker.h"
+
 #import "SLRootViewController.h"
 
 @implementation HYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self registeHooker];
     [self p_configNetwork];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -39,6 +42,11 @@
     
     [config addUrlFilter:[[HYNetworkGlobalParamFilter alloc] init]];
     [config addResponseFilter:[[HYNetworkGlobalResponseFilter alloc] init]];
+}
+
+- (void)registeHooker
+{
+    [SLViewControllerHooker registe];
 }
 
 

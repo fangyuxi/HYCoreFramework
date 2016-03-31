@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HYBaseViewController.h"
 #import "HYBaseTableViewSource.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "HYViewControllerProtocol.h"
+#import "UIViewController+HYControllerCatetory.h"
 
 @class MJRefreshHeader;
 @class MJRefreshFooter;
 
-@interface HYBaseListViewController : HYBaseViewController<HYBaseTableViewSourceDelegate,
-                                                        UITableViewDelegate>
+@interface HYBaseListViewController : UIViewController<HYBaseTableViewSourceDelegate,
+                                                        UITableViewDelegate,
+                                                        HYViewControllerProtocol>
 {
     
 }

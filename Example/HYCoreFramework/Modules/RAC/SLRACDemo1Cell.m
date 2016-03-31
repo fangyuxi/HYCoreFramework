@@ -33,29 +33,29 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-//        [self.contentView addSubview:self.myTitleLabel];
-//        [self.contentView addSubview:self.contentTextField];
-//        [self.contentView addSubview:self.testView];
-//        [self.testView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.width.mas_equalTo(50);
-//            make.height.mas_equalTo(30);
-//            make.centerX.equalTo(self.contentView);
-//            make.top.bottom.equalTo(self.contentView);
-//        }];
+        [self.contentView addSubview:self.myTitleLabel];
+        [self.contentView addSubview:self.contentTextField];
+        [self.contentView addSubview:self.testView];
+        [self.testView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(50);
+            make.height.mas_equalTo(30);
+            make.centerX.equalTo(self.contentView);
+            make.top.bottom.equalTo(self.contentView);
+        }];
         
-//        [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(50);
-//        }];
-//        [self.myTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.top.bottom.equalTo(self.contentView);
-//            make.right.equalTo(self.contentView);
-//        }];
+        [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(50);
+        }];
+        [self.myTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.bottom.equalTo(self.contentView);
+            make.right.equalTo(self.contentView);
+        }];
         
-//        [self.contentTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.right.equalTo(self.contentView);
-//            make.top.bottom.equalTo(self.myTitleLabel);
-//            make.width.equalTo(self.contentView).dividedBy(2);
-//        }];
+        [self.contentTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView);
+            make.top.bottom.equalTo(self.myTitleLabel);
+            make.width.equalTo(self.contentView).dividedBy(2);
+        }];
     }
     return self;
 }

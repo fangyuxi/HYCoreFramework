@@ -30,7 +30,7 @@
 
 - (void)initTableView
 {
-    self.tableView = [UITableView new];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
 //    self.tableView.backgroundColor = [UIColor greenColor];
     self.tableView.fd_debugLogEnabled = YES;
     [self.view addSubview:self.tableView];
