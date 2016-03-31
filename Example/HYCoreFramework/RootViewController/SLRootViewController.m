@@ -7,7 +7,7 @@
 //
 
 #import "SLRootViewController.h"
-
+#import "SLRACDemoViewController.h"
 
 @interface SLRootViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -51,7 +51,7 @@
     if (indexPath.row == 0) {
         [self.navigationController pushViewController:[SLRootViewController new] animated:YES];
     } else if (indexPath.row == 1) {
-        
+        [self.navigationController pushViewController:[SLRACDemoViewController new] animated:YES];
     }
 }
 
@@ -62,7 +62,8 @@
 {
     if (!_dataSource) {
         _dataSource = @[
-                        @"Test EmptyDataSet"
+                        @"EmptyDataSet demo",
+                        @"RAC demo"
                         ];
     }
     return _dataSource;

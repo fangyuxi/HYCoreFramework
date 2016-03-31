@@ -10,7 +10,6 @@
 #import "HYHomeTableViewSource.h"
 #import "MJRefreshGifHeader.h"
 #import "Masonry.h"
-#import "HYDefautEmtpyScrollViewDataSetStypeObject.h"
 #import "HYHomeAdDataPresenter.h"
 #import "HYHomeAdView.h"
 

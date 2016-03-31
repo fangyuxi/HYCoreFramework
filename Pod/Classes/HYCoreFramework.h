@@ -17,5 +17,6 @@
 #import "HYBaseCell.h"
 #import "Masonry.h"
 #import "HYBaseViewController.h"
+#import "HYBaseListViewController.h"
 
 #endif /* HYCoreFramework_h */

@@ -30,4 +30,5 @@ Pod::Spec.new do |s|
   s.dependency 'Masonry'
   s.dependency 'HYLogEngine', '~> 1.1'
   s.dependency 'MBProgressHUD'
+  s.dependency 'ReactiveCocoa', '~> 2.5'
 end
