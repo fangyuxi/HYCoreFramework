@@ -36,8 +36,11 @@
 
 - (void)initView
 {
-    [self initTableView];
     [self initTableViewSource];
+    [self initTableView];
+
+    [self.tableView layoutIfNeeded];
+    
     [self p_registTableViewWithTableViewSource];
     [self p_tableViewAndSourceInitFinish];
 }

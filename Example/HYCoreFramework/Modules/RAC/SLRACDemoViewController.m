@@ -12,6 +12,7 @@
 @interface SLRACDemoViewController ()
 
 @property (nonatomic, strong) SLRACDemoSource *tableViewSource;
+@property (nonatomic, strong) UIBarButtonItem *submitButton;
 
 @end
 
@@ -25,14 +26,15 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSStringFromClass(self.class);
     
+    self.navigationItem.rightBarButtonItem = self.submitButton;
+    
     [self dragToRefreshWithoutAnimation];
 }
 
 - (void)initTableView
 {
     self.tableView = [UITableView new];
-//    self.tableView.backgroundColor = [UIColor greenColor];
-    self.tableView.fd_debugLogEnabled = YES;
+    self.tableView.dataSource = self.tableViewSource;
     [self.view addSubview:self.tableView];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -44,7 +46,21 @@
 - (void)initTableViewSource
 {
     self.tableViewSource = [[SLRACDemoSource alloc] initWithDelegate:self];
-    self.tableView.dataSource = self.tableViewSource;
+}
+
+- (void)bindViewModel
+{
+    RAC(self, submitButton.enabled) = RACObserve(self, tableViewSource.canSubmit);
+}
+                                              
+#pragma mark - Getters
+                                              
+- (UIBarButtonItem *)submitButton
+{
+    if (!_submitButton) {
+        _submitButton = [[UIBarButtonItem alloc] initWithTitle:@"Submit" style:UIBarButtonItemStyleDone target:self action:NULL];
+    }
+    return _submitButton;
 }
 
 @end
