@@ -70,9 +70,11 @@
 - (void)p_tableViewAndSourceInitFinish
 {
     NSAssert(self.tableView,@"The TableView instance must assign to the self.tableView");
+    
     if (!self.tableView.hy_emptyDataSetDelegate){self.tableView.hy_emptyDataSetDelegate = self;}
     if (!self.tableView.hy_emptyDataSetSource){self.tableView.hy_emptyDataSetSource = self;}
     if (!self.tableView.delegate){self.tableView.delegate = self;}
+    if (!self.tableView.dataSource) {self.tableView.dataSource = self.tableViewSource;}
 }
 
 #pragma mark registe cell-cellmodel

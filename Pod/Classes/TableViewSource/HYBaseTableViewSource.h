@@ -95,7 +95,7 @@ typedef void (^HYTableViewSourceUpdateCompletionBlock)(NSUInteger section, NSUIn
 - (void)cancel;
 
 @property (nonatomic, assign)BOOL canLoadMore;
-@property (nonatomic, assign)NSInteger pageNum;
+@property (nonatomic, assign)NSInteger pageNum; //default 1
 
 @end
 
@@ -174,7 +174,6 @@ typedef void (^HYTableViewSourceUpdateCompletionBlock)(NSUInteger section, NSUIn
  *  @param row     row index
  *  @param block   block
  */
-
 - (void)deleteSourceCellModelInSection:(NSUInteger)section
                                 andRow:(NSUInteger)row
                    withCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block;

@@ -23,7 +23,8 @@
 /**
  *  storage & storageDirectory 
  
-    默认创建的是HYArchiveStorage
+    当赋值storageDirectory的时候 默认创建的是HYArchiveStorage
+    文件名是[self class]
  */
 @property (nonatomic, retain)HYStorage *storage;
 @property (nonatomic, copy)NSString *storageDirectory;
