@@ -130,8 +130,6 @@
 
 - (instancetype)initWithDelegate:(id<HYBaseTableViewSourceDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
-- (void)initExtension;
-
 @property (nonatomic, weak) id<HYBaseTableViewSourceDelegate> delegate;
 @property (nonatomic, weak) id<HYCellToControllerActionProtocol> actionDelegate;
 

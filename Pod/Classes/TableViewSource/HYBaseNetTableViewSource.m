@@ -19,10 +19,16 @@
 
 @implementation HYBaseNetTableViewSource
 
-- (void)initExtension
+- (instancetype)initWithDelegate:(id<HYBaseTableViewSourceDelegate>)delegate
 {
-    self.request = [[HYSimpleRequest alloc] init];
-    self.request.validator = self;
+    self = [super initWithDelegate:delegate];
+    if (self)
+    {
+        self.request = [[HYSimpleRequest alloc] init];
+        self.request.validator = self;
+        return self;
+    }
+    return nil;
 }
 
 - (void)refreshSource

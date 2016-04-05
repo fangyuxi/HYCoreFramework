@@ -38,16 +38,9 @@
         self.delegate = delegate;
         self.cellModels = [NSMutableArray array];
         self.pageNum = 1;
-        
-        [self initExtension];
         return self;
     }
     return nil;
-}
-
-- (void)initExtension
-{
-    
 }
 
 #pragma mark UITableViewDataSourceProtocal
