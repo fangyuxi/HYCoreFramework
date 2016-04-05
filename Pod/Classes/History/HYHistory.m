@@ -67,22 +67,11 @@
     self = [super initWithDictionary:nil];
     if (self) {
         self.storageDirectory = path;
-        self.storage = [[HYArchiveStorage alloc] initWithPath:[self p_historyFilePath]];
         
         NSDictionary *dic = (NSDictionary *)[self.storage objectForKey:[self p_historyKey]];
         self.itemsArray = dic[[self p_historyArrayKey]] ? : [NSMutableArray array];
     }
     return self;
-}
-
-- (NSString *)p_historyFileName
-{
-    return NSStringFromClass([self class]);
-}
-
-- (NSString *)p_historyFilePath
-{
-    return [self.storageDirectory stringByAppendingPathComponent:[self p_historyFileName]];
 }
 
 - (NSString *)p_historyKey

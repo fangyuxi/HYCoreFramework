@@ -21,6 +21,8 @@
 
 /**
  *  已经被hook的method，子类可以覆盖执行
+ 
+    !!!子类覆盖一定要调用super
  */
 - (void)controllerViewDidLoad:(UIViewController *)controller;
 - (void)viewWillAppear:(BOOL)animated theViewController:(UIViewController *)viewController;

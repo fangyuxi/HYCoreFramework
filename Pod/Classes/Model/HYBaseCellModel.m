@@ -19,7 +19,8 @@ const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout = -1.0f;
 - (instancetype)initWithDictionary:(id)dic
 {
     self = [super initWithDictionary:dic];
-    if (self) {
+    if (self)
+    {
         self.reuseIdentifier = NSStringFromClass([self class]);
         self.cellHeight = HYBaseCellNoFrameHeightWhenUseAutoLayout;
     }
@@ -29,7 +30,8 @@ const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout = -1.0f;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    if (self) {
+    if (self)
+    {
         self.reuseIdentifier = NSStringFromClass([self class]);
         self.cellHeight = HYBaseCellNoFrameHeightWhenUseAutoLayout;
     }

@@ -8,7 +8,7 @@
 
 #import "HYBaseModel.h"
 #import "MJExtension/MJExtension.h"
-#import "HYStorage.h"
+#import "HYArchiveStorage.h"
 
 @interface HYBaseModel ()
 
@@ -28,7 +28,6 @@
     self = [super init];
     if (self)
     {
-//        [self initExtension];
         return self;
     }
     return nil;
@@ -42,10 +41,8 @@
         if (!dic)
         {
             self.dic = nil;
-//            [self initExtension];
             return self;
         }
-        
         
         if ([dic isKindOfClass:[NSDictionary class]])
         {
@@ -62,19 +59,12 @@
             NSLog(@"dic to %@ error", [self class]);
         }
         
-//        [self initExtension];
-        
         return self;
     }
     return nil;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
-{
-    
-}
-
-- (void)initExtension
 {
     
 }
@@ -121,6 +111,11 @@
 
 - (void)setStorageDirectory:(NSString *)storageDirectory
 {
+    if (_storageDirectory == storageDirectory)
+    {
+        return;
+    }
+    
     _storageDirectory = [storageDirectory copy];
     
     if (!storageDirectory)
@@ -143,7 +138,8 @@
         }
     }
     
-    
+    NSString *path = [_storageDirectory stringByAppendingPathComponent:NSStringFromClass([self class])];
+    self.storage = [[HYArchiveStorage alloc] initWithPath:path];
 }
 
 @end
