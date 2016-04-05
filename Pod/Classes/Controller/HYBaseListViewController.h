@@ -90,9 +90,9 @@
 /**
  *  对于列表类型的控制器，默认有三种情况下的emptyDataSetView
  */
-@property (nonatomic, strong, readwrite) UIView<HYEmptySetViewProtocol> *emptyDataSetRefreshView;
-@property (nonatomic, strong, readwrite) UIView<HYEmptySetViewProtocol> *emptyDataSetNoContentView;
-@property (nonatomic, strong, readwrite) UIView<HYEmptySetViewProtocol> *emptyDataSetErrorView;
+@property (nonatomic, strong, readwrite) UIView<HYEmptySetViewProtocol> *emptyDataSetRefreshView; //空页面加载
+@property (nonatomic, strong, readwrite) UIView<HYEmptySetViewProtocol> *emptyDataSetNoContentView; //返回为空，没有缓存
+@property (nonatomic, strong, readwrite) UIView<HYEmptySetViewProtocol> *emptyDataSetErrorView; //返回失败，没有缓存
 
 /**
  *  对于列表类型的控制器，默认内置了三种类型的空页面提示

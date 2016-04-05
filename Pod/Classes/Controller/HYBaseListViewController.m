@@ -375,6 +375,7 @@ didReceviedExtraData:(id)data
 
 - (void)tableSourceDidClearAllData:(HYBaseTableViewSource *)tableSource
 {
+    self.tableView.mj_footer = nil;
     if ([self shouldShowEmptyDataSetContentView])
     {
         [self showEmptyView:self.emptyDataSetNoContentView];

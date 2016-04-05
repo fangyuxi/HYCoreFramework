@@ -11,6 +11,8 @@
 #import "HYBaseCellModel.h"
 #import "HYBaseCell.h"
 
+typedef void (^HYTableViewSourceUpdateCompletionBlock)(NSUInteger section, NSUInteger row, HYBaseCellModel *cellModel);
+
 @class HYBaseTableViewSource;
 
 /**
@@ -149,11 +151,73 @@
 
 @end
 
+#pragma mark update source
+
+/**
+ *  外部用来更新source的时候调用
+    内部也可以调用
+ */
+@interface HYBaseTableViewSource (UpdateSource)
+
+/**
+ *  清空self.cellModels
+    会向控制器回调 tableSourceDidClearAllData
+ *
+ *  @param block block
+ */
+- (void)clearSourceWithCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block;
+
+/**
+ *  删除一行 sync执行
+ *
+ *  @param section section index
+ *  @param row     row index
+ *  @param block   block
+ */
+
+- (void)deleteSourceCellModelInSection:(NSUInteger)section
+                                andRow:(NSUInteger)row
+                   withCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block;
+
+/**
+ *  向cellModels中插入一个model sync执行
+    如果是Frame布局，那么再调这个方法前，请先调用 
+    HYBaseCellModel calculateCellElementFrame
+ *
+ *  @param model   将要插入的model
+ *  @param section section index
+                   当section >= self.cellModels的时候，会插入一个新的section
+ *  @param row     row index
+ *  @param block   block
+ */
+- (void)insertSourceCellModel:(HYBaseCellModel *)model
+                    inSection:(NSUInteger)section
+                       andRow:(NSUInteger)row
+          withCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block;
+
+/**
+ *  用一个新的CellModel更新self.cellModels中的cellModel
+    如果是Frame布局，那么再调这个方法前，请先调用
+    HYBaseCellModel calculateCellElementFrame
+ *
+ *  @param model   model
+ *  @param section section index
+ *  @param row     row index
+ *  @param block   block
+ */
+- (void)updateWithCellModel:(HYBaseCellModel *)model
+                  inSection:(NSUInteger)section
+                     andRow:(NSUInteger)row
+        withCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block;
+
+@end
 
 #pragma mark notify delegate
 
-//当子类自定义数据源的时候，需要在合适的位置调用这些方法来通知Controller更新
-//具体参见HYBaseNetTableViewSource的列子
+/**
+ *  当子类自定义数据源的时候，需要在合适的位置调用这些方法来通知Controller更新
+    具体参见HYBaseNetTableViewSource的列子
+ */
 
 @interface HYBaseTableViewSource (Notify)
 
@@ -167,6 +231,7 @@
 - (void)notifyRefreshError:(NSError *)error;
 - (void)notifyLoadMoreError:(NSError *)error;
 
+- (void)notifySourceDidClear;
 
 @end
 

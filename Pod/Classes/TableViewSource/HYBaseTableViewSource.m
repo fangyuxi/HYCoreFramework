@@ -121,6 +121,93 @@
 
 @end
 
+@implementation HYBaseTableViewSource (UpdateSource)
+
+- (void)clearSourceWithCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block
+{
+    self.cellModels = nil;
+    [self notifySourceDidClear];
+    
+    if (block) block(0,0,nil);
+}
+
+- (void)deleteSourceCellModelInSection:(NSUInteger)section
+                                andRow:(NSUInteger)row
+                   withCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block
+{
+    if (section >= self.cellModels.count) {return;}
+    
+    NSMutableArray *rows = [self.cellModels objectAtIndex:section];
+    NSAssert([rows isKindOfClass:[NSMutableArray class]], @"如果要使用 deleteSourceCellModelInSection::: 那么source.cellModels中的数组必须是可变数组");
+    
+    if (row >= rows.count){return;}
+    HYBaseCellModel *cellModel = [rows objectAtIndex:row];
+    [rows removeObjectAtIndex:row];
+    
+    //当最后一条内容删除的时候，需要向控制器回调tableSourceDidClearAllData
+    BOOL needNotifyClear = YES;
+    if (self.cellModels.count == 0)
+    {
+        needNotifyClear = YES;
+    }
+    else
+    {
+        for (NSMutableArray *array in self.cellModels)
+        {
+            if (array.count != 0)
+            {
+                needNotifyClear = NO;
+            }
+        }
+    }
+    if (needNotifyClear) [self notifySourceDidClear];
+    if (block) block(section,row,cellModel);
+}
+
+- (void)insertSourceCellModel:(HYBaseCellModel *)model
+                    inSection:(NSUInteger)section
+                       andRow:(NSUInteger)row
+          withCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block
+{
+    if (model == nil) return;
+    
+    if (section >= self.cellModels.count)
+    {
+        NSMutableArray *newSection = [[NSMutableArray alloc] initWithCapacity:1];
+        [newSection addObject:model];
+        [self.cellModels addObject:newSection];
+        if (block) block(section, row, model);
+    }
+    
+    if (section < self.cellModels.count)
+    {
+        NSMutableArray *rows = [self.cellModels objectAtIndex:section];
+        NSAssert([rows isKindOfClass:[NSMutableArray class]], @"如果要使用 insertSourceCellModel:::: 那么source.cellModels中的数组必须是可变数组");
+        
+        if (row > rows.count) return;
+        [rows insertObject:model atIndex:row];
+        if (block) block(section, row, model);
+    }
+}
+
+- (void)updateWithCellModel:(HYBaseCellModel *)model
+                  inSection:(NSUInteger)section
+                     andRow:(NSUInteger)row
+        withCompletionBlock:(HYTableViewSourceUpdateCompletionBlock)block
+{
+    if (model == nil) return;
+    if (section >= self.cellModels.count) return;
+    
+    NSMutableArray *rows = [self.cellModels objectAtIndex:section];
+    NSAssert([rows isKindOfClass:[NSMutableArray class]], @"如果要使用 updateWithCellModel:::: 那么source.cellModels中的数组必须是可变数组");
+    
+    if (row > rows.count) return;
+    [rows replaceObjectAtIndex:row withObject:model];
+    if (block) block(section, row, model);
+}
+@end
+
+
 @implementation HYBaseTableViewSource (Notify)
 
 #pragma mark notify
@@ -174,6 +261,14 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(tableSource:loadMoreError:)])
     {
         [self.delegate tableSource:self loadMoreError:error];
+    }
+}
+
+- (void)notifySourceDidClear
+{
+    if ([self.delegate respondsToSelector:@selector(tableSourceDidClearAllData:)])
+    {
+        [self.delegate tableSourceDidClearAllData:self];
     }
 }
 
