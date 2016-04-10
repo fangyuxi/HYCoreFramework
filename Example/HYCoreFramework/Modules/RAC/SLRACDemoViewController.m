@@ -8,6 +8,7 @@
 
 #import "SLRACDemoViewController.h"
 #import "SLRACDemoSource.h"
+#import "HYBaseSetting.h"
 
 @interface SLRACDemoViewController ()
 
@@ -29,6 +30,13 @@
     self.navigationItem.rightBarButtonItem = self.submitButton;
     
     [self dragToRefreshWithoutAnimation];
+
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,  NSUserDomainMask, YES);
+    if ([paths count] > 0)
+    {
+        HYBaseSetting *setting = [[HYBaseSetting alloc] initWithPath:[[NSString alloc] initWithFormat:@"%@",paths[0]]];
+        [setting saveSetting];
+    }
 }
 
 - (void)initTableView

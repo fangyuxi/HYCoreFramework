@@ -65,7 +65,7 @@
 
 - (void)saveSetting
 {
-    [self.storage setValue:[self generateSettingDic] forKey:[self p_keyForSettingDic]];
+    [self.storage setValue:[NSDictionary dictionary] forKey:[self p_keyForSettingDic]];
 }
 - (void)clearSetting
 {

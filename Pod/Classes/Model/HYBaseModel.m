@@ -86,6 +86,7 @@
     return [[self class] hy_objectClassInArray];
 }
 
+//MJExtension
 - (void)mj_keyValuesDidFinishConvertingToObject
 {
     [self dicMapModelFinish];
