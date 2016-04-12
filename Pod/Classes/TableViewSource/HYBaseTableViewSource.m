@@ -272,5 +272,16 @@
     }
 }
 
+#pragma mark HYCellToControllerActionProtocol
+
+- (void)actionFromView:(UIView *)view
+          withEventTag:(NSString *)tag
+   withParameterObject:(id)object
+{
+    if(self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(actionFromView:withEventTag:withParameterObject:)])
+    {
+        [self.actionDelegate actionFromView:view withEventTag:tag withParameterObject:object];
+    }
+}
 
 @end
