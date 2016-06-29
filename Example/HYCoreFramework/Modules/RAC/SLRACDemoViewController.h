@@ -8,6 +8,6 @@
 
 #import <HYCoreFramework/HYCoreFramework.h>
 
-@interface SLRACDemoViewController : HYBaseListViewController
+@interface SLRACDemoViewController : HYListViewController
 
 @end

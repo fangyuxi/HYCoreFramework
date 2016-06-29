@@ -13,11 +13,19 @@
  */
 
 @interface HYHistory : HYBaseModel
-- (NSArray *)items;
-- (void)addItem:(id<NSCoding>)item;
-- (void)insertItem:(id<NSCoding>)item atIndex:(NSUInteger)index;
-- (void)removeItem:(id<NSCoding>)item;
-- (void)removeItemAtIndex:(NSUInteger)index;
-- (void)clearHistory;
+
 - (instancetype)initWithPath:(NSString *)path;
+
+- (NSArray *)items;
+
+- (void)addItem:(id<NSCoding>)item;
+
+- (void)insertItem:(id<NSCoding>)item atIndex:(NSUInteger)index;
+
+- (void)removeItem:(id<NSCoding>)item;
+
+- (void)removeItemAtIndex:(NSUInteger)index;
+
+- (void)clearHistory;
+
 @end

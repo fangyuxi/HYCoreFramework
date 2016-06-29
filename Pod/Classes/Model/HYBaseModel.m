@@ -8,11 +8,12 @@
 
 #import "HYBaseModel.h"
 #import "MJExtension/MJExtension.h"
-#import "HYArchiveStorage.h"
+
 
 @interface HYBaseModel ()
 
-@property (nonatomic, retain, readwrite) NSDictionary *dic;
+@property (nonatomic, strong, readwrite) NSDictionary *dic;
+@property (nonatomic, strong, readwrite) HYCache *cache;
 
 @end
 
@@ -112,35 +113,23 @@
 
 - (void)setStorageDirectory:(NSString *)storageDirectory
 {
-    if (_storageDirectory == storageDirectory)
+    if ([_storageDirectory isEqualToString:storageDirectory])
     {
         return;
     }
     
     _storageDirectory = [storageDirectory copy];
     
-    if (!storageDirectory)
-    {
-        NSLog(@"storageDirectory must not be nil !!! in %@ model class", [self class]);
-        return;
-    }
+    self.cache = [[HYCache alloc] initWithName:NSStringFromClass([self class])
+                              andDirectoryPath:_storageDirectory];
     
-    //for tread safe
-    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    self.cache.memCache.removeObjectWhenAppEnterBackground = NO;
+    self.cache.memCache.removeObjectWhenAppReceiveMemoryWarning = NO;
+    self.cache.memCache.maxAge = 0;
+    self.cache.memCache.costLimit = INTPTR_MAX;
     
-    if (![fileManager fileExistsAtPath:[_storageDirectory hasPrefix:@"~"] ? [_storageDirectory stringByExpandingTildeInPath] : _storageDirectory])
-    {
-        NSError *error = nil;
-        BOOL result = [fileManager createDirectoryAtPath:_storageDirectory  withIntermediateDirectories:YES attributes:nil error:&error];
-        if (!result)
-        {
-            NSLog(@"%@", error);
-            return;
-        }
-    }
-    
-    NSString *path = [_storageDirectory stringByAppendingPathComponent:NSStringFromClass([self class])];
-    self.storage = [[HYArchiveStorage alloc] initWithPath:path];
+    self.cache.diskCache.maxAge = 0;
+    self.cache.diskCache.byteCostLimit = INTPTR_MAX;
 }
 
 @end

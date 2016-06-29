@@ -8,6 +8,6 @@
 
 #import <HYCoreFramework/HYCoreFramework.h>
 
-@interface SLRACDemoSource : HYBaseTableViewSource
+@interface SLRACDemoSource : HYTableViewSource
 @property (nonatomic, assign) BOOL canSubmit;
 @end

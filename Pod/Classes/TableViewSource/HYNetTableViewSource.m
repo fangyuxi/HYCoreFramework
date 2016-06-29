@@ -6,9 +6,9 @@
 //  Copyright © 2016年 fangyuxi. All rights reserved.
 //
 
-#import "HYBaseNetTableViewSource.h"
+#import "HYNetTableViewSource.h"
 
-@interface HYBaseNetTableViewSource ()
+@interface HYNetTableViewSource ()
 {
     
 }
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation HYBaseNetTableViewSource
+@implementation HYNetTableViewSource
 
 - (instancetype)initWithDelegate:(id<HYBaseTableViewSourceDelegate>)delegate
 {
@@ -41,17 +41,14 @@
     [paramDic setObject:@(self.pageNum) forKey:@"page"];
     self.request.simpleArgument = paramDic;
     
-    [self.request startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+    [self.request startWithSuccessHandler:^(HYBaseRequest * _Nonnull request, HYNetworkResponse * _Nonnull response) {
         
         [self refreshFinishWithData:response.content];
         [self notifyDidFinishRefresh];
         
-    } failerHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+    } failuerHandler:^(HYBaseRequest * _Nonnull request, HYNetworkResponse * _Nonnull response) {
         
         [self notifyRefreshError:response.error];
-        
-    } progressHandler:^(HYBaseRequest *request, int64_t progress) {
-        
     }];
 }
 
@@ -66,21 +63,20 @@
     [paramDic setObject:@(self.pageNum) forKey:@"page"];
     self.request.simpleArgument = paramDic;
     
-    [self.request startWithSuccessHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+    
+    [self.request startWithSuccessHandler:^(HYBaseRequest * _Nonnull request, HYNetworkResponse * _Nonnull response) {
         
         [self loadMoreFinishWithData:response.content];
         [self notifyDidFinishLoadMore];
         
-    } failerHandler:^(HYBaseRequest *request, HYNetworkResponse *response) {
+    } failuerHandler:^(HYBaseRequest * _Nonnull request, HYNetworkResponse * _Nonnull response) {
         
         --self.pageNum;
         [self notifyLoadMoreError:response.error];
-    } progressHandler:^(HYBaseRequest *request, int64_t progress) {
-        
     }];
 }
 
-- (id)jsonValidatorData
+- (id)responseDataValidator
 {
     return nil;
 }

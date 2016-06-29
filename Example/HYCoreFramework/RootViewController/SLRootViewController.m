@@ -8,6 +8,7 @@
 
 #import "SLRootViewController.h"
 #import "SLRACDemoViewController.h"
+#import "HYViewController.h"
 
 @interface SLRootViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -49,7 +50,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
-        [self.navigationController pushViewController:[SLRootViewController new] animated:YES];
+        [self.navigationController pushViewController:[HYViewController new] animated:YES];
     } else if (indexPath.row == 1) {
         [self.navigationController pushViewController:[SLRACDemoViewController new] animated:YES];
     }

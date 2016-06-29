@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E25FD191D0FF4CF0079C78C /* HYTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E25FD181D0FF4CF0079C78C /* HYTools.m */; };
+		1E25FD1C1D0FFB560079C78C /* HYViewControllerEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E25FD1B1D0FFB560079C78C /* HYViewControllerEmptyView.m */; };
 		1E3F04561CA7C02800530244 /* HYHomeAdDataPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */; };
 		1E3F04591CA7C14900530244 /* HYHomeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F04581CA7C14900530244 /* HYHomeAdView.m */; };
 		1EA71AC31CAD288F00CD57BD /* SLViewControllerHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA71AC21CAD288F00CD57BD /* SLViewControllerHooker.m */; };
@@ -53,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		0B411C15AAEC9A3655179C5D /* libPods-HYCoreFramework_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYCoreFramework_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E25FD171D0FF4CF0079C78C /* HYTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTools.h; sourceTree = "<group>"; };
+		1E25FD181D0FF4CF0079C78C /* HYTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTools.m; sourceTree = "<group>"; };
+		1E25FD1A1D0FFB560079C78C /* HYViewControllerEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYViewControllerEmptyView.h; sourceTree = "<group>"; };
+		1E25FD1B1D0FFB560079C78C /* HYViewControllerEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYViewControllerEmptyView.m; sourceTree = "<group>"; };
 		1E3F04541CA7C02800530244 /* HYHomeAdDataPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeAdDataPresenter.h; sourceTree = "<group>"; };
 		1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeAdDataPresenter.m; sourceTree = "<group>"; };
 		1E3F04571CA7C14900530244 /* HYHomeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeAdView.h; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 				1E3F04551CA7C02800530244 /* HYHomeAdDataPresenter.m */,
 				1E3F04571CA7C14900530244 /* HYHomeAdView.h */,
 				1E3F04581CA7C14900530244 /* HYHomeAdView.m */,
+				1E25FD1A1D0FFB560079C78C /* HYViewControllerEmptyView.h */,
+				1E25FD1B1D0FFB560079C78C /* HYViewControllerEmptyView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -208,6 +216,8 @@
 				3794F9641CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m */,
 				3794F9651CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.h */,
 				3794F9661CA43D0C00F41D1F /* HYNetworkSignatureUrlFilter.m */,
+				1E25FD171D0FF4CF0079C78C /* HYTools.h */,
+				1E25FD181D0FF4CF0079C78C /* HYTools.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -536,9 +546,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E25FD1C1D0FFB560079C78C /* HYViewControllerEmptyView.m in Sources */,
 				1EF5BF901CA418D3005E2EF5 /* HYHomeTableViewSource.m in Sources */,
 				3794F9691CA43D0C00F41D1F /* HYNetworkGlobalResponseFilter.m in Sources */,
 				3794F9671CA43D0C00F41D1F /* HYNetworkDefaultServer.m in Sources */,
+				1E25FD191D0FF4CF0079C78C /* HYTools.m in Sources */,
 				1E3F04591CA7C14900530244 /* HYHomeAdView.m in Sources */,
 				1EF5BF991CA50EBE005E2EF5 /* HYHomeCell.m in Sources */,
 				1EEB9B891CA3E647008A8411 /* HYAppDelegate.m in Sources */,

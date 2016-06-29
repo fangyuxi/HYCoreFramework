@@ -7,12 +7,19 @@
 //
 
 #import "HYNetworkGlobalParamFilter.h"
+#import "HYTools.h"
 
 @implementation HYNetworkGlobalParamFilter{
 
     NSDictionary *_paramDic;
 
 }
+
+@synthesize outUrl = _outUrl;
+@synthesize inUrl = _inUrl;
+@synthesize inRequest = _inRequest;
+@synthesize outParameterDic = _outParameterDic;
+@synthesize inParameterDic = _inParameterDic;
 
 - (instancetype)init
 {
@@ -34,9 +41,25 @@
     return nil;
 }
 
-- (NSString *)filterUrl:(NSString *)url withRequest:(HYBaseRequest *)request
+- (NSString *)outUrl
 {
-    return [HYNetworkTools urlStringWithOriginUrlString:url appendParameters:_paramDic];
+    return [HYTools urlStringWithOriginUrlString:self.inUrl appendParameters:[self outParameterDic]];
 }
+
+- (void)setInParameterDic:(NSDictionary *)inParameterDic
+{
+    _inParameterDic = inParameterDic;
+}
+
+- (NSDictionary *)inParameterDic
+{
+    return _inParameterDic;
+}
+
+- (NSDictionary *)outParameterDic
+{
+    return _paramDic;
+}
+
 
 @end

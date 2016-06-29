@@ -6,10 +6,10 @@
 //  Copyright © 2016年 fangyuxi. All rights reserved.
 //
 
-#import "HYBaseTableViewSource.h"
+#import "HYTableViewSource.h"
 #import "HYNetworking.h"
 
-@interface HYBaseNetTableViewSource : HYBaseTableViewSource<HYRequestValidator>
+@interface HYNetTableViewSource : HYTableViewSource<HYRequestValidator>
 {
     
 }
@@ -35,6 +35,6 @@
  *
  *  @return 字典或者数组 类似 @{@"result": @{@"data":@{@"appParamVersionVO":@{@"cateVersion":[NSNumber class]}}}};
  */
-- (id)jsonValidatorData;
+- (id)responseDataValidator;
 
 @end

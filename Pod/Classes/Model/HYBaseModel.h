@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class HYStorage;
+#import "HYCache.h"
 
 @interface HYBaseModel : NSObject<NSCoding>
 {
@@ -18,16 +17,15 @@
 - (instancetype)initWithDictionary:(id)dic NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic, retain, readonly) NSDictionary *dic;
+@property (nonatomic, strong, readonly) NSDictionary *dic;
 
 /**
  *  storage & storageDirectory 
  
-    当赋值storageDirectory的时候 默认创建的是HYArchiveStorage
     文件名是[self class]
  */
-@property (nonatomic, retain)HYStorage *storage;
-@property (nonatomic, copy)NSString *storageDirectory;
+@property (nonatomic, strong, readonly) HYCache *cache;
+@property (nonatomic, copy) NSString *storageDirectory;
 
 /**
  *  当字典转模型结束之后，会回调这个方法，做一些其他处理

@@ -12,6 +12,8 @@ const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout = -1.0f;
 
 @interface HYBaseCellModel()
 
+@property (nonatomic, copy, readwrite) NSString *reuseIdentifier;
+
 @end
 
 @implementation HYBaseCellModel

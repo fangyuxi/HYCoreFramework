@@ -7,17 +7,14 @@
 //
 
 #import "HYHistory.h"
-#import "HYArchiveStorage.h"
 
 @interface HYHistory ()
+
 @property (nonatomic, strong) NSMutableArray *itemsArray;
-@property (nonatomic, strong) HYArchiveStorage *storage;
 
 @end
 
 @implementation HYHistory
-
-@dynamic storage;
 
 - (NSArray *)items
 {
@@ -59,17 +56,18 @@
 
 - (void)saveHistory
 {
-    [self.storage setValue:@{[self p_historyArrayKey] : self.itemsArray} forKey:[self p_historyKey]];
+    [self.cache setObject:self.itemsArray forKey:[self p_historyArrayKey] inDisk:YES withBlock:^{
+        
+    }];
 }
 
 - (instancetype)initWithPath:(NSString *)path
 {
     self = [super initWithDictionary:nil];
-    if (self) {
+    if (self)
+    {
         self.storageDirectory = path;
-        
-        NSDictionary *dic = (NSDictionary *)[self.storage objectForKey:[self p_historyKey]];
-        self.itemsArray = dic[[self p_historyArrayKey]] ? : [NSMutableArray array];
+        self.itemsArray = [self.cache objectForKey:[self p_historyArrayKey]];
     }
     return self;
 }

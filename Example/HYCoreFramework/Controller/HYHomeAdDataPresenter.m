@@ -10,8 +10,6 @@
 
 @implementation HYHomeAdDataPresenter
 
-@synthesize error = _error;
-
 - (id)dataPresenterWithSourceData:(id)sourceData businessName:(NSString *)name
 {
     return nil;

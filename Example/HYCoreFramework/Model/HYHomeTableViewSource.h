@@ -6,9 +6,9 @@
 //  Copyright © 2016年 fangyuxi. All rights reserved.
 //
 
-#import "HYBaseNetTableViewSource.h"
+#import "HYNetTableViewSource.h"
 
-@interface HYHomeTableViewSource : HYBaseNetTableViewSource
+@interface HYHomeTableViewSource : HYNetTableViewSource
 {
     
 }

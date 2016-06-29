@@ -89,7 +89,8 @@
         }
         return HYCustomCellPositionPlainSingle;
     }
-    return HYCustomCellPositionDefault;}
+    return HYCustomCellPositionDefault;
+}
 
 
 @end

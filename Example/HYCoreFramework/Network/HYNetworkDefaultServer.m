@@ -18,7 +18,7 @@
         {
             return @"";
         }
-        return @"http://sxbb.58v5.cn";
+        return @"http://apiverify.bangbang.com";
     }
     else
     {

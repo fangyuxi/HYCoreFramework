@@ -12,7 +12,7 @@
 
 - (void)calculateCellElementFrame
 {
-    self.cellHeight = 100.0f;
+    self.cellHeight = 10.0f;
 }
 
 @end

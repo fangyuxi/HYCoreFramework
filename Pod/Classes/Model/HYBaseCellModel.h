@@ -9,6 +9,27 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "HYBaseModel.h"
 
+/**
+ 
+ *  自定义cell类型
+ 
+ */
+
+typedef NS_ENUM(NSInteger, HYCustomCellPosition)
+{
+    HYCustomCellPositionDefault = 0,
+    HYCustomCellPositionPlainTop,
+    HYCustomCellPositionPlainMiddle,
+    HYCustomCellPositionPlainBottom,
+    HYCustomCellPositionPlainSingle,
+    
+    HYCustomCellPositionGroupTop = HYCustomCellPositionPlainTop,
+    HYCustomCellPositionGroupMiddle = HYCustomCellPositionPlainMiddle,
+    HYCustomCellPositionGroupBottom = HYCustomCellPositionPlainBottom,
+    HYCustomCellPositionGroupSingle = HYCustomCellPositionPlainSingle,
+};
+
+
 extern const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout;
 
 @interface HYBaseCellModel : HYBaseModel
@@ -16,7 +37,7 @@ extern const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout;
     
 }
 
-@property (nonatomic, copy) NSString *reuseIdentifier;
+@property (nonatomic, copy, readonly) NSString *reuseIdentifier;
 
 /**
  *  默认为 HYBaseCellNoFrameHeightWhenUseAutoLayout
@@ -27,6 +48,8 @@ extern const CGFloat HYBaseCellNoFrameHeightWhenUseAutoLayout;
  
  */
 @property (nonatomic, assign)CGFloat cellHeight;
+
+@property (nonatomic, assign)HYCustomCellPosition position;
 
 /**
  *

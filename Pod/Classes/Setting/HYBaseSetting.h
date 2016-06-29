@@ -12,25 +12,34 @@
  *  setting的基类
  */
 @interface HYBaseSetting : HYBaseModel
+{
+    
+}
 
 - (instancetype)initWithPath:(NSString *)path NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
-- (void)saveSetting;
 - (void)clearSetting;
 - (void)resetSetting;
 
-/**
- *  子类覆盖这个方法，初始化设置的默认值
- */
-- (void)createDefaultSettingValues;
+
+/// 子类调用这两个方去存储自定义的setting item
 
 /**
- *  子类覆盖这个方法，使用自定义的Key，生成一个设置项的字典用于存储
-    需要实现transferDic，映射到自己的属性名称
+ *  存储设置项 首先会在内存缓存中存储一份，然后异步的存入闪存
  *
- *  @return 字典
+ *  @param item item
+ *  @param key  key
  */
-- (NSDictionary *)generateSettingDic;
+- (void)storeSettingItem:(id)item forKey:(NSString *)key;
+
+/**
+ *  取出数据项，如果为空，返回nil
+ *
+ *  @param key the item key
+ *
+ *  @return item
+ */
+- (id)settingItemForKey:(NSString *)key;
 
 @end

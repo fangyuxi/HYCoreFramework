@@ -12,6 +12,7 @@
 #import "Masonry.h"
 #import "HYHomeAdDataPresenter.h"
 #import "HYHomeAdView.h"
+#import "HYViewControllerEmptyView.h"
 
 @interface HYViewController ()
 
@@ -23,9 +24,32 @@
 
 @implementation HYViewController
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//        [self.tableViewSource updateSectionAtIndex:0 userMaker:^(HYTableViewSourceSectionMaker *maker) {
+//           
+//            UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 100)];
+//            sectionView.backgroundColor = [UIColor blueColor];
+//            
+//            maker.addSectionHeaderView(sectionView);
+//        }];
+//        
+//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    });
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    self.emptyDataSetErrorView = [HYViewControllerEmptyView new];
+    self.emptyDataSetNoContentView = [HYViewControllerEmptyView new];
+    self.emptyDataSetRefreshView = [HYViewControllerEmptyView new];
     
     [self p_refreshAd];
     
@@ -39,6 +63,8 @@
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView = tableView;
+    self.view.hy_emptyDataSetSource = self;
+    self.view.hy_emptyDataSetDelegate = self;
     [self.view addSubview:self.tableView];
 }
 

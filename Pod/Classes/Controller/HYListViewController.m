@@ -6,19 +6,23 @@
 //  Copyright © 2016年 fangyuxi. All rights reserved.
 //
 
-#import "HYBaseListViewController.h"
+#import "HYListViewController.h"
 #import "HYBaseCell.h"
 #import "MJRefresh/MJRefresh.h"
 #import "HYBaseCellModel.h"
+#import "HYBaseFooterHeaderView.h"
+#import "HYBaseFooterHeaderModel.h"
+#import "HYTableViewSourcePrivate.h"
 
-@interface HYBaseListViewController ()
+@interface HYListViewController ()<HYFooterHeaderToControllerActionProtocol,
+                                            HYCellToControllerActionProtocol>
 
 @property (nonatomic, strong, readwrite) MJRefreshHeader *refreshHeader;
 @property (nonatomic, strong, readwrite) MJRefreshFooter *refreshFooter;
 
 @end
 
-@implementation HYBaseListViewController
+@implementation HYListViewController
 
 
 - (void)viewDidLoad
@@ -71,8 +75,8 @@
 {
     NSAssert(self.tableView,@"The TableView instance must assign to the self.tableView");
     
-    if (!self.tableView.hy_emptyDataSetDelegate){self.tableView.hy_emptyDataSetDelegate = self;}
-    if (!self.tableView.hy_emptyDataSetSource){self.tableView.hy_emptyDataSetSource = self;}
+    if (!self.view.hy_emptyDataSetDelegate){self.view.hy_emptyDataSetDelegate = self;}
+    if (!self.view.hy_emptyDataSetSource){self.view.hy_emptyDataSetSource = self;}
     if (!self.tableView.delegate){self.tableView.delegate = self;}
     if (!self.tableView.dataSource) {self.tableView.dataSource = self.tableViewSource;}
 }
@@ -81,6 +85,7 @@
 
 - (void)p_registTableViewWithTableViewSource
 {
+    //注册Cells
     for (Class aClass in [self.tableViewSource containedCellModelsClassArray])
     {
         Class cellClass = [self.tableViewSource cellClassForCellViewModelClass:aClass];
@@ -89,9 +94,30 @@
         if (cellNibPath)
         {
             [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil] forCellReuseIdentifier:cellIdentifier];
-        } else
+        }
+        else
         {
             [self.tableView registerClass:cellClass forCellReuseIdentifier:cellIdentifier];
+        }
+    }
+    
+    //注册HeaderFooter
+    if (![self.tableViewSource respondsToSelector:@selector(containedHeaderFooterViewClassArray)]) {
+        return;
+    }
+    
+    for (Class aClass in [self.tableViewSource containedHeaderFooterViewClassArray])
+    {
+        Class footerHeaderClass = [self.tableViewSource footerHeaderclassForFooterHeaderModelClass:aClass];
+        NSString *footerHeaderIdentifier = [self.tableViewSource identifierForFooterHeaderModelClass:aClass];
+        NSString *footerHeaderNibPath = [[NSBundle mainBundle] pathForResource:NSStringFromClass(footerHeaderClass) ofType:@"nib"];
+        if (footerHeaderNibPath)
+        {
+            [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(footerHeaderClass) bundle:nil] forHeaderFooterViewReuseIdentifier:footerHeaderIdentifier];
+        }
+        else
+        {
+            [self.tableView registerClass:footerHeaderClass forHeaderFooterViewReuseIdentifier:footerHeaderIdentifier];
         }
     }
 }
@@ -112,9 +138,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *cellModels = self.tableViewSource.cellModels;
-    NSArray *sectionArray = [cellModels objectAtIndex:indexPath.section];
-    HYBaseCellModel *cellModel = [sectionArray objectAtIndex:indexPath.row];
+    NSArray *sections = self.tableViewSource.sections;
+    HYTableViewSourceSection *section = [sections objectAtIndex:indexPath.section];
+    HYBaseCellModel *cellModel = [section rowAtIndex:indexPath.row];
 
     if (cellModel.cellHeight == HYBaseCellNoFrameHeightWhenUseAutoLayout)
     {
@@ -131,6 +157,62 @@
     
     return cellModel.cellHeight;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    HYTableViewSourceSection *sectionObject = [self.tableViewSource.sections objectAtIndex:section];
+    return sectionObject.headerViewHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    HYTableViewSourceSection *sectionObject = [self.tableViewSource.sections objectAtIndex:section];
+    return sectionObject.footerViewHeight;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    HYTableViewSourceSection *sectionObject = [self.tableViewSource.sections objectAtIndex:section];
+    HYBaseFooterHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:sectionObject.headerViewReusedIdentifier];
+    if (headerView)
+    {
+        sectionObject.headerView = headerView;
+    }
+    else
+    {
+        headerView = sectionObject.headerView;
+    }
+    [self prepareFooterHeaderView:headerView atIndexPath:section type:HYFooterHeaderTypeHeader];
+    return headerView;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    HYTableViewSourceSection *sectionObject = [self.tableViewSource.sections objectAtIndex:section];
+    HYBaseFooterHeaderView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:sectionObject.footerViewReusedIdentifier];
+    if (footerView)
+    {
+        sectionObject.footerView = footerView;
+    }
+    else
+    {
+        footerView = sectionObject.footerView;
+    }
+    [self prepareFooterHeaderView:footerView atIndexPath:section type:HYFooterHeaderTypeFooter];
+    return footerView;
+}
+
+- (void)prepareFooterHeaderView:(HYBaseFooterHeaderView *)view
+                    atIndexPath:(NSUInteger)section
+                           type:(HYFooterHeaderType)type
+{
+    HYTableViewSourceSection *sectionObject = [self.tableViewSource.sections objectAtIndex:section];
+    
+    [view resetFooterHeader];
+    view.footerHeaderModel = type == HYFooterHeaderTypeFooter ? sectionObject.footerModel : sectionObject.headerModel;
+    [view updateFooterHeader];
+}
+
 
 #pragma mark overwrite
 
@@ -252,16 +334,16 @@
 
 - (BOOL)p_emptyViewShowDefaultShowConditions
 {
-    if (self.tableViewSource.cellModels.count == 0)
+    if (self.tableViewSource.sections.count == 0)
     {
         return YES;
     }
     
-    if (self.tableViewSource.cellModels.count != 0)
+    if (self.tableViewSource.sections.count != 0)
     {
-        for (NSArray *sections in self.tableViewSource.cellModels)
+        for (HYTableViewSourceSection *sections in self.tableViewSource.sections)
         {
-            if (sections.count != 0)
+            if (sections.rowCount != 0)
             {
                 return NO;
             }
@@ -272,7 +354,7 @@
 
 #pragma mark TableViewSourceDelegate
 
-- (void)tableSourceDidStartRefresh:(HYBaseTableViewSource *)tableSource
+- (void)tableSourceDidStartRefresh:(HYTableViewSource *)tableSource
 {
     if ([self shouldShowEmptyDataSetRefreshView])
     {
@@ -285,7 +367,7 @@
     }
 }
 
-- (void)tableSourceDidFinishRefresh:(HYBaseTableViewSource *)tableSource
+- (void)tableSourceDidFinishRefresh:(HYTableViewSource *)tableSource
 {
     if ([self shouldShowEmptyDataSetContentView])
     {
@@ -309,12 +391,12 @@
     [self.tableView reloadData];
 }
 
-- (void)tableSourceDidStartLoadMore:(HYBaseTableViewSource *)tableSource
+- (void)tableSourceDidStartLoadMore:(HYTableViewSource *)tableSource
 {
     
 }
 
-- (void)tableSourceDidFinishLoadMore:(HYBaseTableViewSource *)tableSource
+- (void)tableSourceDidFinishLoadMore:(HYTableViewSource *)tableSource
 {
     if ([self shouldShowEmptyDataSetContentView])
     {
@@ -328,7 +410,7 @@
     [self.tableView reloadData];
 }
 
-- (void)tableSource:(HYBaseTableViewSource *)tableSource
+- (void)tableSource:(HYTableViewSource *)tableSource
        refreshError:(NSError *)error
 {
     if ([self shouldShowEmptyDataSetErrorView])
@@ -341,7 +423,7 @@
     [self showFooterIfNeeded];
 }
 
-- (void)tableSource:(HYBaseTableViewSource *)tableSource
+- (void)tableSource:(HYTableViewSource *)tableSource
       loadMoreError:(NSError *)error
 {
     if ([self shouldShowEmptyDataSetErrorView])
@@ -369,13 +451,13 @@
     }
 }
 
-- (void)tableSource:(HYBaseTableViewSource *)source
+- (void)tableSource:(HYTableViewSource *)source
 didReceviedExtraData:(id)data
 {
     
 }
 
-- (void)tableSourceDidClearAllData:(HYBaseTableViewSource *)tableSource
+- (void)tableSourceDidClearAllData:(HYTableViewSource *)tableSource
 {
     self.tableView.mj_footer = nil;
     if ([self shouldShowEmptyDataSetContentView])

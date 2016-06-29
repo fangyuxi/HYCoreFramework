@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "HYNetworking.h"
 
-@interface HYNetworkSignatureUrlFilter : NSObject<HYNetworkUrlFilterProtocal>
+@interface HYNetworkSignatureUrlFilter : NSObject<HYNetworkParameterDecoratorProtocol>
 
 @end

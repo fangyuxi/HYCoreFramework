@@ -7,10 +7,9 @@
 //
 
 #import "HYBaseSetting.h"
-#import "HYArchiveStorage.h"
 
 @interface HYBaseSetting ()
-@property (nonatomic, strong, readwrite) NSDictionary *dic;
+
 @end
 
 @implementation HYBaseSetting
@@ -40,49 +39,34 @@
     if (self)
     {
         self.storageDirectory = path;
-        //会调用mj的方法赋值
-        self.dic = (NSDictionary *)[self.storage objectForKey:[self p_keyForSettingDic]];
-        if (!self.dic || [self.dic count])
-        {
-            [self createDefaultSettingValues];
-        }
         return self;
     }
     return nil;
 }
 
-- (void)createDefaultSettingValues
-{
-    
-}
+#pragma mark setting
 
-- (NSDictionary *)generateSettingDic
-{
-    return nil;
-}
-
-#pragma mark setting save reset
-
-- (void)saveSetting
-{
-    [self.storage setValue:[NSDictionary dictionary] forKey:[self p_keyForSettingDic]];
-}
 - (void)clearSetting
 {
    
 }
+
 - (void)resetSetting
 {
-    [self createDefaultSettingValues];
-    [self saveSetting];
+    
 }
 
-#pragma mark key
 
-- (NSString *)p_keyForSettingDic
+- (void)storeSettingItem:(id)item forKey:(NSString *)key
 {
-    return NSStringFromClass([self class]);
+    [self.cache setObject:item forKey:key inDisk:YES withBlock:^{
+        
+    }];
 }
 
+- (id)settingItemForKey:(NSString *)key
+{
+    return nil;
+}
 
 @end

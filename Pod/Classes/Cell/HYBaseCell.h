@@ -8,28 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-
-@class HYBaseCellModel;
-
-/**
- 
- *  自定义cell类型
- 
- */
-
-typedef NS_ENUM(NSInteger, HYCustomCellPosition)
-{
-    HYCustomCellPositionDefault = 0,
-    HYCustomCellPositionPlainTop,
-    HYCustomCellPositionPlainMiddle,
-    HYCustomCellPositionPlainBottom,
-    HYCustomCellPositionPlainSingle,
-    
-    HYCustomCellPositionGroupTop = HYCustomCellPositionPlainTop,
-    HYCustomCellPositionGroupMiddle = HYCustomCellPositionPlainMiddle,
-    HYCustomCellPositionGroupBottom = HYCustomCellPositionPlainBottom,
-    HYCustomCellPositionGroupSingle = HYCustomCellPositionPlainSingle,
-};
+#import "HYBaseCellModel.h"
 
 #pragma mark HYCellToControllerActionProtocol
 
@@ -48,7 +27,7 @@ typedef NS_ENUM(NSInteger, HYCustomCellPosition)
 @protocol HYCellToControllerActionProtocol <NSObject>
 @optional
 
-- (void)actionFromView:(UIView *)view
+- (void)actionFromCell:(UIView *)view
           withEventTag:(NSString *)tag
    withParameterObject:(id)object;
 

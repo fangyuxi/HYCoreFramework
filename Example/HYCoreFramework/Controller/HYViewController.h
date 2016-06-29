@@ -9,8 +9,8 @@
 @import UIKit;
 @import Foundation;
 
-#import "HYBaseListViewController.h"
+#import "HYListViewController.h"
 
-@interface HYViewController : HYBaseListViewController
+@interface HYViewController : HYListViewController
 
 @end

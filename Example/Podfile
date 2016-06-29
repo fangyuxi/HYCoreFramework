@@ -1,6 +1,9 @@
 
 target 'HYCoreFramework_Example', :exclusive => true do
   pod 'HYCoreFramework', :path => '../'
+  
+  pod 'Masonry'
+  pod 'ReactiveCocoa', '~> 2.5'
 end
 
 target 'HYCoreFramework_Tests', :exclusive => true do

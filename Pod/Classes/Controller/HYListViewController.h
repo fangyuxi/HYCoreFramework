@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HYBaseTableViewSource.h"
+#import "HYTableViewSource.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "HYViewControllerProtocol.h"
 #import "UIViewController+HYControllerCatetory.h"
@@ -15,7 +15,7 @@
 @class MJRefreshHeader;
 @class MJRefreshFooter;
 
-@interface HYBaseListViewController : UIViewController<HYBaseTableViewSourceDelegate,
+@interface HYListViewController : UIViewController<HYBaseTableViewSourceDelegate,
                                                         UITableViewDelegate,
                                                         HYViewControllerProtocol>
 {
@@ -49,7 +49,7 @@
 #pragma mark tableView & tableViewSource
 
 @property (nonatomic, strong)UITableView *tableView;
-@property (nonatomic, strong)HYBaseTableViewSource *tableViewSource;
+@property (nonatomic, strong)HYTableViewSource *tableViewSource;
 
 #pragma mark refresh action
 
@@ -81,9 +81,19 @@
 - (void)initTableViewSource;
 
 /**
- *  配置Header和Footer的样式
+ *  配置下拉刷新的Header和Footer的样式
  */
 - (void)configHeaderFooterAppearance;
+
+/**
+ *  配置Section Footer Header
+ *
+ *  @param view      footer或者是header
+ *  @param indexPath 位置
+ */
+- (void)prepareFooterHeaderView:(HYBaseFooterHeaderView *)view
+                    atIndexPath:(NSUInteger)section
+                           type:(HYFooterHeaderType)type;
 
 
 #pragma mark default empty view for list style controller

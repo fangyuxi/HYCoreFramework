@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "HYNetworking.h"
 
-@interface HYNetworkGlobalResponseFilter : NSObject<HYNetworkResponseFilterProtocal>
+@interface HYNetworkGlobalResponseFilter : NSObject<HYNetworkResponseFilterProtocol>
 
 
 @end
