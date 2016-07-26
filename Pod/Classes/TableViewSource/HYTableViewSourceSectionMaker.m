@@ -27,6 +27,15 @@
     return nil;
 }
 
+- (HYTableViewSourceSectionMaker *(^)(NSString *identifier))setIdentifier
+{
+    return ^HYTableViewSourceSectionMaker *(NSString *identifier){
+        
+        self.section.identifier = identifier;
+        return self;
+    };
+}
+
 - (HYTableViewSourceRowMaker *(^)(NSUInteger index))row
 {
     return ^HYTableViewSourceRowMaker *(NSUInteger index){
@@ -95,6 +104,15 @@
     return ^HYTableViewSourceSectionMaker *(id model){
         
         [self.section deleteRowWithModel:model];
+        return self;
+    };
+}
+
+- (HYTableViewSourceSectionMaker *(^)())deleteAllRows
+{
+    return ^HYTableViewSourceSectionMaker *(){
+        
+        [self.section deleteAllRows];
         return self;
     };
 }

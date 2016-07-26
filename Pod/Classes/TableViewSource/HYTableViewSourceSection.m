@@ -73,6 +73,11 @@
     [self.rows removeObject:model];
 }
 
+- (void)deleteAllRows
+{
+    [self.rows removeAllObjects];
+}
+
 - (void)replaceRowAtIndex:(NSUInteger)index
                 withModel:(HYBaseCellModel *)Model
 {

@@ -35,6 +35,8 @@
 /*******************               section Row                  **********************/
 /*************************************************************************************/
 
+- (HYTableViewSourceSectionMaker *(^)(NSString *identifier))setIdentifier;
+
 /**
  *  返回一行
  */
@@ -70,7 +72,7 @@
  */
 - (HYTableViewSourceSectionMaker *(^)(NSUInteger index))deleteRowIndex;
 - (HYTableViewSourceSectionMaker *(^)(HYBaseCellModel *model))deleteRowModel;
-
+- (HYTableViewSourceSectionMaker *(^)())deleteAllRows;
 
 /*************************************************************************************/
 /*******************       section header & footer         ***************************/

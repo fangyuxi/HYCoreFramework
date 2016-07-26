@@ -175,6 +175,28 @@ typedef void (^HYTableViewSourceUpdateCompletionBlock)(NSUInteger section, NSUIn
 - (void)updateSectionAtIndex:(NSUInteger)index
                    userMaker:(void(^)(HYTableViewSourceSectionMaker *maker))block;
 
+/**
+ *  获取指定位置的section
+ *
+ *  @param index sectoin index
+ */
+- (HYTableViewSourceSectionMaker *)sectionAtIndex:(NSUInteger)index;
+
+/**
+ *  根据id获取section
+ *
+ *  @param identifier section identifier
+ */
+- (HYTableViewSourceSectionMaker *)sectionWithIdentifier:(NSString *)identifier;
+
+
+- (void)deleteSectionAtIndex:(NSUInteger)index;
+- (void)deleteSectionWithIdentifier:(NSString *)identifier;
+- (void)deleteAllSections;
+
+- (NSUInteger)indexOfSection:(HYTableViewSourceSection *)section;
+- (NSUInteger)indexOfSectionIdentifier:(NSString *)identifier;
+
 @end
 
 #pragma mark notify delegate

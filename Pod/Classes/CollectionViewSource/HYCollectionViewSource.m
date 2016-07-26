@@ -9,7 +9,6 @@
 #import "HYCollectionViewSource.h"
 
 @implementation HYCollectionViewSource
-UINavigationController
 //- (NSInteger)collectionView:(UICollectionView *)collectionView
 //     numberOfItemsInSection:(NSInteger)section
 //{

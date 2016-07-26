@@ -177,6 +177,80 @@
     [self updateSection:section userMaker:block];
 }
 
+- (HYTableViewSourceSectionMaker *)sectionAtIndex:(NSUInteger)index
+{
+    if (index >= self.sections.count)
+    {
+        return nil;
+    }
+    
+    HYTableViewSourceSection *section = [self.sections objectAtIndex:index];
+    HYTableViewSourceSectionMaker *maker = [[HYTableViewSourceSectionMaker alloc] initWithSection:section];
+    return maker;
+}
+
+- (HYTableViewSourceSectionMaker *)sectionWithIdentifier:(NSString *)identifier
+{
+    for (HYTableViewSourceSection *section in self.sections)
+    {
+        if ([section.identifier isEqualToString:identifier])
+        {
+            HYTableViewSourceSectionMaker *maker = [[HYTableViewSourceSectionMaker alloc] initWithSection:section];
+            return maker;
+        }
+    }
+    
+    return nil;
+}
+
+- (void)deleteSectionAtIndex:(NSUInteger)index
+{
+    if (index >= self.sections.count)
+    {
+        return;
+    }
+    
+    [self.sections removeObjectAtIndex:index];
+}
+
+- (void)deleteSectionWithIdentifier:(NSString *)identifier
+{
+    HYTableViewSourceSection *tmpSection = nil;
+    for (HYTableViewSourceSection *section in self.sections)
+    {
+        if ([section.identifier isEqualToString:identifier])
+        {
+            tmpSection = section;
+        }
+    }
+    
+    if (tmpSection)
+    {
+        [self.sections removeObject:tmpSection];
+    }
+}
+
+- (void)deleteAllSections
+{
+    [self.sections removeAllObjects];
+}
+
+- (NSUInteger)indexOfSection:(HYTableViewSourceSection *)section {
+    return [self.sections indexOfObject:section];
+}
+
+- (NSUInteger)indexOfSectionIdentifier:(NSString *)identifier {
+    __block NSUInteger index = NSNotFound;
+    [self.sections enumerateObjectsUsingBlock:^(HYTableViewSourceSection *section, NSUInteger idx, BOOL *stop) {
+        if ([section.identifier isEqualToString:identifier]) {
+            index = idx;
+        }
+    }];
+    return index;
+    
+}
+
+
 @end
 
 @implementation HYTableViewSource (Notify)

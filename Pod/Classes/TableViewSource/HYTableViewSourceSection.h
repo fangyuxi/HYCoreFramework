@@ -18,6 +18,8 @@
     
 }
 
+@property (nonatomic, copy) NSString *identifier;
+
 @property (nonatomic, strong, readonly) NSMutableArray *rows;
 @property (nonatomic, assign, readonly) NSUInteger rowCount;
 
@@ -42,6 +44,7 @@
 
 - (void)deleteRowAtIndex:(NSUInteger)index;
 - (void)deleteRowWithModel:(HYBaseCellModel *)model;
+- (void)deleteAllRows;
 
 - (void)replaceRowAtIndex:(NSUInteger)index
                 withModel:(HYBaseCellModel *)Model;
