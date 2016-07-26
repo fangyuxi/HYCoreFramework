@@ -19,6 +19,53 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "HYCoreFramework"
 ```
+## Section Row Maker 
+
+```objc
+        //列表页section
+        [self updateSection:maker.section userMaker:^(WBPTTableViewSourceSectionMaker *maker) {
+                                
+              maker.deleteAllRows();
+              //cells
+              for (NSInteger index = 0; index < [infoList count]; ++index)
+               {
+                  NSDictionary *dic = [infoList objectAtIndex:index];
+                                    
+                  if ([dic isKindOfClass:[NSDictionary class]])
+                  {
+                    WBPTMainJobCellModel *model = [[WBPTMainJobCellModel alloc]
+                                                      initWithDictionary:[infoList objectAtIndex:index]];
+                    [model calculateCellElementFrame];
+                    maker.addRow(model).rowPosition([WBPTBaseCell plainStyleWithIndex:index Count:[infoList count]]);
+                  }
+                 }
+         }];
+                            
+                            //列表页section
+                [self makeSection:^(WBPTTableViewSourceSectionMaker *maker) {
+                    
+                    //identifier
+                    maker.setIdentifier(@"WBPTMainJobCellModel");
+                    
+                    //filterView as sectoinHeader
+                    WBPTMainFilterSectionHeaderView *filterView = [[WBPTMainFilterSectionHeaderView alloc] initWithReuseIdentifier:nil];
+                    maker.addUnReusedSectionHeaderView(filterView);
+                    
+                    //cells
+                    for (NSInteger index = 0; index < [infoList count]; ++index)
+                    {
+                        NSDictionary *dic = [infoList objectAtIndex:index];
+                        
+                        if ([dic isKindOfClass:[NSDictionary class]])
+                        {
+                            WBPTMainJobCellModel *model = [[WBPTMainJobCellModel alloc]
+                                                           initWithDictionary:[infoList objectAtIndex:index]];
+                            [model calculateCellElementFrame];
+                            maker.addRow(model).rowPosition([WBPTBaseCell plainStyleWithIndex:index Count:[infoList count]]);
+                        }
+                    }
+                }];
+```
 
 ## Author
 
